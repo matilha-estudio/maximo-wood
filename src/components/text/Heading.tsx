@@ -61,9 +61,17 @@ export function SubtitleLarge({ children, className }: TextProps) {
     )
 }
 
+export function SubtitleMediumBold({ children, className }: TextProps) {
+    return (
+        <span className={cn("font-bold text-[24px] leading-[32.64px]", className)}>
+            {children}
+        </span>
+    )
+}
+
 export function SubtitleSmall({ children, className }: TextProps) {
     return (
-        <span className={cn("font-medium text-[20px] leading-[34px]", className)}>
+        <span className={cn("font-bold text-[20px] leading-[34px]", className)}>
             {children}
         </span>
     )
