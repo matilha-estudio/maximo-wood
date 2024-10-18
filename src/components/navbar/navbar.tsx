@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { ChevronDown } from "lucide-react";
 import { SubtitleSmallBold, SubtitleSmallMedium } from "../text/Heading";
 import { cn } from "@/lib/utils";
+import { Routes } from "@/enums/routes";
 
 export default function Navbar() {
     const [expandedSection, setExpandedSection] = useState<string | null>(null);
@@ -32,7 +33,7 @@ export default function Navbar() {
     return (
         <nav className="flex flex-col justify-center items-center bg-white sticky top-0 gap-9 z-10">
             {/* principal area */}
-            <div className={cn("relative flex justify-between px-[72px] py-8 w-full max-w-screen-2xl border-neutral-1000", expandedSection && "border-b")}>
+            <div className={cn("relative flex justify-between px-[72px] py-8 w-full max-w-screen-2xl border-neutral-1000 border-b")}>
                 <div className="relative flex items-center">
                     {/* Logo preto (inicial) */}
                     <Image
@@ -78,7 +79,9 @@ export default function Navbar() {
                         </Button>
                     </div>
                     <Button variant="default" size="default">
-                        Become a dealer
+                        <a href={Routes.becomeADealer}>
+                            Become a dealer
+                        </a>
                     </Button>
                 </div>
             </div>

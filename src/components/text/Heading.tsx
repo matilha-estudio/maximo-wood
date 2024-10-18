@@ -124,3 +124,19 @@ export function Overline({ children, className }: TextProps) {
         </span>
     )
 }
+
+export function TextLink({ children, className }: TextProps) {
+    return (
+        <span className={cn("font-bold text-[18px] leading-[21px]", className)}>
+            {children}
+        </span>
+    )
+}
+
+export function InputText({ children, className }: TextProps) {
+    return (
+        <span className={cn("font-medium text-[16px] leading-[19.2px]", className)}>
+            {children}
+        </span>
+    )
+}
