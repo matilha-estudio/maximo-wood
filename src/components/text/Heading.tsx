@@ -53,6 +53,14 @@ export function H6({ children, className }: TextProps) {
     )
 }
 
+export function SubtitleXL({ children, className }: TextProps) {
+    return (
+        <span className={cn("font-extrabold text-[36px] leading-[43.52px]", className)}>
+            {children}
+        </span>
+    )
+}
+
 export function SubtitleLarge({ children, className }: TextProps) {
     return (
         <span className={cn("font-medium text-[32px] leading-[43.52px]", className)}>
@@ -64,6 +72,14 @@ export function SubtitleLarge({ children, className }: TextProps) {
 export function SubtitleMediumBold({ children, className }: TextProps) {
     return (
         <span className={cn("font-bold text-[24px] leading-[32.64px]", className)}>
+            {children}
+        </span>
+    )
+}
+
+export function SubtitleMediumNormal({ children, className }: TextProps) {
+    return (
+        <span className={cn("font-normal text-[24px] leading-[32.64px]", className)}>
             {children}
         </span>
     )
@@ -95,7 +111,7 @@ export function SubtitleSmallBold({ children, className }: TextProps) {
 
 export function ParagraphLarge({ children, className }: TextProps) {
     return (
-        <span className={cn("font-normal text-[19px] leading-[33.82px]", className)}>
+        <span className={cn("font-normal text-[18px] leading-[33.82px]", className)}>
             {children}
         </span>
     )

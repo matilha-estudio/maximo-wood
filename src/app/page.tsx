@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar/navbar";
 import { ProductCard } from "@/components/productCard/productCard";
 import { H1, H2, H5, ParagraphLarge, ParagraphMedium, SubtitleMediumBold } from "@/components/text/Heading";
 import { Button } from "@/components/ui/button";
+import { Routes } from "@/enums/routes";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
@@ -24,7 +25,9 @@ export default function Home() {
               Maximo combines decades of natural resilience with advanced thermal innovation, offering wood that stands the test of time—in any climate, for any project.
             </ParagraphMedium>
             <Button className="gap-1 w-fit bg-white text-neutral-1000">
-              Our Materials
+              <a href={Routes.home}>
+                Our Materials
+              </a>
               <ArrowRight />
             </Button>
           </div>
@@ -39,8 +42,8 @@ export default function Home() {
       </section>
 
       <section className="flex bg-white w-full justify-center">
-        <div className="flex max-w-screen-2xl px-[72px] py-[120px]">
-          <ParagraphLarge>
+        <div className="flex max-w-screen-2xl px-[72px] py-[120px] w-full justify-end">
+          <ParagraphLarge className="max-w-[744px]">
             Every Maximo board is handpicked for quality, sustainability, and unmatched stability. Our range includes both timeless hardwoods and thermally modified woods, giving you the flexibility to choose between classic beauty and modern performance. With Maximo, you’re not just choosing wood—you’re choosing a legacy of craftsmanship, built for the future. Explore the possibilities and discover the wood that redefines excellence.
           </ParagraphLarge>
         </div>
@@ -62,12 +65,15 @@ export default function Home() {
               </ParagraphLarge>
               <Button variant='link' className="flex-col">
                 <div className="flex gap-1">
-                  Explore Maximo Thermo
+                  <a href={Routes.hardwood}>
+                    Explore Maximo Thermo
+                  </a>
                   <ArrowRight />
                 </div>
                 <Image src={'/icons/Path-110.png'} alt="Path-110" width={66} height={45} className="place-self-start -mt-4" />
               </Button>
             </div>
+
             <div className="flex flex-col gap-10 max-w-[413px] items-center text-center">
               <Image src={"/images/Ellipse2.png"} alt={"Ellipse1"} width={120} height={120} />
               <SubtitleMediumBold>
@@ -78,7 +84,9 @@ export default function Home() {
               </ParagraphLarge>
               <Button variant='link' className="flex-col">
                 <div className="flex gap-1">
-                  Explore Maximo Hardwood
+                  <a href={Routes.hardwood}>
+                    Explore Maximo Hardwood
+                  </a>
                   <ArrowRight />
                 </div>
                 <Image src={'/icons/Path-110.png'} alt="Path-110" width={66} height={45} className="place-self-start -mt-4" />
@@ -93,10 +101,10 @@ export default function Home() {
           <div className="flex justify-between w-full">
             <H2 className="text-brand-graphite uppercase">Our Products</H2>
             <Button variant='link' className="flex-col">
-              <div className="flex gap-1">
+              <a href={Routes.allProducts} className="flex gap-1">
                 All products
                 <ArrowRight />
-              </div>
+              </a>
               <Image src={'/icons/Path-110.png'} alt="Path-110" width={66} height={45} className="place-self-start -mt-4" />
             </Button>
           </div>
@@ -113,9 +121,19 @@ export default function Home() {
 
       <section className="flex bg-white w-full justify-center">
         <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] border-y border-neutral-1000 gap-10">
-          <H2 className="text-brand-graphite max-w-[814px] uppercase">
-            Inspiration for architects and designers
-          </H2>
+          <div className="flex justify-between w-full">
+            <H2 className="text-brand-graphite max-w-[814px] uppercase hover:text-brand-ipe-yellow cursor-pointer transition-colors">
+              Inspiration for architects and designers
+            </H2>
+
+            <Button variant='link' className="flex-col">
+              <a href="" className="flex gap-1">
+                All projects
+                <ArrowRight />
+              </a>
+              <Image src={'/icons/Path-110.png'} alt="Path-110" width={66} height={45} className="place-self-start -mt-4" />
+            </Button>
+          </div>
 
           <div>
             <InspirationSection />

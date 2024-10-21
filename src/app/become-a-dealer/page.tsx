@@ -30,8 +30,8 @@ export default function BecomeADealer() {
             </section>
 
             <section className="flex bg-white w-full justify-center">
-                <div className="flex max-w-screen-2xl px-[72px] py-[120px]">
-                    <ParagraphLarge>
+                <div className="flex max-w-screen-2xl px-[72px] py-[120px] w-full justify-end">
+                    <ParagraphLarge className="max-w-[744px]">
                         Every Maximo board is handpicked for quality, sustainability, and unmatched stability. Our range includes both timeless hardwoods and thermally modified woods, giving you the flexibility to choose between classic beauty and modern performance. With Maximo, you’re not just choosing wood—you’re choosing a legacy of craftsmanship, built for the future. Explore the possibilities and discover the wood that redefines excellence.
                     </ParagraphLarge>
                 </div>

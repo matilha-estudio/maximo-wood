@@ -9,7 +9,7 @@ export function InspirationSection() {
             <div className="flex flex-col gap-10">
                 <Image src={"/images/image 95.png"} alt={"inspiration"} width={1298} height={644} className="w-full max-h-[644px]" />
                 <div className="flex justify-between">
-                    <div className="border-t border-neutral-1000 py-4">
+                    <div className="border-t border-neutral-1000 py-4 hover:text-brand-ipe-yellow cursor-pointer transition-colors">
                         <SubtitleSmall>
                             Maximo Hardwood Garapa | Ourania 231
                         </SubtitleSmall>

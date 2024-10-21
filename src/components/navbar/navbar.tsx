@@ -35,29 +35,31 @@ export default function Navbar() {
             {/* principal area */}
             <div className={cn("relative flex justify-between px-[72px] py-8 w-full max-w-screen-2xl border-neutral-1000 border-b")}>
                 <div className="relative flex items-center">
-                    {/* Logo preto (inicial) */}
-                    <Image
-                        src={"/logos/MAXIMO_NO_TAGLINE_LOGO_BLACK.svg"}
-                        alt="logo"
-                        width={199}
-                        height={36.85}
-                        className={cn(
-                            "object-contain transition-opacity duration-300 ease-in-out",
-                            isScrolled ? "opacity-0" : "opacity-100"
-                        )}
-                    />
+                    <a href={Routes.home}>
+                        {/* Logo preto (inicial) */}
+                        <Image
+                            src={"/logos/MAXIMO_NO_TAGLINE_LOGO_BLACK.svg"}
+                            alt="logo"
+                            width={199}
+                            height={36.85}
+                            className={cn(
+                                "object-contain transition-opacity duration-300 ease-in-out",
+                                isScrolled ? "opacity-0" : "opacity-100"
+                            )}
+                        />
 
-                    {/* Logo amarelo (scroll) */}
-                    <Image
-                        src={"/logos/MAXIMO_MW_LOGO_YELLOW.svg"}
-                        alt="logo"
-                        width={50}
-                        height={56}
-                        className={cn(
-                            "object-contain absolute top-0 left-0 transition-opacity duration-300 ease-in-out",
-                            isScrolled ? "opacity-100" : "opacity-0"
-                        )}
-                    />
+                        {/* Logo amarelo (scroll) */}
+                        <Image
+                            src={"/logos/MAXIMO_MW_LOGO_YELLOW.svg"}
+                            alt="logo"
+                            width={50}
+                            height={56}
+                            className={cn(
+                                "object-contain absolute top-0 left-0 transition-opacity duration-300 ease-in-out",
+                                isScrolled ? "opacity-100" : "opacity-0"
+                            )}
+                        />
+                    </a>
                 </div>
                 <div className="flex items-center justify-center gap-10">
                     <div className="flex items-center justify-center gap-4">

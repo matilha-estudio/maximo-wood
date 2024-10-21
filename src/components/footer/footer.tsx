@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Caption, InputText, ParagraphMedium, TextLink } from "../text/Heading";
 import { Inbox, Instagram, Phone, PhoneIcon } from "lucide-react";
 import { Button } from "../ui/button";
+import { Routes } from "@/enums/routes";
 
 export function Footer() {
     return (
@@ -62,7 +63,9 @@ export function Footer() {
                         </InputText>
 
                         <Button variant="default" size="default" className="bg-white text-neutral-1000 mt-2">
-                            Become a dealer
+                            <a href={Routes.becomeADealer}>
+                                Become a dealer
+                            </a>
                         </Button>
                     </div>
                 </div>
