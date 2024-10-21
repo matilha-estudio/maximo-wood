@@ -1,11 +1,9 @@
 'use client'
-import { InspirationSection } from "@/components/carousel/inspirationsSection";
 import { Footer } from "@/components/footer/footer";
 import Navbar from "@/components/navbar/navbar";
 import { ProductCard } from "@/components/productCard/productCard";
-import { H1, H2, H5, ParagraphLarge, ParagraphMedium, SubtitleMediumBold } from "@/components/text/Heading";
+import { H1, H5, ParagraphLarge } from "@/components/text/Heading";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 export default function Products() {

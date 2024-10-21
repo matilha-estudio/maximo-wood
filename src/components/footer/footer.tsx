@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Caption, InputText, ParagraphMedium, TextLink } from "../text/Heading";
-import { Inbox, Instagram, Phone, PhoneIcon } from "lucide-react";
+import { Inbox, Instagram, Phone } from "lucide-react";
 import { Button } from "../ui/button";
 import { Routes } from "@/enums/routes";
 

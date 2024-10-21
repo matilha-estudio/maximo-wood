@@ -57,7 +57,7 @@ export default function AllProjects() {
                     <div className="flex gap-8 w-full">
                         {
                             Array.from({ length: 3 }).map((_, index) => (
-                                <ProductCard />
+                                <ProductCard key={index} />
                             ))
                         }
                     </div>
