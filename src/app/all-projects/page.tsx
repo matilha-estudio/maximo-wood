@@ -47,6 +47,7 @@ export default function AllProjects() {
                         <Button variant='link' className="flex-col">
                             <a href={Routes.allProducts} className="flex gap-1">
                                 All products
+
                                 <ArrowRight />
                             </a>
                             <Image src={'/icons/Path-110.png'} alt="Path-110" width={66} height={45} className="place-self-start -mt-4" />
