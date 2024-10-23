@@ -23,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={font.variable}>
       <body className={`font-anybody antialiased`}>
-        {children}
+        <Navbar>
+          {children}
+        </Navbar>
       </body>
     </html>
   );

@@ -13,7 +13,7 @@ import Image from "next/image";
 export default function AllProjects() {
     return (
         <div className="relative">
-            <Navbar />
+            
             <section className="flex bg-white w-full justify-center">
                 <div className="flex flex-col max-w-screen-2xl px-[72px] pt-[56px] w-full text-brand-graphite">
                     <H1 className="max-w-[822px] pb-[88px]">

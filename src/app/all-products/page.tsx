@@ -9,7 +9,7 @@ import Image from "next/image";
 export default function Products() {
     return (
         <div className="relative text-brand-graphite">
-            <Navbar />
+            
             <section className="flex bg-white w-full justify-center">
                 <Image
                     src={"/images/all-products/header.png"}

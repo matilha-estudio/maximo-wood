@@ -11,7 +11,6 @@ import Image from "next/image";
 export default function ProductDetail() {
     return (
         <div className="relative">
-            <Navbar />
             {/* TODO: DETAILS */}
 
             <section className="flex bg-white w-full justify-center">

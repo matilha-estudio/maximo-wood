@@ -9,8 +9,7 @@ import Image from "next/image";
 export default function BecomeADealer() {
     return (
         <div className="relative text-brand-graphite">
-            <Navbar />
-
+            
             <section className="flex bg-white w-full justify-center">
                 <div className="flex flex-col max-w-screen-2xl px-[72px] py-[120px] w-full gap-10">
                     <H1 className="max-w-[924px]">

@@ -12,7 +12,6 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="relative">
-      <Navbar />
       <section className="flex bg-neutral-1000 w-full justify-center">
         <div className="flex max-w-screen-2xl px-[72px] pt-[56px]">
           <div className="text-white w-full flex flex-col gap-9 justify-center">
