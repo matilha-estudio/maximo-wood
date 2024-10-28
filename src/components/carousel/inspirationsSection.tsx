@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export function InspirationSection() {
     return (
-        <div>
+        <div className="w-full">
             <div className="flex flex-col gap-10">
                 <Image src={"/images/image 95.png"} alt={"inspiration"} width={1298} height={644} className="w-full max-h-[644px]" />
                 <div className="flex justify-between">
@@ -14,7 +14,7 @@ export function InspirationSection() {
                             Maximo Hardwood Garapa | Ourania 231
                         </SubtitleSmall>
                     </div>
-                    <div className="flex gap-4">
+                    <div className="flex gap-4 max-lg:hidden">
                         <Button variant='ghost' size='icon'>
                             <ChevronLeft className="size-10" />
                         </Button>

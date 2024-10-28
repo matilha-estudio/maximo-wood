@@ -1,7 +1,7 @@
 'use client'
 import { InspirationSection } from "@/components/carousel/inspirationsSection";
+import { LogosCarousel } from "@/components/carousel/logos";
 import { Footer } from "@/components/footer/footer";
-import Navbar from "@/components/navbar/navbar";
 import { ProductCard } from "@/components/productCard/productCard";
 import { H1, H2, H5, ParagraphLarge, ParagraphMedium, SubtitleMediumBold } from "@/components/text/Heading";
 import { Button } from "@/components/ui/button";
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="relative">
       <section className="flex bg-neutral-1000 w-full justify-center">
-        <div className="flex max-w-screen-2xl px-[72px] pt-[56px]">
+        <div className="flex max-w-screen-2xl px-[72px] pt-[56px] max-lg:flex-col max-lg:px-6 max-lg:py-14">
           <div className="text-white w-full flex flex-col gap-9 justify-center">
             <H1 className="text-white">
               The Wood
@@ -23,25 +23,27 @@ export default function Home() {
             <ParagraphMedium className="max-w-[465px]">
               Maximo combines decades of natural resilience with advanced thermal innovation, offering wood that stands the test of time—in any climate, for any project.
             </ParagraphMedium>
-            <Button className="gap-1 w-fit bg-white text-neutral-1000">
+            <Button className="gap-1 w-fit bg-white text-neutral-1000 max-lg:w-full lg:mb-8 max-lg:mb-14">
               <a href={Routes.home}>
                 Our Materials
               </a>
               <ArrowRight />
             </Button>
           </div>
-          <Image
-            src={"/images/grant-ritchie-FBkrQhnLQoY-unsplash.png"}
-            alt="logo"
-            width={688}
-            height={688}
-            className="max-w-[688px] w-full h-full"
-          />
+          <div className="lg:max-w-[688px] w-full h-full max-lg:flex max-lg:justify-center">
+            <Image
+              src={"/images/grant-ritchie-FBkrQhnLQoY-unsplash.png"}
+              alt="logo"
+              width={688}
+              height={688}
+              className="max-w-[688px] w-full h-full"
+            />
+          </div>
         </div>
       </section>
 
       <section className="flex bg-white w-full justify-center">
-        <div className="flex max-w-screen-2xl px-[72px] py-[120px] w-full justify-end">
+        <div className="flex max-w-screen-2xl px-[72px] py-[120px] w-full justify-end max-lg:py-14 max-lg:px-6 max-lg:justify-center">
           <ParagraphLarge className="max-w-[744px]">
             Every Maximo board is handpicked for quality, sustainability, and unmatched stability. Our range includes both timeless hardwoods and thermally modified woods, giving you the flexibility to choose between classic beauty and modern performance. With Maximo, you’re not just choosing wood—you’re choosing a legacy of craftsmanship, built for the future. Explore the possibilities and discover the wood that redefines excellence.
           </ParagraphLarge>
@@ -49,12 +51,12 @@ export default function Home() {
       </section>
 
       <section className="flex bg-brand-ipe-yellow/15 w-full justify-center">
-        <div className="flex flex-col max-w-screen-2xl md:py-[120px] md:px-[174px] gap-24">
-          <H2 className="text-center">
+        <div className="flex flex-col max-w-screen-2xl md:py-[120px] md:px-[174px] gap-24 max-lg:px-6 max-lg:py-14">
+          <H2 className="text-center max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold ">
             The best of both worlds for your construction
           </H2>
-          <div className="flex justify-between">
-            <div className="flex flex-col gap-10 max-w-[413px] items-center text-center">
+          <div className="flex lg:justify-between max-lg:flex-col max-lg:items-center max-lg:gap-16">
+            <div className="flex flex-col gap-10 max-w-[413px] items-center text-center ">
               <Image src={"/images/Ellipse1.png"} alt={"Ellipse1"} width={120} height={120} />
               <SubtitleMediumBold>
                 Thermo
@@ -96,10 +98,12 @@ export default function Home() {
       </section >
 
       <section className="flex bg-white w-full justify-center">
-        <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[174px] gap-12">
-          <div className="flex justify-between w-full">
-            <H2 className="text-brand-graphite uppercase">Our Products</H2>
-            <Button variant='link' className="flex-col">
+        <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[174px] gap-12 max-lg:px-6 max-lg:py-14">
+          <div className="flex justify-between w-full max-lg:justify-center max-md:justify-between">
+            <H2 className="text-brand-graphite uppercase max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold ">
+              Our Products
+            </H2>
+            <Button variant='link' className="flex-col max-lg:hidden">
               <a href={Routes.allProducts} className="flex gap-1">
                 All products
                 <ArrowRight />
@@ -108,24 +112,33 @@ export default function Home() {
             </Button>
           </div>
 
-          <div className="flex gap-8 w-full">
+          <div className="flex gap-8 w-full max-lg:flex-col max-lg:items-center">
             {
               Array.from({ length: 3 }).map((_, index) => (
                 <ProductCard />
               ))
             }
           </div>
+          <div className="flex justify-center lg:hidden">
+            <Button variant='link' className="flex-col">
+              <a href={Routes.allProducts} className="flex gap-1">
+                All products
+                <ArrowRight />
+              </a>
+              <Image src={'/icons/Path-110.png'} alt="Path-110" width={66} height={45} className="place-self-start -mt-4" />
+            </Button>
+          </div>
         </div>
       </section>
 
       <section className="flex bg-white w-full justify-center">
-        <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] border-y border-neutral-1000 gap-10">
+        <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] border-y border-neutral-1000 gap-10 max-lg:px-6 max-lg:py-14">
           <div className="flex justify-between w-full">
-            <H2 className="text-brand-graphite max-w-[814px] uppercase hover:text-brand-ipe-yellow cursor-pointer transition-colors">
+            <H2 className="text-brand-graphite max-w-[814px] uppercase hover:text-brand-ipe-yellow cursor-pointer transition-colors max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold ">
               Inspiration for architects and designers
             </H2>
 
-            <Button variant='link' className="flex-col">
+            <Button variant='link' className="flex-col max-lg:hidden">
               <a href="" className="flex gap-1">
                 All projects
                 <ArrowRight />
@@ -134,19 +147,27 @@ export default function Home() {
             </Button>
           </div>
 
-          <div>
+          <div className="flex max-lg:flex-col max-lg:items-center">
             <InspirationSection />
-
+          </div>
+          <div className="flex justify-center lg:hidden">
+            <Button variant='link' className="flex-col">
+              <a href="" className="flex gap-1">
+                All projects
+                <ArrowRight />
+              </a>
+              <Image src={'/icons/Path-110.png'} alt="Path-110" width={66} height={45} className="place-self-start -mt-4" />
+            </Button>
           </div>
         </div>
       </section>
 
       <section className="flex bg-white w-full justify-center">
-        <div className="flex flex-col justify-center items-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] gap-20">
-          <div className="flex gap-[78px]">
+        <div className="flex flex-col justify-center items-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] gap-20 max-lg:px-6 max-lg:py-14">
+          <div className="flex gap-[78px] max-lg:flex-col-reverse max-lg:items-center">
             <Image src={"/images/Rectangle12.png"} alt={"Rectangle12"} width={365} height={416} className="h-full" />
             <div className="relative flex flex-col gap-8 text-brand-graphite">
-              <H2 className="max-w-[80%]">
+              <H2 className="max-w-[80%] max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold">
                 Rooted in Responsibility: Our Commitment to Sustainable Wood
               </H2>
               <ParagraphLarge>
@@ -154,33 +175,40 @@ export default function Home() {
               </ParagraphLarge>
             </div>
           </div>
-
-          <div className="relative flex gap-8 items-center max-h-[189px]">
-            <div className="max-h-[189px] max-w-[189px]">
-              <Image src={"/logos/FSC_C116010_Promotional_with_text_Portrait_BlackOnWhite_r_2Y5lcA 1.png"} alt={"FSC_C116010"} width={189} height={189} className="object-contain h-full" />
-            </div>
-            <div className="max-h-[189px] max-w-[189px]">
-              <Image src={"/logos/UNICONSULT_LOGO-_1_ 1.png"} alt={"UNICONSULT_LOGO"} width={189} height={189} className="object-contain h-full" />
-            </div>
-            <div className="max-h-[189px] max-w-[189px]">
-              <Image src={"/logos/PEFC_LOGO.png"} alt={"PEFC_LOGO"} width={189} height={189} className="object-contain h-full" />
-            </div>
-            <div className="max-h-[189px] max-w-[189px]">
-              <Image src={"/logos/EPD_LOGO1.png"} alt={"EPD_LOGO1"} width={189} height={189} className="object-contain h-full" />
-            </div>
-            <div className="max-h-[189px] max-w-[189px]">
-              <Image src={"/logos/USGBC_LOGO1.png"} alt={"USGBC_LOGO1"} width={189} height={189} className="object-contain h-full" />
-            </div>
-            <div className="max-h-[189px] max-w-[189px]">
-              <Image src={"/logos/TIMBER-TRUST_LOGO.png"} alt={"TIMBER-TRUST_LOGO"} width={189} height={189} className="object-contain h-full" />
-            </div>
+          
+          {/* Desktop */}
+          <div className="relative flex gap-8 items-center max-h-[189px] max-lg:hidden">
+            {
+              listLogos.map((item, index)=>(
+                <div key={index} className="max-h-[189px] max-w-[189px]">
+                  <Image 
+                    src={item.src} 
+                    alt={item.alt} 
+                    width={item.width} 
+                    height={item.height} 
+                    className="object-contain h-full" 
+                    />
+                </div>
+              ))
+            }
+          </div>
+          
+          {/* Mobile */}
+          <div className="relative flex gap-1 items-center w-full lg:hidden">
+            <LogosCarousel images={listLogos} />
           </div>
         </div>
       </section>
 
       <section className="flex bg-brand-ipe-yellow/15 w-full justify-center">
-        <div className="flex justify-center items-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] gap-8">
-          <Image src={"/images/wood_draw.png"} alt={"wood_draw"} width={709} height={561} />
+        <div className="flex justify-center items-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] gap-8 max-lg:px-6 max-lg:py-14 max-lg:flex-col">
+          <Image 
+            className="max-lg:max-h-[286px] max-lg:max-w-[360px]" 
+            src={"/images/wood_draw.png"} 
+            alt={"wood_draw"} 
+            width={709} 
+            height={561} 
+          />
           <div className="flex flex-col items-center gap-8 max-w-[453px] text-center">
             <H5>
               Product samples
@@ -188,7 +216,7 @@ export default function Home() {
             <ParagraphLarge>
               Feel the quality of Maximo Wood. Get your sample and discover the difference at your fingertips.
             </ParagraphLarge>
-            <Button className="w-fit">
+            <Button className="w-fit max-lg:w-full">
               Order samples
             </Button>
           </div>
@@ -199,3 +227,42 @@ export default function Home() {
     </div >
   );
 }
+
+const listLogos = [
+  {
+    src: "/logos/FSC_C116010_Promotional_with_text_Portrait_BlackOnWhite_r_2Y5lcA 1.png",
+    alt: "FSC_C116010",
+    width: 189,
+    height: 189
+  },
+  {
+    src: "/logos/UNICONSULT_LOGO-_1_ 1.png",
+    alt: "UNICONSULT_LOGO",
+    width: 189,
+    height: 189
+  },
+  {
+    src: "/logos/PEFC_LOGO.png",
+    alt: "PEFC_LOGO",
+    width: 189,
+    height: 189
+  },
+  {
+    src: "/logos/EPD_LOGO1.png",
+    alt: "EPD_LOGO1",
+    width: 189,
+    height: 189
+  },
+  {
+    src: "/logos/USGBC_LOGO1.png",
+    alt: "USGBC_LOGO1",
+    width: 189,
+    height: 189
+  },
+  {
+    src: "/logos/TIMBER-TRUST_LOGO.png",
+    alt: "TIMBER-TRUST_LOGO",
+    width: 189,
+    height: 189
+  },
+]

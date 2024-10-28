@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={font.variable}>
-      <body className={`font-anybody antialiased`}>
+      <body className={`font-anybody antialiased max-lg:overflow-x-hidden`}>
         <Navbar>
           {children}
         </Navbar>
