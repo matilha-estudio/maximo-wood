@@ -6,10 +6,15 @@ import { ProductCard } from "@/components/productCard/productCard";
 import { H1, H2, H5, ParagraphLarge, ParagraphMedium, SubtitleMediumBold } from "@/components/text/Heading";
 import { Button } from "@/components/ui/button";
 import { Routes } from "@/enums/routes";
-import { ArrowRight } from "lucide-react";
+import { shuffleArray } from "@/lib/utils";
+import { HardWoodList } from "@/products/HardWoodList";
+import { ThermoWoodProducts } from "@/products/ThermowoodList";
+import { MoveRight } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
+  const LIST_PRODUCTS = shuffleArray(HardWoodList.concat(ThermoWoodProducts))
+
   return (
     <div className="relative">
       <section className="flex bg-neutral-1000 w-full justify-center">
@@ -27,7 +32,7 @@ export default function Home() {
               <a href={Routes.home}>
                 Our Materials
               </a>
-              <ArrowRight />
+              <MoveRight />
             </Button>
           </div>
           <Image
@@ -67,7 +72,7 @@ export default function Home() {
                   <a href={Routes.hardwood}>
                     Explore Maximo Thermo
                   </a>
-                  <ArrowRight />
+                  <MoveRight />
                 </div>
                 <Image src={'/icons/Path-110.png'} alt="Path-110" width={66} height={45} className="place-self-start -mt-4" />
               </Button>
@@ -86,7 +91,7 @@ export default function Home() {
                   <a href={Routes.hardwood}>
                     Explore Maximo Hardwood
                   </a>
-                  <ArrowRight />
+                  <MoveRight />
                 </div>
                 <Image src={'/icons/Path-110.png'} alt="Path-110" width={66} height={45} className="place-self-start -mt-4" />
               </Button>
@@ -102,7 +107,7 @@ export default function Home() {
             <Button variant='link' className="flex-col">
               <a href={Routes.allProducts} className="flex gap-1">
                 All products
-                <ArrowRight />
+                <MoveRight />
               </a>
               <Image src={'/icons/Path-110.png'} alt="Path-110" width={66} height={45} className="place-self-start -mt-4" />
             </Button>
@@ -110,8 +115,8 @@ export default function Home() {
 
           <div className="flex gap-8 w-full">
             {
-              Array.from({ length: 3 }).map((_, index) => (
-                <ProductCard />
+              LIST_PRODUCTS.slice(0, 3).map((product, index) => (
+                <ProductCard key={index} product={product} />
               ))
             }
           </div>
@@ -128,7 +133,7 @@ export default function Home() {
             <Button variant='link' className="flex-col">
               <a href="" className="flex gap-1">
                 All projects
-                <ArrowRight />
+                <MoveRight />
               </a>
               <Image src={'/icons/Path-110.png'} alt="Path-110" width={66} height={45} className="place-self-start -mt-4" />
             </Button>
