@@ -6,7 +6,7 @@ import { ProductCard } from "@/components/productCard/productCard";
 import { H1, H2, H5, ParagraphLarge, SubtitleMediumNormal, SubtitleXL } from "@/components/text/Heading";
 import { Button } from "@/components/ui/button";
 import { Routes } from "@/enums/routes";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MoveRight } from "lucide-react";
 import Image from "next/image";
 
 
@@ -58,7 +58,7 @@ export default function Hardwood() {
                     </H2>
 
                     <ParagraphLarge className="max-w-[638px]">
-                        Like you, we want our forests to stand for generations to come. That’s why we use the most modern forest management techniques, harvesting only 3-5 aging trees from an area as large as a football field. Watch the video to see how Maximo is tirelessly working to preserve our forests and support the communities that depend on them every day.
+                        Like you, we want our forests to stand for generations to come. That's why we use the most modern forest management techniques, harvesting only 3-5 aging trees from an area as large as a football field. Watch the video to see how Maximo is tirelessly working to preserve our forests and support the communities that depend on them every day.
                     </ParagraphLarge>
                 </div>
             </section>
@@ -71,7 +71,7 @@ export default function Hardwood() {
                         <Button variant='link' className="flex-col">
                             <a href={Routes.allProducts} className="flex gap-1">
                                 All products
-                                <ArrowRight />
+                                <MoveRight />
                             </a>
                             <Image src={'/icons/Path-110.png'} alt="Path-110" width={66} height={45} className="place-self-start -mt-4" />
                         </Button>
@@ -80,7 +80,7 @@ export default function Hardwood() {
                     <div className="flex gap-8 w-full justify-center">
                         {
                             Array.from({ length: 3 }).map((_, index) => (
-                                <ProductCard />
+                                <ProductCard key={index} />
                             ))
                         }
                     </div>
