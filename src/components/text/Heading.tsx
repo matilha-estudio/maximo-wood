@@ -143,7 +143,7 @@ export function Overline({ children, className }: TextProps) {
 
 export function TextLink({ children, className }: TextProps) {
     return (
-        <span className={cn("font-bold text-[18px] leading-[21px]", className)}>
+        <span className={cn("font-semibold text-[16px] leading-[21px]", className)}>
             {children}
         </span>
     )

@@ -4,9 +4,12 @@ import Navbar from "@/components/navbar/navbar";
 import { ProductCard } from "@/components/productCard/productCard";
 import { H1, H5, ParagraphLarge } from "@/components/text/Heading";
 import { Button } from "@/components/ui/button";
+import { HardWoodList } from "@/products/HardWoodList";
+import { ThermoWoodProducts } from "@/products/ThermowoodList";
 import Image from "next/image";
 
 export default function Products() {
+    const LIST_PRODUCTS = HardWoodList.concat(ThermoWoodProducts)
     return (
         <div className="relative text-brand-graphite">
             <Navbar />
@@ -40,8 +43,8 @@ export default function Products() {
 
                     <div className="flex flex-wrap gap-8 w-full justify-center">
                         {
-                            Array.from({ length: 9 }).map((_, index) => (
-                                <ProductCard />
+                            LIST_PRODUCTS.map((product, index) => (
+                                <ProductCard key={index} product={product} />
                             ))
                         }
                     </div>
