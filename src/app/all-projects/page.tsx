@@ -6,8 +6,8 @@ import { ProductCard } from "@/components/productCard/productCard";
 import { H1, H2 } from "@/components/text/Heading";
 import { Button } from "@/components/ui/button";
 import { Routes } from "@/enums/routes";
-import { ProjectsList } from "@/products/list";
-import { ArrowRight } from "lucide-react";
+import { ProjectsList } from "@/projects/list";
+import { ArrowRight, MoveRight } from "lucide-react";
 import Image from "next/image";
 
 export default function AllProjects() {
@@ -48,7 +48,7 @@ export default function AllProjects() {
                             <a href={Routes.allProducts} className="flex gap-1">
                                 All products
 
-                                <ArrowRight />
+                                <MoveRight />
                             </a>
                             <Image src={'/icons/Path-110.png'} alt="Path-110" width={66} height={45} className="place-self-start -mt-4" />
                         </Button>
@@ -57,7 +57,8 @@ export default function AllProjects() {
                     <div className="flex gap-8 w-full">
                         {
                             Array.from({ length: 3 }).map((_, index) => (
-                                <ProductCard key={index} />
+                                <ProductCard
+                                    key={index} />
                             ))
                         }
                     </div>
