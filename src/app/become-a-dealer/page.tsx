@@ -81,14 +81,6 @@ export default function BecomeADealer() {
                 </div>
             </section>
 
-            <section className="flex bg-brand-ipe-yellow/15 w-full justify-center">
-                <div className="flex max-w-screen-2xl w-full">
-                    <video autoPlay loop controls src="/medias/3319184472146877331.webm" className="aspect-video w-full max-h-[848px] object-cover">
-                        3319184472146877331
-                    </video>
-                </div>
-            </section>
-
             <section className="flex bg-white w-full justify-center">
                 <div className="flex flex-col max-w-screen-2xl px-[72px] py-[120px] w-full gap-12">
                     <div className="w-full">
