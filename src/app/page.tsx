@@ -9,7 +9,7 @@ import { Routes } from "@/enums/routes";
 import { shuffleArray } from "@/lib/utils";
 import { HardWoodList } from "@/products/HardWoodList";
 import { ThermoWoodProducts } from "@/products/ThermowoodList";
-import { MoveRight } from "lucide-react";
+import { ArrowRight, MoveRight } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
