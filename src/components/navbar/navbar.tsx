@@ -147,7 +147,7 @@ export default function Navbar({
     return (<>
         <nav className={cn(`flex ${showMenu && 'h-screen'} flex-col justify-center items-center bg-white sticky top-0 gap-9 z-10`)}>
             {/* principal area */}
-            <div className={cn("relative flex justify-between px-6 lg:px-[72px] py-8 w-full max-w-screen-2xl border-neutral-1000 lg:border-b")}>
+            <div className={cn("relative flex justify-between px-6 lg:px-[72px] py-8 w-full max-w-screen-2xl border-neutral-1000 border-b")}>
                 <div className="relative flex items-center">
                     <a href={Routes.home}>
                         {/* Logo preto (inicial) */}
