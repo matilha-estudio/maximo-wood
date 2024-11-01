@@ -66,7 +66,8 @@ export default function Hardwood() {
                     </ParagraphLarge>
 
                     <video
-                        src="/medias/Sustainability-Video-Presentation-2024-MAXIMO-V5.webm"
+                        // src="/medias/Sustainability-Video-Presentation-2024-MAXIMO-V5.webm"
+                        src="/medias/How-Thermowood-is-Made-Temporary.webm"
                         className="aspect-video w-full mt-10"
                         controls
                     >
