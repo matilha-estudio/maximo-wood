@@ -6,6 +6,7 @@ import { H1, H2, H3, H5, ParagraphLarge, SubtitleMediumNormal, SubtitleSmall, Su
 import { Button } from "@/components/ui/button";
 import { ButtonYellowLine } from "@/components/ui/buttonYellowLine";
 import { Routes } from "@/enums/routes";
+import { MoveRight } from "lucide-react";
 import { HardWoodList } from "@/products/HardWoodList";
 import Image from "next/image";
 import { useRouter } from "next/navigation";

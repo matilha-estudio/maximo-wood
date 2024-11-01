@@ -6,15 +6,20 @@ import { H1, H2, H3, H5, ParagraphLarge, ParagraphMedium, SubtitleSmall } from "
 import { FAQData } from "@/content/faqList";
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function BecomeADealer() {
+    const { back } = useRouter();
     return (
         <div className="relative text-brand-graphite">
             
             <section className="flex bg-white w-full justify-center">
                 <div className="flex flex-col max-w-screen-2xl px-[72px] lg:py-[120px] max-lg:pb-14 w-full lg:gap-10 max-lg:px-6 max-lg:pt-10">
-                    <div className="max-lg:mb-10">
-                      <ChevronLeft />
+                    <div className="max-lg:mb-10 lg:hidden">
+                      <ChevronLeft 
+                        onClick={()=> back()}
+                        className="cursor-pointer"
+                      />
                     </div>
                     <H1 className="max-w-[924px] max-lg:mb-6">
                         Be at the Forefront of the Wood Revolution

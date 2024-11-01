@@ -8,6 +8,7 @@ import { SubtitleSmallBold, SubtitleSmallMedium } from "../text/Heading";
 import { cn } from "@/lib/utils";
 import { Routes } from "@/enums/routes";
 import ListItensMenuMobile from "./components/listItensMenuMobile";
+import { useRouter } from "next/navigation";
 
 const itensMenuMobile = [
   { 
@@ -105,6 +106,7 @@ export default function Navbar({
     const [expandedSection, setExpandedSection] = useState<string | null>(null);
     const [isScrolled, setIsScrolled] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
+    const { push } = useRouter();
 
     const toggleSection = (section: string) => {
         setExpandedSection(prevSection => (prevSection === section ? null : section));
@@ -143,6 +145,11 @@ export default function Navbar({
         window.removeEventListener('resize', handleResize);
       };
     }, []);
+
+    const onClickRedirect = () => {
+      setShowMenu(false);
+      push(Routes.becomeADealer)
+    }
 
     return (<>
         <nav className={cn(`flex ${showMenu && 'h-screen'} flex-col justify-center items-center bg-white sticky top-0 gap-9 z-10`)}>
@@ -194,10 +201,8 @@ export default function Navbar({
                             <ChevronDown />
                         </Button>
                     </div>
-                    <Button variant="default" size="default">
-                        <a href={Routes.becomeADealer}>
-                            Become a dealer
-                        </a>
+                    <Button variant="default" size="default" onClick={()=>onClickRedirect()}>
+                      Become a dealer
                     </Button>
                 </div>
                 <div className="lg:hidden">
@@ -221,10 +226,8 @@ export default function Navbar({
                 </div>
                 
                 <div className="flex justify-center w-full pb-6 px-6">
-                  <Button className="w-full" variant="default" size="default">
-                    <a href={Routes.becomeADealer}>
-                      Become a dealer
-                    </a>
+                  <Button className="w-full" variant="default" size="default" onClick={()=> onClickRedirect()}>
+                    Become a dealer
                   </Button>
                 </div>
               </div>

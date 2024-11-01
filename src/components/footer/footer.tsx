@@ -3,8 +3,10 @@ import { Caption, InputText, ParagraphMedium, TextLink } from "../text/Heading";
 import { Inbox, Instagram, Phone } from "lucide-react";
 import { Button } from "../ui/button";
 import { Routes } from "@/enums/routes";
+import { useRouter } from "next/navigation";
 
 export function Footer() {
+    const { push } = useRouter();
     return (
         <div className="flex flex-col items-center w-full bg-black max-lg:px-6 max-lg:pt-20">
             <div className="flex justify-between items-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] gap-8 max-lg:w-full max-lg:flex-col max-lg:items-start">
@@ -62,10 +64,13 @@ export function Footer() {
                             </a>
                         </InputText>
 
-                        <Button variant="default" size="default" className="bg-white text-neutral-1000 mt-2 max-lg:w-full">
-                            <a href={Routes.becomeADealer}>
-                                Become a dealer
-                            </a>
+                        <Button 
+                          variant="default" 
+                          size="default" 
+                          className="bg-white text-neutral-1000 mt-2 max-lg:w-full"
+                          onClick={() => push(Routes.becomeADealer)}
+                        >
+                          Become a dealer
                         </Button>
                     </div>
                 </div>

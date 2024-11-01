@@ -10,6 +10,8 @@ import { shuffleArray } from "@/lib/utils";
 import { HardWoodList } from "@/products/HardWoodList";
 import { ThermoWoodProducts } from "@/products/ThermowoodList";
 import { ProjectsList } from "@/projects/list";
+import { MoveRight } from "lucide-react";
+import Image from "next/image";
 
 export default function AllProjects() {
     const LIST_PRODUCTS = shuffleArray(HardWoodList.concat(ThermoWoodProducts))
