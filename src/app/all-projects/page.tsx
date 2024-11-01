@@ -1,13 +1,12 @@
 'use client'
 import { ProjectsCarousel } from "@/components/carousel/projects";
 import { Footer } from "@/components/footer/footer";
-import Navbar from "@/components/navbar/navbar";
 import { ProductCard } from "@/components/productCard/productCard";
 import { H1, H2 } from "@/components/text/Heading";
 import { Button } from "@/components/ui/button";
 import { Routes } from "@/enums/routes";
 import { ProjectsList } from "@/projects/list";
-import { ArrowRight, MoveRight } from "lucide-react";
+import { MoveRight } from "lucide-react";
 import Image from "next/image";
 
 export default function AllProjects() {

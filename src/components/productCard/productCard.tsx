@@ -3,7 +3,7 @@ import { Caption, ParagraphMedium, SubtitleSmall, SubtitleSmallBold, TextLink } 
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import { Product } from "@/products/types";
-import { ArrowRight, MoveRight } from "lucide-react";
+import { MoveRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Routes } from "@/enums/routes";
 

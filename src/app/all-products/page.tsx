@@ -1,31 +1,46 @@
 'use client'
 import { Footer } from "@/components/footer/footer";
-import Navbar from "@/components/navbar/navbar";
 import { ProductCard } from "@/components/productCard/productCard";
-import { H1, H5, ParagraphLarge } from "@/components/text/Heading";
-import { Button } from "@/components/ui/button";
+import ProductSamples from "@/components/productSamples";
+import { H1, ParagraphLarge } from "@/components/text/Heading";
 import { HardWoodList } from "@/products/HardWoodList";
 import { ThermoWoodProducts } from "@/products/ThermowoodList";
+import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Products() {
-    const LIST_PRODUCTS = HardWoodList.concat(ThermoWoodProducts)
+    const LIST_PRODUCTS = HardWoodList.concat(ThermoWoodProducts);
+    const { back } = useRouter();
+
     return (
         <div className="relative text-brand-graphite">
-            
             <section className="flex bg-white w-full justify-center">
-                <Image
-                    src={"/images/all-products/header.png"}
-                    alt="logo"
-                    width={1440}
-                    height={432}
-                    className="max-h-[432px] max-w-screen-2xl w-full h-full object-contain"
-                />
-
+                <div className="flex flex-col max-w-screen-2xl w-full lg:gap-10 max-lg:pt-10">
+                  <div className="max-lg:mb-10 max-lg:ml-6 lg:hidden">
+                    <ChevronLeft 
+                      onClick={()=> back()}
+                      className="cursor-pointer"
+                    />
+                  </div>
+                  <Image
+                      src={"/images/all-products/header.png"}
+                      alt="logo"
+                      width={1440}
+                      height={432}
+                      className="max-h-[432px] max-w-screen-2xl w-full h-full object-contain max-lg:hidden"
+                  />
+                  <Image 
+                    src={"/images/all-products/headerMobile.jpg"} 
+                    alt="logo" 
+                    width={1440} 
+                    height={432} 
+                    className="max-h-[432px] w-full object-cover lg:hidden" />
+                </div>
             </section>
 
             <section className="flex bg-white w-full justify-center">
-                <div className="flex flex-col max-w-screen-2xl px-[72px] py-[120px] w-full gap-10">
+                <div className="flex flex-col max-w-screen-2xl lg:px-[72px] lg:py-[120px] w-full gap-10 max-lg:px-6 max-lg:py-14">
                     <H1 className="max-w-[924px]">
                         Products
                     </H1>
@@ -36,10 +51,18 @@ export default function Products() {
                 </div>
             </section>
 
-            {/* TODO: FILTERS */}
+            {/* Remover div hidden quando criar filters*/}
+            <div className="hidden">
+              <section className="flex bg-white w-full justify-center">
+                <div className="flex flex-col max-w-screen-2xl lg:px-[72px] lg:py-[120px] w-full gap-10 max-lg:px-6 max-lg:py-14">
+                  {/* TODO: FILTERS */}  
+                </div>
+              </section>
+            </div>
+
 
             <section className="flex bg-white w-full justify-center">
-                <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[70px]">
+                <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[70px] max-lg:px-6 max-lg:py-14">
 
                     <div className="flex flex-wrap gap-8 w-full justify-center">
                         {
@@ -54,23 +77,7 @@ export default function Products() {
 
             {/* TODO: PAGINATION */}
 
-
-            <section className="flex bg-brand-ipe-yellow/15 w-full justify-center">
-                <div className="flex justify-center items-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] gap-8">
-                    <Image src={"/images/wood_draw.png"} alt={"wood_draw"} width={709} height={561} />
-                    <div className="flex flex-col items-center gap-8 max-w-[453px] text-center">
-                        <H5>
-                            Product samples
-                        </H5>
-                        <ParagraphLarge>
-                            Feel the quality of Maximo Wood. Get your sample and discover the difference at your fingertips.
-                        </ParagraphLarge>
-                        <Button className="w-fit">
-                            Order samples
-                        </Button>
-                    </div>
-                </div>
-            </section>
+            <ProductSamples />
 
             <Footer />
         </div >

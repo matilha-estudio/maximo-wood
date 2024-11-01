@@ -1,12 +1,11 @@
 'use client'
 import { InspirationSection } from "@/components/carousel/inspirationsSection";
 import { Footer } from "@/components/footer/footer";
-import Navbar from "@/components/navbar/navbar";
 import { ProductCard } from "@/components/productCard/productCard";
 import { H1, H2, H5, ParagraphLarge, SubtitleMediumNormal, SubtitleXL } from "@/components/text/Heading";
 import { Button } from "@/components/ui/button";
 import { Routes } from "@/enums/routes";
-import { ArrowRight, MoveRight } from "lucide-react";
+import { MoveRight } from "lucide-react";
 import Image from "next/image";
 
 
@@ -80,7 +79,7 @@ export default function Hardwood() {
                     <div className="flex gap-8 w-full justify-center">
                         {
                             Array.from({ length: 3 }).map((_, index) => (
-                                <ProductCard key={index} />
+                              <ProductCard key={index} />
                             ))
                         }
                     </div>
