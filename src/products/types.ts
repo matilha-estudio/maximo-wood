@@ -31,5 +31,6 @@ export type Product = {
     tag: ProductTag;
     description: string;
     features: string[];
+    images: string[];
     details: ProductDetails;
 };

@@ -5,15 +5,20 @@ import { Footer } from "@/components/footer/footer";
 import { ProductCard } from "@/components/productCard/productCard";
 import { H1, H2, H5, ParagraphLarge, ParagraphMedium, SubtitleMediumBold } from "@/components/text/Heading";
 import { Button } from "@/components/ui/button";
+import { ButtonYellowLine } from "@/components/ui/buttonYellowLine";
 import { Routes } from "@/enums/routes";
-import { shuffleArray } from "@/lib/utils";
+import { cn, shuffleArray } from "@/lib/utils";
 import { HardWoodList } from "@/products/HardWoodList";
 import { ThermoWoodProducts } from "@/products/ThermowoodList";
 import { ArrowRight, MoveRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const LIST_PRODUCTS = shuffleArray(HardWoodList.concat(ThermoWoodProducts))
+
+  const router = useRouter()
 
   return (
     <div className="relative">
@@ -28,10 +33,8 @@ export default function Home() {
             <ParagraphMedium className="max-w-[465px]">
               Maximo combines decades of natural resilience with advanced thermal innovation, offering wood that stands the test of time—in any climate, for any project.
             </ParagraphMedium>
-            <Button className="gap-1 w-fit bg-white text-neutral-1000 max-lg:w-full lg:mb-8 max-lg:mb-14">
-              <a href={Routes.home}>
-                Our Materials
-              </a>
+            <Button onClick={() => router.push(Routes.home + "#type-of-wood")} className="gap-1 w-fit bg-white text-neutral-1000 max-lg:w-full lg:mb-8 max-lg:mb-14">
+              Our Materials
               <MoveRight />
             </Button>
           </div>
@@ -55,7 +58,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex bg-brand-ipe-yellow/15 w-full justify-center">
+      <section id="type-of-wood" className="flex bg-brand-ipe-yellow/15 w-full justify-center">
         <div className="flex flex-col max-w-screen-2xl md:py-[120px] md:px-[174px] gap-24 max-lg:px-6 max-lg:py-14">
           <H2 className="text-center max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold ">
             The best of both worlds for your construction
@@ -69,15 +72,9 @@ export default function Home() {
               <ParagraphLarge>
                 Using only heat and steam, Maximo's patented process dramatically reduces the wood's sugar and moisture content, making it unattractive to bugs and exceptionally lightweight. Perfect for enhancing walls, ceilings, and more, both indoors and outdoors.
               </ParagraphLarge>
-              <Button variant='link' className="flex-col">
-                <div className="flex gap-1">
-                  <a href={Routes.hardwood}>
-                    Explore Maximo Thermo
-                  </a>
-                  <MoveRight />
-                </div>
-                <Image src={'/icons/Path-110.png'} alt="Path-110" width={66} height={45} className="place-self-start -mt-4" />
-              </Button>
+
+              <ButtonYellowLine title="Explore Maximo Thermo" href={Routes.thermowood} />
+
             </div>
 
             <div className="flex flex-col gap-10 max-w-[413px] items-center text-center">
@@ -88,15 +85,9 @@ export default function Home() {
               <ParagraphLarge>
                 Our premium hardwoods are handpicked for quality and durability. Sourced from sustainably managed forests, each piece is graded premium on all four sides, making them ideal for demanding applications like decking, boardwalks, and more.
               </ParagraphLarge>
-              <Button variant='link' className="flex-col">
-                <div className="flex gap-1">
-                  <a href={Routes.hardwood}>
-                    Explore Maximo Hardwood
-                  </a>
-                  <MoveRight />
-                </div>
-                <Image src={'/icons/Path-110.png'} alt="Path-110" width={66} height={45} className="place-self-start -mt-4" />
-              </Button>
+
+              <ButtonYellowLine title="Explore Maximo Hardwood" href={Routes.hardwood} />
+
             </div>
           </div>
         </div>
@@ -108,13 +99,9 @@ export default function Home() {
             <H2 className="text-brand-graphite uppercase max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold ">
               Our Products
             </H2>
-            <Button variant='link' className="flex-col max-lg:hidden">
-              <a href={Routes.allProducts} className="flex gap-1">
-                All products
-                <MoveRight />
-              </a>
-              <Image src={'/icons/Path-110.png'} alt="Path-110" width={66} height={45} className="place-self-start -mt-4" />
-            </Button>
+
+            <ButtonYellowLine title="All products" href={Routes.allProducts} />
+
           </div>
 
           <div className="flex gap-8 w-full max-lg:flex-col max-lg:items-center">
@@ -125,13 +112,7 @@ export default function Home() {
             }
           </div>
           <div className="flex justify-center lg:hidden">
-            <Button variant='link' className="flex-col">
-              <a href={Routes.allProducts} className="flex gap-1">
-                All products
-                <ArrowRight />
-              </a>
-              <Image src={'/icons/Path-110.png'} alt="Path-110" width={66} height={45} className="place-self-start -mt-4" />
-            </Button>
+            <ButtonYellowLine title="All products" href={Routes.allProducts} />
           </div>
         </div>
       </section>
@@ -139,30 +120,20 @@ export default function Home() {
       <section className="flex bg-white w-full justify-center">
         <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] border-y border-neutral-1000 gap-10 max-lg:px-6 max-lg:py-14">
           <div className="flex justify-between w-full">
-            <H2 className="text-brand-graphite max-w-[814px] uppercase hover:text-brand-ipe-yellow cursor-pointer transition-colors max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold ">
-              Inspiration for architects and designers
-            </H2>
-
-            <Button variant='link' className="flex-col max-lg:hidden">
-              <a href="" className="flex gap-1">
-                All projects
-                <MoveRight />
-              </a>
-              <Image src={'/icons/Path-110.png'} alt="Path-110" width={66} height={45} className="place-self-start -mt-4" />
-            </Button>
+            <Link href={Routes.allProjects}>
+              <H2 className="text-brand-graphite max-w-[814px] uppercase hover:text-brand-ipe-yellow cursor-pointer transition-colors max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold ">
+                Inspiration for architects and designers
+              </H2>
+            </Link>
+            <ButtonYellowLine title="All projects" href={Routes.allProjects} />
           </div>
 
           <div className="flex max-lg:flex-col max-lg:items-center">
-            <InspirationSection />
+            <InspirationSection showTitle />
           </div>
+
           <div className="flex justify-center lg:hidden">
-            <Button variant='link' className="flex-col">
-              <a href="" className="flex gap-1">
-                All projects
-                <ArrowRight />
-              </a>
-              <Image src={'/icons/Path-110.png'} alt="Path-110" width={66} height={45} className="place-self-start -mt-4" />
-            </Button>
+            <ButtonYellowLine title="All projects" href={Routes.allProjects} />
           </div>
         </div>
       </section>
@@ -180,24 +151,22 @@ export default function Home() {
               </ParagraphLarge>
             </div>
           </div>
-          
+
           {/* Desktop */}
           <div className="relative flex gap-8 items-center max-h-[189px] max-lg:hidden">
-            {
-              listLogos.map((item, index)=>(
-                <div key={index} className="max-h-[189px] max-w-[189px]">
-                  <Image 
-                    src={item.src} 
-                    alt={item.alt} 
-                    width={item.width} 
-                    height={item.height} 
-                    className="object-contain h-full" 
-                    />
-                </div>
-              ))
-            }
+            {listLogos.map((item, index) => (
+              <div key={index} className="flex items-center justify-center max-h-[189px] max-w-[189px] overflow-hidden">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  width={item.width}
+                  height={item.height}
+                  className={cn("object-contain h-full max-h-[189px] max-w-[189px]")}
+                />
+              </div>
+            ))}
           </div>
-          
+
           {/* Mobile */}
           <div className="relative flex gap-1 items-center w-full lg:hidden">
             <LogosCarousel images={listLogos} />
@@ -207,12 +176,12 @@ export default function Home() {
 
       <section className="flex bg-brand-ipe-yellow/15 w-full justify-center">
         <div className="flex justify-center items-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] gap-8 max-lg:px-6 max-lg:py-14 max-lg:flex-col">
-          <Image 
-            className="max-lg:max-h-[286px] max-lg:max-w-[360px]" 
-            src={"/images/wood_draw.png"} 
-            alt={"wood_draw"} 
-            width={709} 
-            height={561} 
+          <Image
+            className="max-lg:max-h-[286px] max-lg:max-w-[360px]"
+            src={"/images/wood_draw.png"}
+            alt={"wood_draw"}
+            width={709}
+            height={561}
           />
           <div className="flex flex-col items-center gap-8 max-w-[453px] text-center">
             <H5>

@@ -12,10 +12,10 @@ export default function Products() {
     const LIST_PRODUCTS = HardWoodList.concat(ThermoWoodProducts)
     return (
         <div className="relative text-brand-graphite">
-            
+
             <section className="flex bg-white w-full justify-center">
                 <Image
-                    src={"/images/all-products/header.png"}
+                    src={"/images/allproducts/header.png"}
                     alt="logo"
                     width={1440}
                     height={432}

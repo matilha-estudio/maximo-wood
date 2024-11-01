@@ -33,6 +33,7 @@ export const ThermoWoodProducts: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-17ft",
         },
+        images: []
     },
     {
         group: "Ash",
@@ -65,7 +66,8 @@ export const ThermoWoodProducts: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "6-12ft"
         },
-        id: 2
+        id: 2,
+        images: []
     },
     {
         group: "Ash",
@@ -98,7 +100,8 @@ export const ThermoWoodProducts: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "6-13ft"
         },
-        id: 3
+        id: 3,
+        images: []
     },
     {
         group: "Ash",
@@ -131,7 +134,8 @@ export const ThermoWoodProducts: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "6-12ft"
         },
-        id: 4
+        id: 4,
+        images: []
     },
     {
         group: "Ash",
@@ -164,7 +168,8 @@ export const ThermoWoodProducts: Product[] = [
             boardLengths: "6-12ft"
         },
         dimensions: "1x6 - T&G Nickel Gap",
-        id: 5
+        id: 5,
+        images: []
     },
     {
         group: "Ash",
@@ -197,7 +202,8 @@ export const ThermoWoodProducts: Product[] = [
             boardLengths: "6-12ft"
         },
         dimensions: "1x6 - T&G V-Joint",
-        id: 6
+        id: 6,
+        images: []
     },
     {
         group: "Clear radiata",
@@ -232,7 +238,8 @@ export const ThermoWoodProducts: Product[] = [
             boardLengths: "6-22ft"
         },
         dimensions: "1x6 - T&G Nickel Gap",
-        id: 7
+        id: 7,
+        images: []
     },
     {
         group: "Clear radiata",
@@ -267,7 +274,8 @@ export const ThermoWoodProducts: Product[] = [
             boardLengths: "6-22ft"
         },
         dimensions: "3/8x4 - S4SE4E",
-        id: 8
+        id: 8,
+        images: []
     },
     {
         group: "Clear radiata",
@@ -302,7 +310,8 @@ export const ThermoWoodProducts: Product[] = [
             boardLengths: "6-22ft"
         },
         dimensions: "5/6x6 - S4SE4E",
-        id: 9
+        id: 9,
+        images: []
     },
     {
         group: "Clear radiata",
@@ -337,7 +346,8 @@ export const ThermoWoodProducts: Product[] = [
             boardLengths: "6-22ft"
         },
         dimensions: "2x6 - S4SE4E",
-        id: 10
+        id: 10,
+        images: []
     },
     {
         group: "Ayous Reversible",
@@ -371,7 +381,8 @@ export const ThermoWoodProducts: Product[] = [
             boardLengths: "6-12ft"
         },
         dimensions: "1x4 - T&G V-Joint x Square Back",
-        id: 11
+        id: 11,
+        images: []
     },
     {
         group: "Ayous Reversible",
@@ -405,7 +416,8 @@ export const ThermoWoodProducts: Product[] = [
             boardLengths: "6-12ft"
         },
         dimensions: "1x6 - T&G V-Joint x Square Back",
-        id: 12
+        id: 12,
+        images: []
     },
     {
         group: "Redwood",
@@ -438,7 +450,8 @@ export const ThermoWoodProducts: Product[] = [
             boardLengths: "6-12ft"
         },
         dimensions: "1x6 - T&G V-Joint",
-        id: 13
+        id: 13,
+        images: []
     },
     {
         group: "Redwood",
@@ -471,6 +484,7 @@ export const ThermoWoodProducts: Product[] = [
             boardLengths: "6-12ft"
         },
         dimensions: "1x6 - T&G Nickel Gap",
-        id: 14
+        id: 14,
+        images: []
     }
 ];

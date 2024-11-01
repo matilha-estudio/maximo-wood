@@ -30,7 +30,8 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 1
+        id: 1,
+        images: []
     },
     {
         group: "Ipe",
@@ -61,7 +62,8 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 2
+        id: 2,
+        images: []
     },
     {
         group: "Ipe",
@@ -92,7 +94,8 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 3
+        id: 3,
+        images: []
     },
     {
         group: "Ipe",
@@ -123,7 +126,8 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 4
+        id: 4,
+        images: []
     },
     {
         group: "Ipe",
@@ -154,7 +158,8 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 5
+        id: 5,
+        images: []
     },
     {
         group: "Ipe",
@@ -185,7 +190,8 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 6
+        id: 6,
+        images: []
     },
     {
         group: "Ipe",
@@ -216,7 +222,8 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 7
+        id: 7,
+        images: []
     },
     {
         group: "Ipe",
@@ -247,7 +254,8 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 8
+        id: 8,
+        images: []
     },
     {
         group: "Ipe",
@@ -278,7 +286,8 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 9
+        id: 9,
+        images: []
     },
     {
         group: "Ipe",
@@ -309,7 +318,8 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 10
+        id: 10,
+        images: []
     },
     {
         group: "Ipe",
@@ -340,7 +350,8 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 11
+        id: 11,
+        images: []
     },
     {
         group: "Ipe",
@@ -371,7 +382,8 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 12
+        id: 12,
+        images: []
     },
     {
         group: "Cumaru",
@@ -402,7 +414,8 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 13
+        id: 13,
+        images: []
     },
     {
         group: "Cumaru",
@@ -433,7 +446,8 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 14
+        id: 14,
+        images: []
     },
     {
         group: "Cumaru",
@@ -464,7 +478,8 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 15
+        id: 15,
+        images: []
     },
     {
         group: "Cumaru Deck tiles",
@@ -496,7 +511,8 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 16
+        id: 16,
+        images: []
     },
     {
         group: "Cumaru Deck tiles",
@@ -529,7 +545,8 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 17
+        id: 17,
+        images: []
     },
     {
         group: "Garapa",
@@ -560,7 +577,8 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 18
+        id: 18,
+        images: []
     },
     {
         group: "Garapa",
@@ -591,7 +609,8 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 19
+        id: 19,
+        images: []
     },
     {
         group: "Cumaru Deck tiles",
@@ -623,7 +642,8 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 20
+        id: 20,
+        images: []
     },
     {
         group: "Garapa Deck tiles",
@@ -656,6 +676,7 @@ export const HardWoodList: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-22ft",
         },
-        id: 21
+        id: 21,
+        images: []
     },
 ];

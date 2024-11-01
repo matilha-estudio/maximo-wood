@@ -1,9 +1,6 @@
 'use client'
-import { InspirationSection } from "@/components/carousel/inspirationsSection";
-import FAQAccordion from "@/components/faq/faq";
 import { Footer } from "@/components/footer/footer";
-import Navbar from "@/components/navbar/navbar";
-import { ProductCard } from "@/components/productCard/productCard";
+import { CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel"
 import ProductFeatureAccordion from "@/components/productAccordions/productFeatureAccordion";
 import { H2, H4, H5, H6, ParagraphLarge } from "@/components/text/Heading";
 import { Button } from "@/components/ui/button";
@@ -14,6 +11,8 @@ import { MoveRight } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import ProductDetailsAccordion from "@/components/productAccordions/productDetailsAccordion";
+import { cn } from "@/lib/utils";
+import { Carousel } from "@/components/ui/carousel";
 
 export default function ProductDetail({ params }: { params: { id: string } }) {
     const ProductID = params.id
@@ -21,26 +20,51 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
 
     const [product, setProduct] = useState<Product>()
 
+    const [api, setApi] = useState<CarouselApi>()
+    const [current, setCurrent] = useState(0)
+
     useEffect(() => {
-        const filter = LIST_PRODUCTS.find((v, i) => v.id === Number(ProductID))
+        const filter = LIST_PRODUCTS.find((v) => v.id === Number(ProductID))
         setProduct(filter)
     }, [ProductID])
-    console.log(product)
+
+    useEffect(() => {
+        if (!api) {
+            return
+        }
+
+        setCurrent(api.selectedScrollSnap() + 1)
+
+        api.on("select", () => {
+            setCurrent(api.selectedScrollSnap() + 1)
+        })
+    }, [api])
+
     return (
         <div className="relative">
             {/* TODO: DETAILS */}
 
             <section className="flex bg-white w-full justify-center text-brand-graphite">
                 <div className="flex justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] border-y border-neutral-1000 gap-10">
-                    <div className="lg:w-1/2 flex flex-col items-start">
-                        <Image
-                            src={"/images/grant-ritchie-FBkrQhnLQoY-unsplash.png"}
-                            alt="logo"
-                            width={592}
-                            height={664}
-                            className="max-h-[664px] max-w-[592px] w-full h-full object-cover"
-                        />
-                    </div>
+
+                    <Carousel setApi={setApi}>
+                        <CarouselContent>
+                            {/* {
+                                product?.images.map((image, index) => ( */}
+                            <CarouselItem>
+                                <Image
+                                    src={"/images/grant-ritchie-FBkrQhnLQoY-unsplash.png"}
+                                    alt="logo"
+                                    width={592}
+                                    height={664}
+                                    className="max-h-[664px] max-w-[592px] h-full object-cover"
+                                />
+                            </CarouselItem>
+                            {/* ))
+                            } */}
+                        </CarouselContent>
+                    </Carousel>
+
                     <div className="lg:w-1/2 flex flex-col gap-10">
                         <div className="flex flex-col gap-6">
                             <H4>
@@ -58,7 +82,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                         </div>
 
                         <div className="lg:w-1/2">
-                            <Button className="gap-1 w-fit bg-white hover:border-none border border-neutral-1000 text-neutral-1000">
+                            <Button className="gap-1 w-fit bg-white hover:border-none border border-neutral-1000 text-neutral-1000 hover:bg-black hover:text-white">
                                 Request samples
                                 <MoveRight />
                             </Button>
@@ -107,25 +131,18 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                         </div>
                     </div>
 
-                    <div className="relative flex gap-8 items-center max-h-[189px]">
-                        <div className="max-h-[189px] max-w-[189px]">
-                            <Image src={"/logos/FSC_C116010_Promotional_with_text_Portrait_BlackOnWhite_r_2Y5lcA 1.png"} alt={"FSC_C116010"} width={189} height={189} className="object-contain h-full" />
-                        </div>
-                        <div className="max-h-[189px] max-w-[189px]">
-                            <Image src={"/logos/UNICONSULT_LOGO-_1_ 1.png"} alt={"UNICONSULT_LOGO"} width={189} height={189} className="object-contain h-full" />
-                        </div>
-                        <div className="max-h-[189px] max-w-[189px]">
-                            <Image src={"/logos/PEFC_LOGO.png"} alt={"PEFC_LOGO"} width={189} height={189} className="object-contain h-full" />
-                        </div>
-                        <div className="max-h-[189px] max-w-[189px]">
-                            <Image src={"/logos/EPD_LOGO1.png"} alt={"EPD_LOGO1"} width={189} height={189} className="object-contain h-full" />
-                        </div>
-                        <div className="max-h-[189px] max-w-[189px]">
-                            <Image src={"/logos/USGBC_LOGO1.png"} alt={"USGBC_LOGO1"} width={189} height={189} className="object-contain h-full" />
-                        </div>
-                        <div className="max-h-[189px] max-w-[189px]">
-                            <Image src={"/logos/TIMBER-TRUST_LOGO.png"} alt={"TIMBER-TRUST_LOGO"} width={189} height={189} className="object-contain h-full" />
-                        </div>
+                    <div className="relative flex gap-8 items-center max-h-[189px] max-lg:hidden">
+                        {listLogos.map((item, index) => (
+                            <div key={index} className="flex items-center justify-center max-h-[189px] max-w-[189px] overflow-hidden">
+                                <Image
+                                    src={item.src}
+                                    alt={item.alt}
+                                    width={item.width}
+                                    height={item.height}
+                                    className={cn("object-contain h-full max-h-[189px] max-w-[189px]")}
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -151,3 +168,42 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
         </div>
     )
 }
+
+const listLogos = [
+    {
+        src: "/logos/FSC_C116010_Promotional_with_text_Portrait_BlackOnWhite_r_2Y5lcA 1.png",
+        alt: "FSC_C116010",
+        width: 189,
+        height: 189
+    },
+    {
+        src: "/logos/UNICONSULT_LOGO-_1_ 1.png",
+        alt: "UNICONSULT_LOGO",
+        width: 189,
+        height: 189
+    },
+    {
+        src: "/logos/PEFC_LOGO.png",
+        alt: "PEFC_LOGO",
+        width: 189,
+        height: 189
+    },
+    {
+        src: "/logos/EPD_LOGO1.png",
+        alt: "EPD_LOGO1",
+        width: 189,
+        height: 189
+    },
+    {
+        src: "/logos/USGBC_LOGO1.png",
+        alt: "USGBC_LOGO1",
+        width: 189,
+        height: 189
+    },
+    {
+        src: "/logos/TIMBER-TRUST_LOGO.png",
+        alt: "TIMBER-TRUST_LOGO",
+        width: 189,
+        height: 189
+    },
+]
