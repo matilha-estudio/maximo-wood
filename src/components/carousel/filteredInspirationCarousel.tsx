@@ -20,9 +20,9 @@ export function FilteredInspirationCarousel({ filter, size }: InspirationSection
         <div className="w-full">
             <div className="flex flex-col gap-10">
                 <Carousel className="flex flex-col justify-between gap-10">
-                    <CarouselContent className="w-full h-full max-h-[644px] max-w-[1298px]">
+                    <CarouselContent className="w-full h-full md:max-h-[644px] max-md:max-h-[286px] max-w-[1298px]">
                         {filteredImages.map((item, index) => (
-                            <CarouselItem key={index} className={cn(size === 'basis' ? "basis-4/5" : "w-full", "carousel-drag")}>
+                            <CarouselItem key={index} className={cn(size === 'basis' ? "md:basis-4/5" : "w-full", "carousel-drag")}>
                                 <ModalInspirationCarousel
                                     trigger={
                                         <Image
@@ -39,7 +39,7 @@ export function FilteredInspirationCarousel({ filter, size }: InspirationSection
                         ))}
                     </CarouselContent>
                     <div className="flex">
-                        <div className="flex w-full justify-end items-start pr-9">
+                        <div className="flex w-full justify-end items-start pr-9 max-md:hidden">
                             <CarouselPrevious className="relative carousel-previous" />
                             <CarouselNext className="relative -ml-20 carousel-next" />
                         </div>

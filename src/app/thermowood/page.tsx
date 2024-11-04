@@ -9,9 +9,9 @@ import { Button } from "@/components/ui/button";
 import { ButtonYellowLine } from "@/components/ui/buttonYellowLine";
 import { Routes } from "@/enums/routes";
 import { cn } from "@/lib/utils";
-import { HardWoodList } from "@/products/HardWoodList";
 import { ThermoWoodProducts } from "@/products/ThermowoodList";
 import Image from "next/image";
+import { ChevronLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function Thermowood() {
@@ -21,30 +21,36 @@ export default function Thermowood() {
         <div className="relative text-brand-graphite">
 
             <section className="flex bg-white w-full justify-center">
-                <div className="flex flex-col max-w-screen-2xl px-[72px] pt-[88px] pb-[80px] w-full gap-10">
+                <div className="flex flex-col max-w-screen-2xl px-[72px] pt-[88px] pb-[80px] w-full gap-10 max-lg:px-6 max-lg:py-10">
+                    <div className="lg:hidden">
+                      <ChevronLeft
+                        onClick={() => route.back()}
+                        className="cursor-pointer"
+                      />
+                    </div>
                     <H1 className="max-w-[924px]">
                         Thermo
                     </H1>
                 </div>
             </section>
 
-            <section className="flex bg-white w-full justify-center">
+            <section className="flex bg-white w-full justify-center max-md:h-56">
                 <Image
                     src={"/images/thermowood/Banner.png"}
                     alt="logo"
                     width={1440}
                     height={432}
-                    className="max-h-[432px] max-w-screen-2xl w-full h-full object-contain"
+                    className="max-h-[432px] max-w-screen-2xl w-full h-full object-contain max-md:object-fill"
                 />
             </section>
 
             <section className="flex bg-white w-full justify-center">
-                <div className="flex flex-col max-w-screen-2xl px-[72px] items-center py-[120px] w-full gap-10">
+                <div className="flex flex-col max-w-screen-2xl w-full gap-10 lg:px-[72px] lg:py-[120px] lg:items-center max-lg:px-6 max-lg:py-14">
                     <H5 className="max-w-[924px]">
                         We’ve Forever Changed Wood Using only Heat and Steam
                     </H5>
 
-                    <SubtitleMediumNormal className="text-center">
+                    <SubtitleMediumNormal className="lg:text-center max-md:text-[16px] max-md:leading-7">
                         Sometimes, less is more. After years of research, it’s clear that you don’t need to add anything to wood to make it better—you need to remove it. By extracting the moisture and sugars through our patented process, we’ve created wood that’s lighter and no longer attractive to bugs. It’s sustainable, organic, stable, and perfect for any application, indoors or out.
                     </SubtitleMediumNormal>
 
@@ -57,22 +63,24 @@ export default function Thermowood() {
             </section>
 
             <section className="flex bg-white w-full justify-center">
-                <div className="flex flex-col max-w-screen-2xl px-[72px] py-[120px] w-full gap-10 border-t border-neutral-1000">
-                    <H2 className="max-w-[573px]">
+                <div className="flex flex-col max-w-screen-2xl lg:px-[72px] lg:py-[120px] w-full gap-10 border-t max-lg:border-b border-neutral-1000">
+                    <H2 className="max-w-[573px] max-lg:px-6 max-lg:pb-6 max-lg:pt-14">
                         How Maximo Thermo is made
                     </H2>
 
-                    <ParagraphLarge className="max-w-[744px]">
-                        We believe in giving wood a second chance. When species like Ayous and Radiata aren’t lucky enough to be born as resilient as our hardwoods, we do that for them. Using heat and steam alone, we forever alter their structure at the cellular level, making them more reliable and durable than ever before.
-                    </ParagraphLarge>
+                    <div className="max-lg:flex max-lg:flex-col-reverse">
+                      <ParagraphLarge className="max-w-[744px] max-lg:px-6 max-lg:py-14">
+                          We believe in giving wood a second chance. When species like Ayous and Radiata aren’t lucky enough to be born as resilient as our hardwoods, we do that for them. Using heat and steam alone, we forever alter their structure at the cellular level, making them more reliable and durable than ever before.
+                      </ParagraphLarge>
 
-                    <video
-                        src="/medias/How-Thermowood-is-Made-Temporary.webm"
-                        className="aspect-video w-full mt-10"
-                        controls
-                    >
-                        How-Thermowood-is-Made-Temporary
-                    </video>
+                      <video
+                          src="/medias/How-Thermowood-is-Made-Temporary.webm"
+                          className="aspect-video w-full mt-10"
+                          controls
+                      >
+                          How-Thermowood-is-Made-Temporary
+                      </video>
+                    </div>
                 </div>
             </section>
 
@@ -125,13 +133,14 @@ export default function Thermowood() {
             </section>
 
             <section className="flex bg-white w-full justify-center">
-                <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[174px] gap-12 max-lg:px-6 max-lg:py-14">
+                <div className="flex flex-col justify-center max-w-screen-2xl border-t border-neutral-1000 w-full md:py-[120px] md:px-[72px] gap-12 max-lg:px-6 max-lg:py-14">
                     <div className="flex justify-between w-full max-lg:justify-center max-md:justify-between">
                         <H2 className="text-brand-graphite uppercase max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold max-w-screen-sm">
                             Our Thermo Products
                         </H2>
-
-                        <ButtonYellowLine title="All products" href={Routes.allProducts} />
+                        <div className="max-lg:hidden">
+                          <ButtonYellowLine title="All products" href={Routes.allProducts} />
+                        </div>
 
                     </div>
 
@@ -151,21 +160,21 @@ export default function Thermowood() {
 
             <section className="flex bg-white w-full justify-center">
                 <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] border-y border-neutral-1000 gap-10">
-                    <div className="flex justify-between w-full" onClick={() => route.push(Routes.allProjects)}>
+                    <div className="flex justify-between w-full max-md:px-6 max-md:pt-14" onClick={() => route.push(Routes.allProjects)}>
                         <H2 className="text-brand-graphite max-w-[814px] uppercase hover:text-brand-ipe-yellow cursor-pointer transition-colors">
                             Inspiring Maximo Thermo Designs from Around the World
                         </H2>
                     </div>
 
-                    <div>
+                    <div className="max-md:pl-6 max-md:pb-14">
                         <FilteredInspirationCarousel filter="thermowood" size="basis" />
                     </div>
                 </div>
             </section>
 
             <section className="flex bg-white w-full justify-center">
-                <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] gap-20">
-                    <div className="flex flex-col gap-8 w-1/2">
+                <div className="flex max-md:flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] max-md:px-6 max-md:py-14 max-md:gap-10">
+                    <div className="flex flex-col gap-8 lg:w-1/2 max-lg:w-full">
                         <SubtitleXL className="uppercase">
                             Certified Excellence & Sustainability
                         </SubtitleXL>

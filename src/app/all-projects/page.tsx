@@ -1,5 +1,4 @@
 'use client'
-import { ModalInspirationCarousel } from "@/components/carousel/inspirationModalCarousel";
 import { ProjectsCarousel } from "@/components/carousel/projects";
 import { Footer } from "@/components/footer/footer";
 import { ProductCard } from "@/components/productCard/productCard";
@@ -10,25 +9,32 @@ import { shuffleArray } from "@/lib/utils";
 import { HardWoodList } from "@/products/HardWoodList";
 import { ThermoWoodProducts } from "@/products/ThermowoodList";
 import { ProjectsList } from "@/projects/list";
-import { MoveRight } from "lucide-react";
-import Image from "next/image";
+import { ChevronLeft } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function AllProjects() {
     const LIST_PRODUCTS = shuffleArray(HardWoodList.concat(ThermoWoodProducts))
+    const { back } = useRouter();
 
     return (
         <div className="relative">
 
             <section className="flex bg-white w-full justify-center">
-                <div className="flex flex-col max-w-screen-2xl px-[72px] pt-[56px] w-full text-brand-graphite">
-                    <H1 className="max-w-[822px] pb-[88px]">
+                <div className="flex flex-col max-w-screen-2xl px-[72px] pt-[56px] max-lg:pt-10 max-lg:pb-14 max-lg:px-6 w-full text-brand-graphite">
+                    <div className="max-lg:mb-10 lg:hidden">
+                      <ChevronLeft
+                        onClick={() => back()}
+                        className="cursor-pointer"
+                      />
+                    </div>
+                    <H1 className="max-w-[822px] pb-[88px] max-lg:pb-0">
                         Inspiration for Architects and Designers
                     </H1>
                 </div>
             </section>
 
             <section className="flex bg-white w-full justify-center">
-                <div className="flex flex-col max-w-screen-2xl pt-[56px] w-full text-brand-graphite">
+                <div className="flex flex-col max-w-screen-2xl pt-[56px] max-lg:pt-0 w-full text-brand-graphite">
                     {
                         ProjectsList.map((item, index) => (
                             <ProjectsCarousel
