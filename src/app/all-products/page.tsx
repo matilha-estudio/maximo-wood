@@ -24,7 +24,7 @@ export default function Products() {
                         />
                     </div>
                     <Image
-                        src={"/images/allproducts/header.png"}
+                        src={"/images/all-products/header.png"}
                         alt="logo"
                         width={1440}
                         height={432}
