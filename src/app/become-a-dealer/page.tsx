@@ -12,14 +12,14 @@ export default function BecomeADealer() {
     const { back } = useRouter();
     return (
         <div className="relative text-brand-graphite">
-            
+
             <section className="flex bg-white w-full justify-center">
                 <div className="flex flex-col max-w-screen-2xl px-[72px] lg:py-[120px] max-lg:pb-14 w-full lg:gap-10 max-lg:px-6 max-lg:pt-10">
                     <div className="max-lg:mb-10 lg:hidden">
-                      <ChevronLeft 
-                        onClick={()=> back()}
-                        className="cursor-pointer"
-                      />
+                        <ChevronLeft
+                            onClick={() => back()}
+                            className="cursor-pointer"
+                        />
                     </div>
                     <H1 className="max-w-[924px] max-lg:mb-6">
                         Be at the Forefront of the Wood Revolution
@@ -52,25 +52,25 @@ export default function BecomeADealer() {
                             Why Partner with Maximo?
                         </H2>
                         <H3 className="uppercase lg:hidden">
-                          Why Partner with Maximo?
+                            Why Partner with Maximo?
                         </H3>
                     </div>
 
                     <div className="flex w-full gap-16 lg:flex-wrap max-lg:flex-col items-center">
                         <div className="flex flex-col gap-4 max-w-[338px]">
                             <SubtitleSmall>
-                              Access to Premium Products
+                                Access to Premium Products
                             </SubtitleSmall>
                             <ParagraphLarge>
-                              At Maximo Wood, we’re driven by a vision: to make premium, high-quality wood accessible to everyone—whether you’re building a deck
+                                At Maximo Wood, we’re driven by a vision: to make premium, high-quality wood accessible to everyone—whether you’re building a deck
                             </ParagraphLarge>
                         </div>
                         <div className="flex flex-col gap-4 max-w-[338px]">
                             <SubtitleSmall>
-                              Democratizing Thermally Modified Wood
+                                Democratizing Thermally Modified Wood
                             </SubtitleSmall>
                             <ParagraphLarge>
-                              At Maximo Wood, we’re driven by a vision: to make premium, high-quality wood accessible to everyone—whether you’re building a deck
+                                At Maximo Wood, we’re driven by a vision: to make premium, high-quality wood accessible to everyone—whether you’re building a deck
                             </ParagraphLarge>
                         </div>
                         <div className="flex flex-col gap-4 max-w-[338px]">
@@ -100,7 +100,7 @@ export default function BecomeADealer() {
                             Trusted by Industry Leaders
                         </H2>
                         <H5 className="lg:hidden">
-                          Trusted by Industry Leaders
+                            Trusted by Industry Leaders
                         </H5>
                     </div>
                     <div className="flex gap-8 justify-center max-lg:hidden">
@@ -139,9 +139,9 @@ export default function BecomeADealer() {
                         </div>
                     </div>
                     <div className="flex justify-center lg:hidden">
-                      <IndustryLeadersCarousel 
-                        images={listLogos}
-                      />
+                        <IndustryLeadersCarousel
+                            images={listLogos}
+                        />
                     </div>
                 </div>
             </section>
@@ -193,28 +193,28 @@ export default function BecomeADealer() {
 }
 
 const listLogos = [
-  {
-    src: "/images/BuildersFirst.png",
-    alt: "BuildersFirst",
-    width: 410,
-    height: 400,
-    title: 'Builders First Source',
-    subTitle: 'As one of the largest building materials retailers in the country, Builders First Source trusts Maximo Wood to deliver high-quality solutions that meet the needs of professionals across America.'
-  },
-  {
-    src: "/images/BurtonLumber.png",
-    alt: "BurtonLumber",
-    width: 410,
-    height: 400,
-    title: 'Burton Lumber',
-    subTitle: 'With over 100 years of history and multiple branches, Burton Lumber counts on Maximo to offer modern, innovative solutions for their clients—keeping their legacy strong and future-focused.'
-  },
-  {
-    src: "/images/StringhamLumber.png",
-    alt: "StringhamLumber",
-    width: 410,
-    height: 400,
-    title: 'Stringham Lumber',
-    subTitle: 'A proud part of the well-known Do it Best network, with branches all over the U.S., Stringham Lumber relies on Maximo Wood to provide the premium products their customers demand.'
-  }
+    {
+        src: "/images/BuildersFirst.png",
+        alt: "BuildersFirst",
+        width: 410,
+        height: 400,
+        title: 'Builders First Source',
+        subTitle: 'As one of the largest building materials retailers in the country, Builders First Source trusts Maximo Wood to deliver high-quality solutions that meet the needs of professionals across America.'
+    },
+    {
+        src: "/images/BurtonLumber.png",
+        alt: "BurtonLumber",
+        width: 410,
+        height: 400,
+        title: 'Burton Lumber',
+        subTitle: 'With over 100 years of history and multiple branches, Burton Lumber counts on Maximo to offer modern, innovative solutions for their clients—keeping their legacy strong and future-focused.'
+    },
+    {
+        src: "/images/StringhamLumber.png",
+        alt: "StringhamLumber",
+        width: 410,
+        height: 400,
+        title: 'Stringham Lumber',
+        subTitle: 'A proud part of the well-known Do it Best network, with branches all over the U.S., Stringham Lumber relies on Maximo Wood to provide the premium products their customers demand.'
+    }
 ]

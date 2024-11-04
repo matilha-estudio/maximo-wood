@@ -1,5 +1,5 @@
 export type ProductTag = {
-    material: string;
+    material: "Hardwood" | "Thermo";
     application: (
         | "Siding & Cladding"
         | "Decking"
@@ -31,5 +31,6 @@ export type Product = {
     tag: ProductTag;
     description: string;
     features: string[];
+    images: string[];
     details: ProductDetails;
 };
