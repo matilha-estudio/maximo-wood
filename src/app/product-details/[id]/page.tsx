@@ -188,6 +188,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
             </section>
 
             <ProductSamples />
+            <ProductSamples />
 
             <Footer />
         </div>
