@@ -47,7 +47,8 @@ export function ProductCard(props: IProductCard) {
                             ))
                         }
                     </div>
-                    <Image src={'/images/Dime-19B.png'} alt="card" width={412} height={400} className="object-cover" />
+                    <Image src={props.product.images[0]} alt="card" width={412} height={400} className="object-cover group-hover:hidden flex max-w-[412px] max-h-[400px]" />
+                    <Image src={props.product.images[1]} alt="card" width={412} height={400} className="object-cover hidden group-hover:flex max-w-[412px] max-h-[400px]" />
                 </div>
                 <div className="flex flex-col gap-2">
                     <SubtitleSmall>

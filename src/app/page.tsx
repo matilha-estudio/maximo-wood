@@ -95,7 +95,7 @@ export default function Home() {
       </section >
 
       <section className="flex bg-white w-full justify-center">
-        <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[174px] gap-12 max-lg:px-6 max-lg:py-14">
+        <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] gap-12 max-lg:px-6 max-lg:py-14">
           <div className="flex justify-between w-full max-lg:justify-center max-md:justify-between">
             <H2 className="text-brand-graphite uppercase max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold ">
               Our Products

@@ -1,4 +1,5 @@
 'use client'
+import { Dropdown } from "@/components/dropdown/dropdown";
 import { Footer } from "@/components/footer/footer";
 import { ProductCard } from "@/components/productCard/productCard";
 import ProductSamples from "@/components/productSamples";
@@ -51,15 +52,13 @@ export default function Products() {
                 </div>
             </section>
 
-            {/* Remover div hidden quando criar filters*/}
-            <div className="hidden">
-                <section className="flex bg-white w-full justify-center">
-                    <div className="flex flex-col max-w-screen-2xl lg:px-[72px] lg:py-[120px] w-full gap-10 max-lg:px-6 max-lg:py-14">
-                        {/* TODO: FILTERS */}
-                    </div>
-                </section>
+            {/* Só comecei */}
+            <div className="flex max-w-screen-2xl lg:px-[72px] w-full gap-10 max-lg:px-6">
+                {/* TODO: FILTERS */}
+                <Dropdown />
+                <Dropdown />
+                <Dropdown />
             </div>
-
 
             <section className="flex bg-white w-full justify-center">
                 <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[70px] max-lg:px-6 max-lg:py-14">

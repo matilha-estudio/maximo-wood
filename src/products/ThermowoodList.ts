@@ -2,7 +2,7 @@ import { Product } from "./types";
 
 export const ThermoWoodProducts: Product[] = [
     {
-        id: 1,
+        id: 101,
         group: "Ash",
         name: "Maximo Thermowood® Ash",
         dimensions: "7/8x6 - S4SE4E Endmatch",
@@ -33,7 +33,11 @@ export const ThermoWoodProducts: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "3-17ft",
         },
-        images: []
+        images: [
+            '/images/thermowood/Ash/7-8x6-S4SE4EEndmatch/MaximoThermoAsh7-8x6-S4SE4EEndmatch-1.jpg',
+            '/images/thermowood/Ash/7-8x6-S4SE4EEndmatch/Maximo Thermo Ash 7-8x6 - S4SE4E Endmatch-2.jpg',
+            '/images/thermowood/Ash/7-8x6-S4SE4EEndmatch/IMG_0593.JPG'
+        ]
     },
     {
         group: "Ash",
@@ -66,8 +70,12 @@ export const ThermoWoodProducts: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "6-12ft"
         },
-        id: 2,
-        images: []
+        id: 102,
+        images: [
+            '/images/thermowood/Ash/5-4x6 - S4SE4E Endmatch/Maximo Thermo Ash 5-4x6 - S4SE4E Endmatch-1.jpg',
+            '/images/thermowood/Ash/5-4x6 - S4SE4E Endmatch/Maximo Thermo Ash 5-4x6 - S4SE4E Endmatch-2.jpg',
+            '/images/thermowood/Ash/5-4x6 - S4SE4E Endmatch/NOVAWOOD TMT ASH DECKING  (13).jpg',
+        ]
     },
     {
         group: "Ash",
@@ -100,8 +108,12 @@ export const ThermoWoodProducts: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "6-13ft"
         },
-        id: 3,
-        images: []
+        id: 103,
+        images: [
+            '/images/thermowood/Ash/2x6 S4SE4E/Maximo Thermo Ash 2x6-S4SE4E-1.jpg',
+            '/images/thermowood/Ash/2x6 S4SE4E/Maximo Thermo Ash 2x6-S4SE4E-2.jpg',
+            '/images/thermowood/Ash/2x6 S4SE4E/IMG_0584.JPG',
+        ]
     },
     {
         group: "Ash",
@@ -134,8 +146,12 @@ export const ThermoWoodProducts: Product[] = [
             availableIn: "Random Lengths",
             boardLengths: "6-12ft"
         },
-        id: 4,
-        images: []
+        id: 104,
+        images: [
+            '/images/thermowood/Ash/1x6 - T&G Shiplap/Maximo Thermo Ash 1x6 - T&G Shiplap-1.jpg',
+            '/images/thermowood/Ash/1x6 - T&G Shiplap/Maximo Thermo Ash 1x6 - T&G Shiplap-2.jpg',
+            '/images/thermowood/Ash/1x6 - T&G Shiplap/example.jpeg',
+        ]
     },
     {
         group: "Ash",
@@ -168,8 +184,12 @@ export const ThermoWoodProducts: Product[] = [
             boardLengths: "6-12ft"
         },
         dimensions: "1x6 - T&G Nickel Gap",
-        id: 5,
-        images: []
+        id: 105,
+        images: [
+            '/images/thermowood/Ash/1x6 T&G Nickel Gap/Maximo Thermo Nickel Gap Ash-1 .jpg',
+            '/images/thermowood/Ash/1x6 T&G Nickel Gap/Maximo Thermo Nickel Gap Ash-2.jpg',
+            '/images/thermowood/Ash/1x6 T&G Nickel Gap/IMG_0734.JPG',
+        ]
     },
     {
         group: "Ash",
@@ -202,8 +222,12 @@ export const ThermoWoodProducts: Product[] = [
             boardLengths: "6-12ft"
         },
         dimensions: "1x6 - T&G V-Joint",
-        id: 6,
-        images: []
+        id: 106,
+        images: [
+            '/images/thermowood/Ash/1x6 T&G V-Joint x Square Back/Maximo Thermo Ash t&g vjoint 1.jpg',
+            '/images/thermowood/Ash/1x6 T&G V-Joint x Square Back/Maximo Thermo Ash t&g vjoint 2.jpg',
+            '/images/thermowood/Ash/1x6 T&G V-Joint x Square Back/NOVAWOOD TMT ASH CLADDING (4).jpg',
+        ]
     },
     {
         group: "Clear radiata",
@@ -238,8 +262,12 @@ export const ThermoWoodProducts: Product[] = [
             boardLengths: "6-22ft"
         },
         dimensions: "1x6 - T&G Nickel Gap",
-        id: 7,
-        images: []
+        id: 107,
+        images: [
+            '/images/thermowood/ClearRadiata/1x6 - T&G Nickel Gap/Maximo Thermo Clear Radiata Natural 1x6 - T&G Nickel Gap-1.jpg',
+            '/images/thermowood/ClearRadiata/1x6 - T&G Nickel Gap/Maximo Thermo Clear Radiata Natural 1x6 - T&G Nickel Gap-2.jpg',
+            '/images/thermowood/ClearRadiata/1x6 - T&G Nickel Gap/Lakehouse Luxe - Vulcan Timber - Abodo Wood 3.jpg',
+        ]
     },
     {
         group: "Clear radiata",
@@ -274,8 +302,12 @@ export const ThermoWoodProducts: Product[] = [
             boardLengths: "6-22ft"
         },
         dimensions: "3/8x4 - S4SE4E",
-        id: 8,
-        images: []
+        id: 108,
+        images: [
+            '/images/thermowood/ClearRadiata/3-8x4/Maximo Thermo Clear Radiata Natural 3-8x4-1.jpg',
+            '/images/thermowood/ClearRadiata/3-8x4/Maximo Thermo Clear Radiata Natural 3-8x4-2.jpg',
+            '/images/thermowood/ClearRadiata/3-8x4/Cass Bay House - Vulcan Timber - Abodo Wood 3.jpg',
+        ]
     },
     {
         group: "Clear radiata",
@@ -310,8 +342,12 @@ export const ThermoWoodProducts: Product[] = [
             boardLengths: "6-22ft"
         },
         dimensions: "5/6x6 - S4SE4E",
-        id: 9,
-        images: []
+        id: 109,
+        images: [
+            '/images/thermowood/ClearRadiata/5-6x6/Maximo Thermo Clear Radiata Natural 5-6x6-1.jpg',
+            '/images/thermowood/ClearRadiata/5-6x6/Maximo Thermo Clear Radiata Natural 5-6x6-2.jpg',
+            '/images/thermowood/ClearRadiata/5-6x6/Dunlop Hub - Vulcan Timber - Abodo Wood 04.jpg',
+        ]
     },
     {
         group: "Clear radiata",
@@ -346,8 +382,12 @@ export const ThermoWoodProducts: Product[] = [
             boardLengths: "6-22ft"
         },
         dimensions: "2x6 - S4SE4E",
-        id: 10,
-        images: []
+        id: 110,
+        images: [
+            '/images/thermowood/ClearRadiata/2x6/Maximo Thermo Clear Radiata Natural 2x6-1.jpg',
+            '/images/thermowood/ClearRadiata/2x6/Maximo Thermo Clear Radiata Natural 2x6-2.jpg',
+            '/images/thermowood/ClearRadiata/2x6/0H6A1096.JPG',
+        ]
     },
     {
         group: "Ayous Reversible",
@@ -381,8 +421,12 @@ export const ThermoWoodProducts: Product[] = [
             boardLengths: "6-12ft"
         },
         dimensions: "1x4 - T&G V-Joint x Square Back",
-        id: 11,
-        images: []
+        id: 111,
+        images: [
+            '/images/thermowood/Ayous/1x4 S4SE4E/Maximo Thermo Ayous 1x4-S4SE4E-1.jpg',
+            '/images/thermowood/Ayous/1x4 S4SE4E/Maximo Thermo Ayous 1x4-S4SE4E-2.jpg',
+            '/images/thermowood/Ayous/1x4 S4SE4E/IMG_2547.jpg',
+        ]
     },
     {
         group: "Ayous Reversible",
@@ -416,8 +460,12 @@ export const ThermoWoodProducts: Product[] = [
             boardLengths: "6-12ft"
         },
         dimensions: "1x6 - T&G V-Joint x Square Back",
-        id: 12,
-        images: []
+        id: 112,
+        images: [
+            '/images/thermowood/Ayous/1x6 S4SE4E/Maximo Thermo Ayous 1x6-S4SE4E-1.jpg',
+            '/images/thermowood/Ayous/1x6 S4SE4E/Maximo Thermo Ayous 1x6-S4SE4E-2.jpg',
+            '/images/thermowood/Ayous/1x6 S4SE4E/IMG_0348.JPG',
+        ]
     },
     {
         group: "Redwood",
@@ -450,8 +498,11 @@ export const ThermoWoodProducts: Product[] = [
             boardLengths: "6-12ft"
         },
         dimensions: "1x6 - T&G V-Joint",
-        id: 13,
-        images: []
+        id: 113,
+        images: [
+            '/images/thermowood/Ayous/1x6 S4SE4E/Maximo Thermo Ayous 1x6-S4SE4E-1.jpg',
+            '/images/thermowood/Ayous/1x6 S4SE4E/Maximo Thermo Ayous 1x6-S4SE4E-2.jpg',
+        ]
     },
     {
         group: "Redwood",
@@ -484,7 +535,10 @@ export const ThermoWoodProducts: Product[] = [
             boardLengths: "6-12ft"
         },
         dimensions: "1x6 - T&G Nickel Gap",
-        id: 14,
-        images: []
+        id: 114,
+        images: [
+            '/images/thermowood/Ayous/1x6 S4SE4E/Maximo Thermo Ayous 1x6-S4SE4E-2.jpg',
+            '/images/thermowood/Ayous/1x6 S4SE4E/Maximo Thermo Ayous 1x6-S4SE4E-2.jpg',
+        ]
     }
 ];

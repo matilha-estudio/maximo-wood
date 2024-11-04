@@ -31,20 +31,14 @@ export default function AllProjects() {
                 <div className="flex flex-col max-w-screen-2xl pt-[56px] w-full text-brand-graphite">
                     {
                         ProjectsList.map((item, index) => (
-                            <ModalInspirationCarousel
+                            <ProjectsCarousel
                                 key={index}
-                                trigger={
-                                    <ProjectsCarousel
-                                        key={index}
-                                        title={item.title}
-                                        product={item.product}
-                                        profile={item.profile}
-                                        location={item.location}
-                                        description={item.description}
-                                        images={item.images}
-                                    />
-                                }
-                                list={item.images}
+                                title={item.title}
+                                product={item.product}
+                                profile={item.profile}
+                                location={item.location}
+                                description={item.description}
+                                images={item.images}
                             />
 
                         ))

@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/carousel"
 import Image from "next/image"
 import { H4, ParagraphLarge, SubtitleSmallBold } from "../text/Heading"
+import { ModalInspirationCarousel } from "./inspirationModalCarousel"
 
 interface IProjectsCarousel {
     title: string
@@ -46,21 +47,26 @@ export function ProjectsCarousel(props: IProjectsCarousel) {
                         <CarouselPrevious className="relative" />
                         <CarouselNext className="relative -ml-20" />
                     </div>
-                    <CarouselContent>
-                        {
-                            props.images && props.images.map((image, index) => (
-                                <CarouselItem key={index} className="max-w-[632px] max-h-[456px] overflow-hidden">
-                                    <Image
-                                        src={image}
-                                        alt={props.title + index}
-                                        width={632}
-                                        height={456}
-                                        className="object-cover w-full h-full max-w-[632px] max-h-[456px]"
-                                    />
-                                </CarouselItem>
-                            ))
+                    <ModalInspirationCarousel
+                        trigger={
+                            <CarouselContent>
+                                {
+                                    props.images && props.images.map((image, index) => (
+                                        <CarouselItem key={index} className="max-w-[632px] max-h-[456px] overflow-hidden">
+                                            <Image
+                                                src={image}
+                                                alt={props.title + index}
+                                                width={632}
+                                                height={456}
+                                                className="object-cover w-full h-full max-w-[632px] max-h-[456px]"
+                                            />
+                                        </CarouselItem>
+                                    ))
+                                }
+                            </CarouselContent>
                         }
-                    </CarouselContent>
+                        list={props.images}
+                    />
                 </Carousel>
             </div>
 
