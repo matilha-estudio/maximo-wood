@@ -141,17 +141,20 @@ export default function Home() {
 
       <section className="flex bg-white w-full justify-center">
         <div className="flex flex-col justify-center items-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] gap-20 max-lg:px-6 max-lg:py-14">
-          <div className="flex gap-[78px] max-lg:flex-col-reverse max-lg:items-center">
-            <Image src={"/images/Rectangle12.png"} alt={"Rectangle12"} width={365} height={416} className="h-full" />
-            <div className="relative flex flex-col gap-8 text-brand-graphite">
-              <H2 className="max-w-[80%] max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold">
-                Rooted in Responsibility: Our Commitment to Sustainable Wood
-              </H2>
-              <ParagraphLarge>
-                Sustainability is at the heart of everything we do at Maximo Wood. From sourcing responsibly managed woodlands to supporting communities in Brazil that depend on forests for their livelihoods, we’re committed to making a positive impact. Our products are backed by certifications like FSC and PEFC, ensuring our wood is sourced with care for both people and the planet.
-              </ParagraphLarge>
+            <div className="flex gap-[78px] max-lg:flex-col-reverse ">
+              <Image src={"/images/Rectangle12.png"} alt={"Rectangle12"} width={365} height={416} className="h-full max-lg:hidden" />
+              <div className="max-lg:flex justify-center lg:hidden">
+                <Image src={"/images/Rectangle12.jpeg"} alt={"Rectangle12"} width={365} height={416} className="h-full w-full " />
+              </div>
+                <div className="relative flex flex-col gap-8 text-brand-graphite">
+                    <H2 className="md:max-w-[80%] max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold">
+                        Rooted in Responsibility: Our Commitment to Sustainable Wood
+                    </H2>
+                    <ParagraphLarge>
+                        Sustainability is at the heart of everything we do at Maximo Wood. From sourcing responsibly managed woodlands to supporting communities in Brazil that depend on forests for their livelihoods, we’re committed to making a positive impact. Our products are backed by certifications like FSC and PEFC, ensuring our wood is sourced with care for both people and the planet.
+                    </ParagraphLarge>
+                </div>
             </div>
-          </div>
 
           {/* Desktop */}
           <div className="relative flex gap-8 items-center max-h-[189px] max-lg:hidden">

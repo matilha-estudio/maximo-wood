@@ -2,12 +2,12 @@
 import { Footer } from "@/components/footer/footer";
 import { CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel"
 import ProductFeatureAccordion from "@/components/productAccordions/productFeatureAccordion";
-import { H2, H4, H5, H6, ParagraphLarge } from "@/components/text/Heading";
+import { H2, H4, H6, ParagraphLarge } from "@/components/text/Heading";
 import { Button } from "@/components/ui/button";
 import { HardWoodList } from "@/products/HardWoodList";
 import { ThermoWoodProducts } from "@/products/ThermowoodList";
 import { Product } from "@/products/types";
-import { MoveRight } from "lucide-react";
+import { ChevronLeft, MoveRight } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import ProductDetailsAccordion from "@/components/productAccordions/productDetailsAccordion";
@@ -15,8 +15,12 @@ import ProductSamples from "@/components/productSamples";
 import { cn } from "@/lib/utils";
 import { Carousel } from "@/components/ui/carousel";
 import { ProductCard } from "@/components/productCard/productCard";
+import { useRouter } from "next/navigation";
+import { LogosCarousel } from "@/components/carousel/logos";
+import { RelatedProducts } from "@/components/carousel/relatedProducts";
 
 export default function ProductDetail({ params }: { params: { id: string } }) {
+    const { back } = useRouter();
     const ProductID = params.id
     const LIST_PRODUCTS = HardWoodList.concat(ThermoWoodProducts)
 
@@ -57,13 +61,19 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
             {/* TODO: DETAILS */}
 
             <section className="flex bg-white w-full justify-center text-brand-graphite">
-                <div className="flex justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] border-y border-neutral-1000 gap-10">
+                <div className="flex max-md:flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] max-md:px-6 max-md:pt-10 max-md:pb-14 border-y border-neutral-1000 gap-10">
+                    <div className="md:hidden">
+                      <ChevronLeft
+                        onClick={() => back()}
+                        className="cursor-pointer"
+                      />
+                    </div>
                     <div className="flex flex-col gap-4">
                         <Carousel setApi={setApi} className="max-w-[592px] max-h-[664px]">
                             <CarouselContent>
                                 {
                                     product?.images.map((image, index) => (
-                                        <CarouselItem>
+                                        <CarouselItem key={index}>
                                             <Image
                                                 key={index}
                                                 src={image}
@@ -84,6 +94,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                             {
                                 product?.images.map((image, index) => (
                                     <div
+                                        key={index}
                                         className={cn(
                                             "relative h-[84px] w-[84px] cursor-pointer",
                                             current === index && "border border-black"
@@ -121,8 +132,8 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                             </div>
                         </div>
 
-                        <div className="lg:w-1/2">
-                            <Button className="gap-1 w-fit bg-white hover:border-none border border-neutral-1000 text-neutral-1000 hover:bg-black hover:text-white">
+                        <div className="lg:w-1/2 max-md:w-full">
+                            <Button className="gap-1 w-fit max-md:w-full bg-white hover:border-none border border-neutral-1000 text-neutral-1000 hover:bg-black hover:text-white">
                                 Request samples
                                 <MoveRight />
                             </Button>
@@ -135,10 +146,10 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
             </section>
 
             <section className="flex bg-white w-full justify-center">
-                <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] gap-12">
+                <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] border-b border-neutral-1000 max-md:px-6 max-md:py-14 gap-12">
                     <div className="flex justify-between w-full">
                         <H2 className="text-brand-graphite uppercase">Releated products</H2>
-                        <Button variant='link' className="flex-col">
+                        <Button variant='link' className="flex-col max-md:hidden">
                             <div className="flex gap-1">
                                 All products
                                 <MoveRight />
@@ -147,22 +158,30 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                         </Button>
                     </div>
 
-                    <div className="flex gap-8 w-full">
+                    <div className="flex gap-8 w-full max-md:hidden">
                         {
-                            releatedProducts && releatedProducts.slice(0, 3).map((item, index) => (
-                                <ProductCard key={index} product={item} />
-                            ))
+                          releatedProducts && releatedProducts.slice(0, 3).map((item, index) => (
+                            <ProductCard key={index} product={item} />
+                          ))
+                        }
+                    </div>
+                    <div className="flex w-full md:hidden">
+                        {releatedProducts && 
+                          <RelatedProducts products={releatedProducts} limit={3} />
                         }
                     </div>
                 </div>
             </section>
 
             <section className="flex bg-white w-full justify-center">
-                <div className="flex flex-col justify-center items-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] gap-20">
-                    <div className="flex gap-[78px]">
-                        <Image src={"/images/Rectangle12.png"} alt={"Rectangle12"} width={365} height={416} className="h-full" />
+                <div className="flex flex-col justify-center items-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] max-md:px-6 max-md:py-14 gap-20">
+                    <div className="flex max-md:flex-col-reverse gap-[78px]">
+                      <Image src={"/images/Rectangle12.png"} alt={"Rectangle12"} width={365} height={416} className="h-full max-md:hidden" />
+                      <div className="max-md:flex justify-center md:hidden">
+                        <Image src={"/images/Rectangle12.jpeg"} alt={"Rectangle12"} width={365} height={416} className="h-full w-full " />
+                      </div>
                         <div className="relative flex flex-col gap-8 text-brand-graphite">
-                            <H2 className="max-w-[80%]">
+                            <H2 className="md:max-w-[80%] max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold">
                                 Rooted in Responsibility: Our Commitment to Sustainable Wood
                             </H2>
                             <ParagraphLarge>
@@ -184,10 +203,14 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                             </div>
                         ))}
                     </div>
+
+                    {/* Mobile */}
+                    <div className="relative flex gap-1 items-center w-full lg:hidden">
+                        <LogosCarousel images={listLogos} />
+                    </div>
                 </div>
             </section>
 
-            <ProductSamples />
             <ProductSamples />
 
             <Footer />
