@@ -6,4 +6,5 @@ export enum Routes {
     productDetails = '/product-details',
     hardwood = '/hardwood',
     thermowood = '/thermowood',
+    contactus = '/contact-us',
 }

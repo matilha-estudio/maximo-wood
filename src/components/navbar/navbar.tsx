@@ -10,94 +10,6 @@ import { Routes } from "@/enums/routes";
 import ListItensMenuMobile from "./components/listItensMenuMobile";
 import { useRouter } from "next/navigation";
 
-const itensMenuMobile = [
-  { 
-    label: 'Products',
-    content: <>
-      <div className="flex flex-col h-full gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
-        <SubtitleSmallBold>By Material</SubtitleSmallBold>
-        <div className="flex flex-col gap-4">
-            <Button variant="link" size="medium" className="justify-start p-0">
-                <SubtitleSmallMedium>HardWood</SubtitleSmallMedium>
-            </Button>
-            <Button variant="link" size="medium" className="justify-start p-0">
-                <SubtitleSmallMedium>TermoWood</SubtitleSmallMedium>
-            </Button>
-        </div>
-      </div>
-      <div className="flex flex-col h-full gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
-        <SubtitleSmallBold>By Application</SubtitleSmallBold>
-        <div className="flex flex-col gap-4">
-          <Button variant="link" size="medium" className="justify-start p-0">
-            <SubtitleSmallMedium>Siding & Cladding</SubtitleSmallMedium>
-          </Button>
-          <Button variant="link" size="medium" className="justify-start p-0">
-            <SubtitleSmallMedium>Decking</SubtitleSmallMedium>
-          </Button>
-        </div>
-      </div>
-      <div className="flex flex-col h-full gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
-        <SubtitleSmallBold>By Collection</SubtitleSmallBold>
-        <div className="flex flex-col gap-4">
-          <Button variant="link" size="medium" className="justify-start p-0">
-              <SubtitleSmallMedium>Walls & Ceilings</SubtitleSmallMedium>
-          </Button>
-          <Button variant="link" size="medium" className="justify-start p-0">
-              <SubtitleSmallMedium>Narrow</SubtitleSmallMedium>
-          </Button>
-        </div>
-      </div>
-    </>
-  },
-  { 
-    label: 'Inspiration', 
-    content:<>
-      <div className="flex flex-col h-full gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
-        <div className="flex flex-col gap-4">
-          <Button variant="link" size="medium" className="justify-start p-0">
-            <SubtitleSmallMedium>Projects</SubtitleSmallMedium>
-          </Button>
-          <Button variant="link" size="medium" className="justify-start p-0">
-            <SubtitleSmallMedium>Request Samples</SubtitleSmallMedium>
-          </Button>
-        </div>
-      </div>
-    </>
-  },
-  { 
-    label: 'Resources', 
-    content: <div className="flex flex-col h-full gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
-    <div className="flex flex-col gap-4">
-      <Button variant="link" size="medium" className="justify-start p-0">
-        <SubtitleSmallMedium>Schedule a ceu</SubtitleSmallMedium>
-      </Button>
-      <Button variant="link" size="medium" className="justify-start p-0">
-        <SubtitleSmallMedium>Resources for hardwood</SubtitleSmallMedium>
-      </Button>
-      <Button variant="link" size="medium" className="justify-start p-0">
-        <SubtitleSmallMedium>Resources for thermo</SubtitleSmallMedium>
-      </Button>
-      <Button variant="link" size="medium" className="justify-start p-0">
-        <SubtitleSmallMedium>Request samples</SubtitleSmallMedium>
-      </Button>
-    </div>
-  </div>
-  },
-  { 
-    label: 'Where to Buy', 
-    content: <div className="flex flex-col h-full gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
-    <div className="flex flex-col gap-4">
-      <Button variant="link" size="medium" className="justify-start p-0">
-        <SubtitleSmallMedium>Contact us</SubtitleSmallMedium>
-      </Button>
-      <Button variant="link" size="medium" className="justify-start p-0">
-        <SubtitleSmallMedium>Become a dealer</SubtitleSmallMedium>
-      </Button>
-    </div>
-  </div>
-  },
-]
-
 export default function Navbar({
   children
 }:{
@@ -109,7 +21,7 @@ export default function Navbar({
     const { push } = useRouter();
 
     const toggleSection = (section: string) => {
-        setExpandedSection(prevSection => (prevSection === section ? null : section));
+      setExpandedSection(prevSection => (prevSection === section ? null : section));
     };
 
     // Listen for scroll events to toggle logo
@@ -146,9 +58,177 @@ export default function Navbar({
       };
     }, []);
 
-    const onClickRedirect = () => {
+    const onClickRedirect = (page = Routes.home) => {
       setShowMenu(false);
-      push(Routes.becomeADealer)
+      push(page)
+    }
+
+    const buttonsByMaterial = () => {
+      return (
+      <div className="flex flex-col gap-4">
+          <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.hardwood)}>
+              <SubtitleSmallMedium>HardWood</SubtitleSmallMedium>
+          </Button>
+          <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.thermowood)}>
+              <SubtitleSmallMedium>TermoWood</SubtitleSmallMedium>
+          </Button>
+      </div>
+      )
+    }
+
+    const buttonsByApp = () => {
+      return (
+        <div className="flex flex-col gap-4">
+          <Button variant="link" size="medium" className="justify-start p-0">
+            <SubtitleSmallMedium>Siding & Cladding</SubtitleSmallMedium>
+          </Button>
+          <Button variant="link" size="medium" className="justify-start p-0">
+            <SubtitleSmallMedium>Decking</SubtitleSmallMedium>
+          </Button>
+        </div>
+      )
+    }
+
+    const buttonsByCollection = () => {
+      return (
+        <div className="flex flex-col gap-4">
+          <Button variant="link" size="medium" className="justify-start p-0">
+              <SubtitleSmallMedium>Walls & Ceilings</SubtitleSmallMedium>
+          </Button>
+          <Button variant="link" size="medium" className="justify-start p-0">
+              <SubtitleSmallMedium>Narrow</SubtitleSmallMedium>
+          </Button>
+        </div>
+      )
+    }
+
+    const buttonsInspiration = () => {
+      return (
+        <div className="flex flex-col gap-4">
+          <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.allProjects)}>
+            <SubtitleSmallMedium>Projects</SubtitleSmallMedium>
+          </Button>
+          <Button variant="link" size="medium" className="justify-start p-0">
+            <SubtitleSmallMedium>Request Samples</SubtitleSmallMedium>
+          </Button>
+        </div>
+      )
+    }
+
+    const buttonsResources = () => {
+      return (
+        <div className="flex flex-col gap-4">
+          <Button variant="link" size="medium" className="justify-start p-0">
+            <SubtitleSmallMedium>Schedule a ceu</SubtitleSmallMedium>
+          </Button>
+          <Button variant="link" size="medium" className="justify-start p-0">
+            <SubtitleSmallMedium>Resources for hardwood</SubtitleSmallMedium>
+          </Button>
+          <Button variant="link" size="medium" className="justify-start p-0">
+            <SubtitleSmallMedium>Resources for thermo</SubtitleSmallMedium>
+          </Button>
+          <Button variant="link" size="medium" className="justify-start p-0" >
+            <SubtitleSmallMedium>Request samples</SubtitleSmallMedium>
+          </Button>
+        </div>
+      )
+    }
+
+    const buttonsWhereToBy = () =>{
+      return (
+        <div className="flex flex-col gap-4">
+          <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.contactus)}>
+            <SubtitleSmallMedium>Contact us</SubtitleSmallMedium>
+          </Button>
+          <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.becomeADealer)}>
+            <SubtitleSmallMedium>Become a dealer</SubtitleSmallMedium>
+          </Button>
+        </div>
+      )
+    }
+
+    const itensMenuMobile = [
+      { 
+        label: 'Products',
+        content: <>
+          <div className="flex flex-col h-full gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
+            <SubtitleSmallBold>By Material</SubtitleSmallBold>
+            {buttonsByMaterial()}
+          </div>
+          <div className="flex flex-col h-full gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
+            <SubtitleSmallBold>By Application</SubtitleSmallBold>
+            {buttonsByApp()}
+          </div>
+          <div className="flex flex-col h-full gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
+            <SubtitleSmallBold>By Collection</SubtitleSmallBold>
+            {buttonsByCollection()}
+          </div>
+        </>
+      },
+      { 
+        label: 'Inspiration', 
+        content:<>
+          <div className="flex flex-col h-full gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
+            {buttonsInspiration()}
+          </div>
+        </>
+      },
+      { 
+        label: 'Resources', 
+        content: <div className="flex flex-col h-full gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
+          {buttonsResources()}
+        </div>
+      },
+      { 
+        label: 'Where to Buy', 
+        content: <div className="flex flex-col h-full gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
+          {buttonsWhereToBy()}
+        </div>
+      },
+    ];
+
+    const itensMenuDesk = {
+      products: {
+        image: '/images/menu/products.jpeg',
+        menu: <>
+        <div className="flex flex-col h-full border-l gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
+            <SubtitleSmallBold>By Material</SubtitleSmallBold>
+            {buttonsByMaterial()}
+        </div>
+        <div className="flex flex-col h-full border-l gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
+            <SubtitleSmallBold>By Application</SubtitleSmallBold>
+            {buttonsByApp()}
+        </div>
+        <div className="flex flex-col h-full border-l gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
+            <SubtitleSmallBold>By Collection</SubtitleSmallBold>
+            {buttonsByCollection()}
+        </div>
+      </>
+      },
+      inspiration: {
+        image: '/images/menu/inspiration.jpeg',
+        menu: <>
+        <div className="flex flex-col h-full border-l gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
+          {buttonsInspiration()}
+        </div>
+      </>
+      },
+      resources: {
+        image: '/images/menu/resources.jpeg',
+        menu: <>
+        <div className="flex flex-col h-full border-l gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
+          {buttonsResources()}
+        </div>
+      </>
+      },
+      'where-to-buy': {
+        image: '/images/menu/wheretoby.jpeg',
+        menu: <>
+        <div className="flex flex-col h-full border-l gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
+          {buttonsWhereToBy()}
+        </div>
+      </>
+      },
     }
 
     return (<>
@@ -201,7 +281,7 @@ export default function Navbar({
                             <ChevronDown />
                         </Button>
                     </div>
-                    <Button variant="default" size="default" onClick={()=>onClickRedirect()}>
+                    <Button variant="default" size="default" onClick={()=>onClickRedirect(Routes.becomeADealer)}>
                       Become a dealer
                     </Button>
                 </div>
@@ -226,7 +306,7 @@ export default function Navbar({
                 </div>
                 
                 <div className="flex justify-center w-full pb-6 px-6">
-                  <Button className="w-full" variant="default" size="default" onClick={()=> onClickRedirect()}>
+                  <Button className="w-full" variant="default" size="default" onClick={()=> onClickRedirect(Routes.becomeADealer)}>
                     Become a dealer
                   </Button>
                 </div>
@@ -235,47 +315,15 @@ export default function Navbar({
 
             {/* collapsible area */}
             {expandedSection && (
-                <div className="flex w-full max-w-screen-2xl px-[72px] h-full pb-9 gap-6">
+                <div className="flex w-full max-w-screen-2xl px-[72px] h-full pb-9 gap-6 max-lg:hidden">
                     <Image
-                        src={"/images/grant-ritchie-FBkrQhnLQoY-unsplash.png"}
+                        src={itensMenuDesk[expandedSection]?.image}
                         alt="logo"
                         width={422}
                         height={318}
                     />
                     <div className="flex gap-6 h-full w-full">
-                        <div className="flex flex-col h-full border-l gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
-                            <SubtitleSmallBold>By Material</SubtitleSmallBold>
-                            <div className="flex flex-col gap-4">
-                                <Button variant="link" size="medium" className="justify-start p-0">
-                                    <SubtitleSmallMedium>HardWood</SubtitleSmallMedium>
-                                </Button>
-                                <Button variant="link" size="medium" className="justify-start p-0">
-                                    <SubtitleSmallMedium>TermoWood</SubtitleSmallMedium>
-                                </Button>
-                            </div>
-                        </div>
-                        <div className="flex flex-col h-full border-l gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
-                            <SubtitleSmallBold>By Application</SubtitleSmallBold>
-                            <div className="flex flex-col gap-4">
-                                <Button variant="link" size="medium" className="justify-start p-0">
-                                    <SubtitleSmallMedium>Siding & Cladding</SubtitleSmallMedium>
-                                </Button>
-                                <Button variant="link" size="medium" className="justify-start p-0">
-                                    <SubtitleSmallMedium>Decking</SubtitleSmallMedium>
-                                </Button>
-                            </div>
-                        </div>
-                        <div className="flex flex-col h-full border-l gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
-                            <SubtitleSmallBold>By Collection</SubtitleSmallBold>
-                            <div className="flex flex-col gap-4">
-                                <Button variant="link" size="medium" className="justify-start p-0">
-                                    <SubtitleSmallMedium>Walls & Ceilings</SubtitleSmallMedium>
-                                </Button>
-                                <Button variant="link" size="medium" className="justify-start p-0">
-                                    <SubtitleSmallMedium>Narrow</SubtitleSmallMedium>
-                                </Button>
-                            </div>
-                        </div>
+                        {itensMenuDesk[expandedSection]?.menu}
                     </div>
                 </div>
             )}
