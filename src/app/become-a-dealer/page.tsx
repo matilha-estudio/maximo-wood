@@ -2,6 +2,7 @@
 import { IndustryLeadersCarousel } from "@/components/carousel/industryLeaders";
 import FAQAccordion from "@/components/faq/faq";
 import { Footer } from "@/components/footer/footer";
+import BecomeDealerForm from "@/components/forms/becomeDealer";
 import { H1, H2, H3, H5, ParagraphLarge, ParagraphMedium, SubtitleSmall } from "@/components/text/Heading";
 import { FAQData } from "@/content/faqList";
 import { ChevronLeft } from "lucide-react";
@@ -163,7 +164,7 @@ export default function BecomeADealer() {
                     </div>
 
                     <div>
-                        form here //TODO
+                        <BecomeDealerForm />
                     </div>
                 </div>
             </section>

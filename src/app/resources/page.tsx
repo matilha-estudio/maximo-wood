@@ -1,16 +1,17 @@
 'use client'
 import AccordionResources from "@/components/accordionResources/accordionResources";
 import { Footer } from "@/components/footer/footer";
+import RequestSamplesForm from "@/components/forms/requestSamples";
+import ScheduleCeuForm from "@/components/forms/scheduleceu";
 import { H2, H4, H5, H6, ParagraphLarge } from "@/components/text/Heading";
 import { Button } from "@/components/ui/button";
-import { Routes } from "@/enums/routes";
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function Resources() {
-    const { back, push } = useRouter();
+    const { back } = useRouter();
     const [showProductSamples, setShowProductSamples] = useState(true);
     return (
         <div className="relative text-brand-graphite">
@@ -83,7 +84,7 @@ export default function Resources() {
             <section className="flex bg-brand-ipe-yellow w-full justify-center">
                 <div className="flex flex-col w-full lg:pt-14 max-lg:pt-[14px]">
                   <div className="flex w-full lg:py-6 ">
-                    <div className={`flex justify-center w-1/2 border-black border-b${showProductSamples?"-4":""} `} onClick={()=>setShowProductSamples(true)}>
+                    <div className={`flex justify-center w-1/2 border-black ${showProductSamples?"border-b-4":"border-b"} `} onClick={()=>setShowProductSamples(true)}>
                       <H6 className="text-black cursor-pointer mb-6 max-lg:hidden">
                         Product Samples
                       </H6>
@@ -91,7 +92,7 @@ export default function Resources() {
                         Product Samples
                       </div>
                     </div>
-                    <div className={`flex justify-center w-1/2 border-black border-b${showProductSamples?"":"-4"} `} onClick={()=>setShowProductSamples(false)}>
+                    <div className={`flex justify-center w-1/2 border-black ${showProductSamples?"border-b":"border-b-4"} `} onClick={()=>setShowProductSamples(false)}>
                       <H6 className="text-black cursor-pointer mb-6 max-lg:hidden">
                         Schedule a CEU
                       </H6>
@@ -102,46 +103,56 @@ export default function Resources() {
                   </div>
                   <div className="flex w-full">
                     <div className="flex max-w-screen-2xl lg:px-[72px] lg:py-[104px] w-full lg:gap-16 max-lg:px-6 max-lg:pt-14 max-lg:flex-col">
-                      {showProductSamples ? 
-                        <div className="flex flex-col gap-6 lg:w-1/2 max-lg:mb-14">
-                          <H2 className="text-black uppercase max-lg:hidden">
-                            Request Samples
-                          </H2>
-                          <H5 className="text-black uppercase lg:hidden">
-                            Request Samples
-                          </H5>
-                          <ParagraphLarge>
-                            Want to experience Maximo Wood for yourself? Complete the form, and we’ll deliver a sample that lets you feel the quality firsthand. Be sure to include details about your project, so we can tailor the samples to your specific needs.
-                          </ParagraphLarge>
-                        </div>
-                        :
-                        <div className="flex flex-col gap-6 lg:w-1/2 max-w-[474px] max-lg:mb-14">
-                          <H2 className="text-black uppercase max-lg:hidden">
-                            Schedule a CEU
-                          </H2>
-                          <H5 className="text-black uppercase lg:hidden">
-                            Schedule a CEU
-                          </H5>
-                          <ParagraphLarge>
-                            At Maximo Wood, we believe in not only providing high-quality products but also empowering professionals in the field. That’s why we offer a registered course with AIA CES for continuing professional education under our Maximo Thermo division:
-                          </ParagraphLarge>
-
-                          <ParagraphLarge>
-                            <b className="text-black">Course Title:</b> Thermally Modified Wood as a Sustainable, Biophilic Product Choice for Architects and Designers
-                          </ParagraphLarge>
-
-                          <ParagraphLarge>
-                            <b className="text-black">Credits Offered:</b> 1 LU|HSW credit
-                          </ParagraphLarge>
-
-                          <ParagraphLarge>
-                            Architects and Designers can choose from the following options to complete the course at no cost: <b className="text-black">In-person Lunch and Learn, Virtual event, On-Demand Course (Accessible anytime).</b>
-                          </ParagraphLarge>
-
-                          <div className="flex max-w-[210px]">
-                            <Image src={"/images/selo-schedule-ceu.png"} alt={"maximo"} width={210} height={86} className="max-h-[86px] w-full" />
+                      {showProductSamples ?
+                        <>
+                          <div className="flex flex-col gap-6 lg:w-1/2 max-lg:mb-14">
+                            <H2 className="text-black uppercase max-lg:hidden">
+                              Request Samples
+                            </H2>
+                            <H5 className="text-black uppercase lg:hidden">
+                              Request Samples
+                            </H5>
+                            <ParagraphLarge>
+                              Want to experience Maximo Wood for yourself? Complete the form, and we’ll deliver a sample that lets you feel the quality firsthand. Be sure to include details about your project, so we can tailor the samples to your specific needs.
+                            </ParagraphLarge>
                           </div>
-                        </div>
+                          <div className="flex flex-col gap-6 lg:w-1/2 max-lg:mb-14">
+                            <RequestSamplesForm />
+                          </div>
+                        </>
+                        :
+                        <>
+                          <div className="flex flex-col gap-6 lg:w-1/2 max-w-[474px] max-lg:mb-14">
+                            <H2 className="text-black uppercase max-lg:hidden">
+                              Schedule a CEU
+                            </H2>
+                            <H5 className="text-black uppercase lg:hidden">
+                              Schedule a CEU
+                            </H5>
+                            <ParagraphLarge>
+                              At Maximo Wood, we believe in not only providing high-quality products but also empowering professionals in the field. That’s why we offer a registered course with AIA CES for continuing professional education under our Maximo Thermo division:
+                            </ParagraphLarge>
+
+                            <ParagraphLarge>
+                              <b className="text-black">Course Title:</b> Thermally Modified Wood as a Sustainable, Biophilic Product Choice for Architects and Designers
+                            </ParagraphLarge>
+
+                            <ParagraphLarge>
+                              <b className="text-black">Credits Offered:</b> 1 LU|HSW credit
+                            </ParagraphLarge>
+
+                            <ParagraphLarge>
+                              Architects and Designers can choose from the following options to complete the course at no cost: <b className="text-black">In-person Lunch and Learn, Virtual event, On-Demand Course (Accessible anytime).</b>
+                            </ParagraphLarge>
+
+                            <div className="flex max-w-[210px]">
+                              <Image src={"/images/selo-schedule-ceu.png"} alt={"maximo"} width={210} height={86} className="max-h-[86px] w-full" />
+                            </div>
+                          </div>
+                          <div className="flex flex-col gap-6 lg:w-1/2 max-lg:mb-14">
+                            <ScheduleCeuForm />
+                          </div>
+                        </>
                       }
                     </div>
                   </div>

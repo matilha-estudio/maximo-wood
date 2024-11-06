@@ -1,5 +1,6 @@
 'use client'
 import { Footer } from "@/components/footer/footer";
+import LocateDealerForm from "@/components/forms/locateDealer";
 import { H1, H2, H4, H5, InputText, ParagraphLarge } from "@/components/text/Heading";
 import { Button } from "@/components/ui/button";
 import { Routes } from "@/enums/routes";
@@ -64,7 +65,7 @@ export default function ContactUs() {
                     </div>
                 </div>
                 <div className="flex flex-col gap-6 lg:w-2/3 max-lg:mb-14">
-                  {/* TODO add embed code form*/}
+                  <LocateDealerForm />
                 </div>
               </div>
             </section>
