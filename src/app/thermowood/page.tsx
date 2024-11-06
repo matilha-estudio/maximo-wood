@@ -101,7 +101,7 @@ export default function Thermowood() {
                                 Built to Last
                             </SubtitleSmall>
                             <ParagraphLarge>
-                                Maximo's patented thermal modification process changes the wood at the cellular level, dramatically enhancing its natural resilience—backed by a 20-year warranty.
+                                Maximo’s patented thermal modification process changes the wood at the cellular level, dramatically enhancing its natural resilience—backed by a 20-year warranty.
                             </ParagraphLarge>
                         </div>
                         <div className="flex flex-col gap-4 max-w-[338px]">
@@ -109,7 +109,7 @@ export default function Thermowood() {
                                 Lightweight & Easy to Install
                             </SubtitleSmall>
                             <ParagraphLarge>
-                                Maximo Thermo's lightweight nature makes it easier to handle and install, reducing labor time and effort.
+                                Maximo Thermo’s lightweight nature makes it easier to handle and install, reducing labor time and effort.
                             </ParagraphLarge>
                         </div>
                         <div className="flex flex-col gap-4 max-w-[338px]">

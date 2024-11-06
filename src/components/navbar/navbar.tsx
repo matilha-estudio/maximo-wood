@@ -317,13 +317,13 @@ export default function Navbar({
             {expandedSection && (
                 <div className="flex w-full max-w-screen-2xl px-[72px] h-full pb-9 gap-6 max-lg:hidden">
                     <Image
-                        src={itensMenuDesk[expandedSection]?.image}
+                        src={itensMenuDesk[expandedSection as keyof typeof itensMenuDesk]?.image}
                         alt="logo"
                         width={422}
                         height={318}
                     />
                     <div className="flex gap-6 h-full w-full">
-                        {itensMenuDesk[expandedSection]?.menu}
+                        {itensMenuDesk[expandedSection as keyof typeof itensMenuDesk]?.menu}
                     </div>
                 </div>
             )}

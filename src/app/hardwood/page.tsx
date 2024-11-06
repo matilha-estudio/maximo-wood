@@ -52,7 +52,7 @@ export default function Hardwood() {
                     </H5>
 
                     <SubtitleMediumNormal className="lg:text-center max-md:text-[16px] max-md:leading-7">
-                        Maximo Hardwoods aren't just any lumber; they are handpicked, architectural-grade boards that stand above the rest. Each piece is kiln-dried in chambers that precisely regulate moisture levels, ensuring it's perfectly suited for both indoor and outdoor use. Sustainable. Stable. Maximo.
+                        Maximo Hardwoods aren’t just any lumber; they are handpicked, architectural-grade boards that stand above the rest. Each piece is kiln-dried in chambers that precisely regulate moisture levels, ensuring it’s perfectly suited for both indoor and outdoor use. Sustainable. Stable. Maximo.
                     </SubtitleMediumNormal>
 
                     <Button>
@@ -71,7 +71,7 @@ export default function Hardwood() {
 
                     <div className="max-lg:flex max-lg:flex-col-reverse">
                       <ParagraphLarge className="max-w-[744px] max-lg:px-6 max-lg:py-14">
-                          Like you, we want our forests to stand for generations to come. That's why we use the most modern forest management techniques, harvesting only 3-5 aging trees from an area as large as a football field. Watch the video to see how Maximo is tirelessly working to preserve our forests and support the communities that depend on them every day.
+                          Like you, we want our forests to stand for generations to come. That’s why we use the most modern forest management techniques, harvesting only 3-5 aging trees from an area as large as a football field. Watch the video to see how Maximo is tirelessly working to preserve our forests and support the communities that depend on them every day.
                       </ParagraphLarge>
 
                       <video
@@ -180,7 +180,7 @@ export default function Hardwood() {
                             Certified Excellence & Sustainability
                         </SubtitleXL>
                         <ParagraphLarge>
-                            Every Maximo Hardwood board is crafted under the strictest quality and sustainability standards, and we take pride in holding some of the industry's most respected certifications.
+                            Every Maximo Hardwood board is crafted under the strictest quality and sustainability standards, and we take pride in holding some of the industry’s most respected certifications.
                         </ParagraphLarge>
                     </div>
                     <div className="flex gap-8 max-lg:hidden">

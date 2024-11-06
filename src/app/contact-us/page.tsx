@@ -21,7 +21,7 @@ export default function ContactUs() {
                         />
                     </div>
                     <H1 className="max-w-[638px] max-lg:mb-6">
-                      Let's Build Something Together
+                      Let’s Build Something Together
                     </H1>
 
                     <ParagraphLarge className="max-w-[638px]">
