@@ -31,7 +31,11 @@ export const HardWoodList: Product[] = [
             boardLengths: "3-22ft",
         },
         id: 1,
-        images: []
+        images: [
+          '/images/hardwood/Ipe/1x4 S4SE4E/1x4 ipe.webp',
+          '/images/hardwood/Ipe/1x4 S4SE4E/Maximo Hardwood Ipe 1x4 S4SE4E - 2.jpg',
+          '/images/hardwood/Ipe/1x4 S4SE4E/Maximo Hardwood Ipe 1x4 S4SE4E- 1.jpg',
+        ]
     },
     {
         group: "Ipe",
@@ -63,7 +67,11 @@ export const HardWoodList: Product[] = [
             boardLengths: "3-22ft",
         },
         id: 2,
-        images: []
+        images: [
+          '/images/hardwood/Ipe/5-4x4 S4SE4E/Maximo Hardwood Ipe 5-4X4 S4SE4E - 1.jpg',
+          '/images/hardwood/Ipe/5-4x4 S4SE4E/Maximo Hardwood Ipe 5-4X4 S4SE4E - 2.jpg',
+          '/images/hardwood/Ipe/5-4x4 S4SE4E/patina_hotel_279.JPG',
+        ]
     },
     {
         group: "Ipe",
@@ -95,7 +103,11 @@ export const HardWoodList: Product[] = [
             boardLengths: "3-22ft",
         },
         id: 3,
-        images: []
+        images: [
+          '/images/hardwood/Ipe/1x6 S4SE4E/1x6 ipe.webp',
+          '/images/hardwood/Ipe/1x6 S4SE4E/Maximo Hardwood Ipe 1x6 S4SE4E - 1.jpg',
+          '/images/hardwood/Ipe/1x6 S4SE4E/Maximo Hardwood Ipe 1x6 S4SE4E - 2.jpg',
+        ]
     },
     {
         group: "Ipe",
@@ -127,7 +139,11 @@ export const HardWoodList: Product[] = [
             boardLengths: "3-22ft",
         },
         id: 4,
-        images: []
+        images: [
+          '/images/hardwood/Ipe/5-4X6 S4SE4E/138f.webp',
+          '/images/hardwood/Ipe/5-4X6 S4SE4E/Maximo Hardwood Ipe 5-4X6 S4SE4E - 1.jpg',
+          '/images/hardwood/Ipe/5-4X6 S4SE4E/Maximo Hardwood Ipe 5-4X6 S4SE4E - 2.jpg',
+        ]
     },
     {
         group: "Ipe",
@@ -159,7 +175,11 @@ export const HardWoodList: Product[] = [
             boardLengths: "3-22ft",
         },
         id: 5,
-        images: []
+        images: [
+          '/images/hardwood/Ipe/1x8 S4SE4E/Maximo Hardwood Ipe 1x8 S4SE4E - 1.jpg',
+          '/images/hardwood/Ipe/1x8 S4SE4E/Maximo Hardwood Ipe 1x8 S4SE4E - 2.jpg',
+          '/images/hardwood/Ipe/1x8 S4SE4E/_DSC6073.jpg',
+        ]
     },
     {
         group: "Ipe",
@@ -191,7 +211,11 @@ export const HardWoodList: Product[] = [
             boardLengths: "3-22ft",
         },
         id: 6,
-        images: []
+        images: [
+          '/images/hardwood/Ipe/1x12 S4SE4E/1x12 ipe.webp',
+          '/images/hardwood/Ipe/1x12 S4SE4E/Maximo Hardwood Ipe 1x12 S4SE4E -1.jpg',
+          '/images/hardwood/Ipe/1x12 S4SE4E/Maximo Hardwood Ipe 1x12 S4SE4E -2.jpg',
+        ]
     },
     {
         group: "Ipe",
@@ -223,7 +247,11 @@ export const HardWoodList: Product[] = [
             boardLengths: "3-22ft",
         },
         id: 7,
-        images: []
+        images: [
+          '/images/hardwood/Ipe/2x2 S4SE4E/Maximo Hardwood Ipe 2x2 S4SE4E - 1.jpg',
+          '/images/hardwood/Ipe/2x2 S4SE4E/Maximo Hardwood Ipe 2x2 S4SE4E - 2.jpg',
+          '/images/hardwood/Ipe/2x2 S4SE4E/_DSC9994.jpg',
+        ]
     },
     {
         group: "Ipe",
@@ -255,7 +283,10 @@ export const HardWoodList: Product[] = [
             boardLengths: "3-22ft",
         },
         id: 8,
-        images: []
+        images: [
+          '/images/hardwood/Ipe/4x4 S4SE4E/Maximo Hardwood Ipe 4x4-1.jpg',
+          '/images/hardwood/Ipe/4x4 S4SE4E/Maximo Hardwood Ipe 4x4-2.jpg',
+        ]
     },
     {
         group: "Ipe",
@@ -287,7 +318,11 @@ export const HardWoodList: Product[] = [
             boardLengths: "3-22ft",
         },
         id: 9,
-        images: []
+        images: [
+          '/images/hardwood/Ipe/6x6 S4SE4E/187-2.jpg',
+          '/images/hardwood/Ipe/6x6 S4SE4E/Maximo Hardwood Ipe 6X6 S4SE4E - 1.jpg',
+          '/images/hardwood/Ipe/6x6 S4SE4E/Maximo Hardwood Ipe 6X6 S4SE4E - 2.jpg',
+        ]
     },
     {
         group: "Ipe",
@@ -415,7 +450,11 @@ export const HardWoodList: Product[] = [
             boardLengths: "3-22ft",
         },
         id: 13,
-        images: []
+        images: [
+          '/images/hardwood/Cumaru/Cumaru 8x8 S4SE4E/Maximo Hardwood Cumaru 8x8 S4SE4E -1.jpg',
+          '/images/hardwood/Cumaru/Cumaru 8x8 S4SE4E/Maximo Hardwood Cumaru 8x8 S4SE4E -2.jpg',
+          '/images/hardwood/Cumaru/Cumaru 8x8 S4SE4E/_DSC4206.jpg',
+        ]
     },
     {
         group: "Cumaru",
@@ -447,7 +486,11 @@ export const HardWoodList: Product[] = [
             boardLengths: "3-22ft",
         },
         id: 14,
-        images: []
+        images: [
+          '/images/hardwood/Cumaru/Cumaru 10x10 S4SE4E/Maximo Hardwood  Cumaru 10x10 S4SE4E -1.jpg',
+          '/images/hardwood/Cumaru/Cumaru 10x10 S4SE4E/Maximo Hardwood  Cumaru 10x10 S4SE4E -2.jpg',
+          '/images/hardwood/Cumaru/Cumaru 10x10 S4SE4E/_DSC0743-2.jpg',
+        ]
     },
     {
         group: "Cumaru",
@@ -479,7 +522,11 @@ export const HardWoodList: Product[] = [
             boardLengths: "3-22ft",
         },
         id: 15,
-        images: []
+        images: [
+          '/images/hardwood/Cumaru/Cumaru 12x12 S4SE4E/Maximo Hardwood Cumaru 12x12 S4SE4E -1.jpg',
+          '/images/hardwood/Cumaru/Cumaru 12x12 S4SE4E/Maximo Hardwood Cumaru 12x12 S4SE4E -2.jpg',
+          '/images/hardwood/Cumaru/Cumaru 12x12 S4SE4E/_DSC0237.jpg',
+        ]
     },
     {
         group: "Cumaru Deck tiles",
@@ -512,7 +559,10 @@ export const HardWoodList: Product[] = [
             boardLengths: "3-22ft",
         },
         id: 16,
-        images: []
+        images: [
+          '/images/hardwood/Garapa/Garapa 12x12 Deck Tiles S4SE4E/Maximo Hardwood GARAPA 12X12-1.jpg',
+          '/images/hardwood/Garapa/Garapa 12x12 Deck Tiles S4SE4E/Maximo Hardwood GARAPA 12X12-2.jpg',
+        ]
     },
     {
         group: "Cumaru Deck tiles",
@@ -546,7 +596,10 @@ export const HardWoodList: Product[] = [
             boardLengths: "3-22ft",
         },
         id: 17,
-        images: []
+        images: [
+          '/images/hardwood/Garapa/Garapa 24x24 Deck Tiles S4SE4E/Maximo Hardwood GARAPA 24X24-1.jpg',
+          '/images/hardwood/Garapa/Garapa 24x24 Deck Tiles S4SE4E/Maximo Hardwood GARAPA 24X24-2.jpg',
+        ]
     },
     {
         group: "Garapa",
@@ -578,7 +631,11 @@ export const HardWoodList: Product[] = [
             boardLengths: "3-22ft",
         },
         id: 18,
-        images: []
+        images: [
+          '/images/hardwood/Garapa/1x6 S4SE4E/garapa 1x6.webp',
+          '/images/hardwood/Garapa/1x6 S4SE4E/Maximo Hardwood Garapa 1x6 S4SE4E - 1.png',
+          '/images/hardwood/Garapa/1x6 S4SE4E/Maximo Hardwood Garapa 1x6 S4SE4E -2.jpg',
+        ]
     },
     {
         group: "Garapa",
@@ -610,7 +667,11 @@ export const HardWoodList: Product[] = [
             boardLengths: "3-22ft",
         },
         id: 19,
-        images: []
+        images: [
+          '/images/hardwood/Garapa/Garapa 5-4x6 S4SE4E/5.4x6 garapa.webp',
+          '/images/hardwood/Garapa/Garapa 5-4x6 S4SE4E/Maximo Hardwood Garapa 5-4x6 S4SE4E -1.jpg',
+          '/images/hardwood/Garapa/Garapa 5-4x6 S4SE4E/Maximo Hardwood Garapa 5-4x6 S4SE4E -2.jpg',
+        ]
     },
     {
         group: "Cumaru Deck tiles",
@@ -643,7 +704,10 @@ export const HardWoodList: Product[] = [
             boardLengths: "3-22ft",
         },
         id: 20,
-        images: []
+        images: [
+          '/images/hardwood/Cumaru/Cumaru Deck Tiles 12x12 S4SE4E/Maximo Hardwood Cumaru 12X12-1.jpg',
+          '/images/hardwood/Cumaru/Cumaru Deck Tiles 12x12 S4SE4E/Maximo Hardwood Cumaru 12X12-2.jpg',
+        ]
     },
     {
         group: "Garapa Deck tiles",
@@ -677,6 +741,9 @@ export const HardWoodList: Product[] = [
             boardLengths: "3-22ft",
         },
         id: 21,
-        images: []
+        images: [
+          '/images/hardwood/Cumaru/Cumaru Deck Tiles 24x24 S4SE4E/deck tile cumaru 1.webp',
+          '/images/hardwood/Cumaru/Cumaru Deck Tiles 24x24 S4SE4E/deck tile cumaru 2.webp',
+        ]
     },
 ];

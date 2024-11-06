@@ -36,8 +36,8 @@ export function ProductCard(props: IProductCard) {
 
     return (
         props.product ?
-            <div className="relative flex flex-col md:max-w-[412px] max-md:max-w-[295px] w-full gap-4">
-                <div className="relative group cursor-pointer w-full h-full md:max-w-[412px] max-md:max-w-[295px] md:max-h-[400px] max-md:max-h-[350px]" onClick={Redirect}>
+            <div className="relative flex flex-col md:max-w-[320px] xl:max-w-[412px] max-md:max-w-[295px] w-full gap-4">
+                <div className="relative group cursor-pointer w-full h-full md:max-w-[320px] xl:max-w-[412px] max-md:max-w-[295px] md:max-h-[400px] max-md:max-h-[350px]" onClick={Redirect}>
                     <div className="w-full h-full absolute group-hover:bg-neutral-1000/15 transition-colors" />
                     <div className="absolute flex flex-wrap gap-4 w-full p-4 top-0">
                         <TAG type="material" name={props.product?.tag?.material} />
@@ -47,8 +47,8 @@ export function ProductCard(props: IProductCard) {
                             ))
                         }
                     </div>
-                    <Image src={props.product.images[0]} alt="card" width={412} height={400} className="object-cover group-hover:hidden flex md:max-w-[412px] max-md:max-w-[295px] md:max-h-[400px] max-md:max-h-[350px]" />
-                    <Image src={props.product.images[1]} alt="card" width={412} height={400} className="object-cover hidden group-hover:flex md:max-w-[412px] max-md:max-w-[295px] md:max-h-[400px] max-md:max-h-[350px]" />
+                    <Image src={props.product.images[0]} alt="card" width={412} height={400} className="object-cover group-hover:hidden flex md:max-w-[320px] xl:max-w-[412px] max-md:max-w-[295px] md:max-h-[400px] max-md:max-h-[350px]" />
+                    <Image src={props.product.images[1]} alt="card" width={412} height={400} className="object-cover hidden group-hover:flex md:max-w-[320px] xl:max-w-[412px] max-md:max-w-[295px] md:max-h-[400px] max-md:max-h-[350px]" />
                 </div>
                 <div className="flex flex-col gap-2">
                     <SubtitleSmall>

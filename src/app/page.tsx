@@ -157,7 +157,7 @@ export default function Home() {
             </div>
 
           {/* Desktop */}
-          <div className="relative flex gap-8 items-center max-h-[189px] max-lg:hidden">
+          <div className="relative flex gap-8 items-center max-h-[189px] max-w-[100%] max-lg:hidden">
             {listLogos.map((item, index) => (
               <div key={index} className="flex items-center justify-center max-h-[189px] max-w-[189px] overflow-hidden">
                 <Image

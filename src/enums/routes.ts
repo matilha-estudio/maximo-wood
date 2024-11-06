@@ -7,4 +7,5 @@ export enum Routes {
     hardwood = '/hardwood',
     thermowood = '/thermowood',
     contactus = '/contact-us',
+    resources = '/resources',
 }

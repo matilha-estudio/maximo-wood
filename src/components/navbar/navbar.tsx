@@ -108,7 +108,7 @@ export default function Navbar({
           <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.allProjects)}>
             <SubtitleSmallMedium>Projects</SubtitleSmallMedium>
           </Button>
-          <Button variant="link" size="medium" className="justify-start p-0">
+          <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.resources)}>
             <SubtitleSmallMedium>Request Samples</SubtitleSmallMedium>
           </Button>
         </div>
@@ -118,16 +118,16 @@ export default function Navbar({
     const buttonsResources = () => {
       return (
         <div className="flex flex-col gap-4">
-          <Button variant="link" size="medium" className="justify-start p-0">
+          <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.resources)}>
             <SubtitleSmallMedium>Schedule a ceu</SubtitleSmallMedium>
           </Button>
-          <Button variant="link" size="medium" className="justify-start p-0">
+          <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.resources)}>
             <SubtitleSmallMedium>Resources for hardwood</SubtitleSmallMedium>
           </Button>
-          <Button variant="link" size="medium" className="justify-start p-0">
+          <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.resources)}>
             <SubtitleSmallMedium>Resources for thermo</SubtitleSmallMedium>
           </Button>
-          <Button variant="link" size="medium" className="justify-start p-0" >
+          <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.resources)}>
             <SubtitleSmallMedium>Request samples</SubtitleSmallMedium>
           </Button>
         </div>
