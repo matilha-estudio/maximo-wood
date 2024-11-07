@@ -1,0 +1,2 @@
+*.WebM filter=lfs diff=lfs merge=lfs -text
+public/medias/*.WebM filter=lfs diff=lfs merge=lfs -text

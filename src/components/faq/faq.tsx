@@ -12,7 +12,7 @@ export default function FAQAccordion({ Item, Content, Trigger }: IFAQAccordion) 
         <Accordion type="single" collapsible>
             <AccordionItem value={Item}>
                 <AccordionTrigger>
-                    <SubtitleSmall>
+                    <SubtitleSmall className="max-lg:text-start">
                         {Trigger}
                     </SubtitleSmall>
                 </AccordionTrigger>
