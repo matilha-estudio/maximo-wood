@@ -32,9 +32,9 @@ export const HardWoodList: Product[] = [
         },
         id: 1,
         images: [
-          '/images/hardwood/Ipe/1x4 S4SE4E/1x4 ipe.webp',
-          '/images/hardwood/Ipe/1x4 S4SE4E/Maximo Hardwood Ipe 1x4 S4SE4E - 2.jpg',
           '/images/hardwood/Ipe/1x4 S4SE4E/Maximo Hardwood Ipe 1x4 S4SE4E- 1.jpg',
+          '/images/hardwood/Ipe/1x4 S4SE4E/Maximo Hardwood Ipe 1x4 S4SE4E - 2.jpg',
+          '/images/hardwood/Ipe/1x4 S4SE4E/1x4 ipe.webp',
         ]
     },
     {
@@ -104,9 +104,9 @@ export const HardWoodList: Product[] = [
         },
         id: 3,
         images: [
-          '/images/hardwood/Ipe/1x6 S4SE4E/1x6 ipe.webp',
           '/images/hardwood/Ipe/1x6 S4SE4E/Maximo Hardwood Ipe 1x6 S4SE4E - 1.jpg',
           '/images/hardwood/Ipe/1x6 S4SE4E/Maximo Hardwood Ipe 1x6 S4SE4E - 2.jpg',
+          '/images/hardwood/Ipe/1x6 S4SE4E/1x6 ipe.webp',
         ]
     },
     {
@@ -140,9 +140,9 @@ export const HardWoodList: Product[] = [
         },
         id: 4,
         images: [
-          '/images/hardwood/Ipe/5-4X6 S4SE4E/138f.webp',
           '/images/hardwood/Ipe/5-4X6 S4SE4E/Maximo Hardwood Ipe 5-4X6 S4SE4E - 1.jpg',
           '/images/hardwood/Ipe/5-4X6 S4SE4E/Maximo Hardwood Ipe 5-4X6 S4SE4E - 2.jpg',
+          '/images/hardwood/Ipe/5-4X6 S4SE4E/138f.webp',
         ]
     },
     {
@@ -212,9 +212,9 @@ export const HardWoodList: Product[] = [
         },
         id: 6,
         images: [
-          '/images/hardwood/Ipe/1x12 S4SE4E/1x12 ipe.webp',
           '/images/hardwood/Ipe/1x12 S4SE4E/Maximo Hardwood Ipe 1x12 S4SE4E -1.jpg',
           '/images/hardwood/Ipe/1x12 S4SE4E/Maximo Hardwood Ipe 1x12 S4SE4E -2.jpg',
+          '/images/hardwood/Ipe/1x12 S4SE4E/1x12 ipe.webp',
         ]
     },
     {
@@ -319,9 +319,9 @@ export const HardWoodList: Product[] = [
         },
         id: 9,
         images: [
-          '/images/hardwood/Ipe/6x6 S4SE4E/187-2.jpg',
           '/images/hardwood/Ipe/6x6 S4SE4E/Maximo Hardwood Ipe 6X6 S4SE4E - 1.jpg',
           '/images/hardwood/Ipe/6x6 S4SE4E/Maximo Hardwood Ipe 6X6 S4SE4E - 2.jpg',
+          '/images/hardwood/Ipe/6x6 S4SE4E/187-2.jpg',
         ]
     },
     {
@@ -632,9 +632,9 @@ export const HardWoodList: Product[] = [
         },
         id: 18,
         images: [
-          '/images/hardwood/Garapa/1x6 S4SE4E/garapa 1x6.webp',
           '/images/hardwood/Garapa/1x6 S4SE4E/Maximo Hardwood Garapa 1x6 S4SE4E - 1.png',
           '/images/hardwood/Garapa/1x6 S4SE4E/Maximo Hardwood Garapa 1x6 S4SE4E -2.jpg',
+          '/images/hardwood/Garapa/1x6 S4SE4E/garapa 1x6.webp',
         ]
     },
     {
@@ -668,9 +668,9 @@ export const HardWoodList: Product[] = [
         },
         id: 19,
         images: [
-          '/images/hardwood/Garapa/Garapa 5-4x6 S4SE4E/5.4x6 garapa.webp',
           '/images/hardwood/Garapa/Garapa 5-4x6 S4SE4E/Maximo Hardwood Garapa 5-4x6 S4SE4E -1.jpg',
           '/images/hardwood/Garapa/Garapa 5-4x6 S4SE4E/Maximo Hardwood Garapa 5-4x6 S4SE4E -2.jpg',
+          '/images/hardwood/Garapa/Garapa 5-4x6 S4SE4E/5.4x6 garapa.webp',
         ]
     },
     {

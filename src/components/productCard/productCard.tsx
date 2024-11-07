@@ -47,8 +47,8 @@ export function ProductCard(props: IProductCard) {
                             ))
                         }
                     </div>
-                    <Image src={props.product.images[0]} alt="card" width={412} height={400} className="object-cover group-hover:hidden flex md:max-w-[320px] xl:max-w-[412px] max-md:max-w-[295px] md:max-h-[400px] max-md:max-h-[350px]" />
-                    <Image src={props.product.images[1]} alt="card" width={412} height={400} className="object-cover hidden group-hover:flex md:max-w-[320px] xl:max-w-[412px] max-md:max-w-[295px] md:max-h-[400px] max-md:max-h-[350px]" />
+                    <Image src={props.product.images[0]} alt="card" width={412} height={400} className="object-cover group-hover:hidden flex md:max-w-[320px] xl:max-w-[412px] max-md:max-w-[295px] md:max-h-[400px] max-md:max-h-[350px] max-lg:h-[250px] lg:h-[400px]" />
+                    <Image src={props.product.images[1]} alt="card" width={412} height={400} className="object-cover hidden group-hover:flex md:max-w-[320px] xl:max-w-[412px] max-md:max-w-[295px] md:max-h-[400px] max-md:max-h-[350px] max-lg:h-[250px] lg:h-[400px]" />
                 </div>
                 <div className="flex flex-col gap-2">
                     <SubtitleSmall>
