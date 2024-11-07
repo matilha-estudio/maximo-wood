@@ -180,6 +180,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=> window.open('https://drive.google.com/file/d/1iYX-bq6HoSywKWscBTOciL_swe7kR7Oj/view?usp=sharing')}
             >
               Download file
             </Button>
@@ -193,6 +194,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1JxvwXr1w24_fNGffBCGzUObqODtCzHM7/view?usp=sharing')}
             >
               Download file
             </Button>
@@ -206,6 +208,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=> window.open('https://drive.google.com/file/d/1MQovYSE0mBh70kpCaHtwMWW3QN8SKVM2/view?usp=sharing')}
             >
               Download file
             </Button>
@@ -218,7 +221,8 @@ const HardWoodData = [
           <div>
             <Button 
               variant="secondary" 
-              size="medium" 
+              size="medium"
+              onClick={()=>window.open('https://drive.google.com/file/d/1rYMhzUa-zmkbV4Z9u8FDVobiJfKSx8dA/view?usp=sharing')}
             >
               Download file
             </Button>
@@ -232,6 +236,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1IYTc7mdELpLTqIqAgj9UwSVjsohn6xCJ/view?usp=sharing')}
             >
               Download file
             </Button>
@@ -253,6 +258,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1G5C9f6PoZ6A6fvC5ient24vS71M54AhY/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -266,6 +272,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1zu__EOrEay5CR6DdT7FzLbkUk40mJFb9/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -279,6 +286,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1UBruwAehHCkwrx4N2bdYW0Ix2GYx6zfy/view?usp=sharing')}
             >
               Download file
             </Button>
@@ -292,6 +300,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1KOs8WDBTujTzMiUpBfVGsn6KLPNLZ5rh/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -305,6 +314,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1oD8eoS0c10jigHlQX8I0B0a16vHS-Nop/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -318,6 +328,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1UBruwAehHCkwrx4N2bdYW0Ix2GYx6zfy/view?usp=sharing')}
             >
               Download file
             </Button>
@@ -331,6 +342,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1AYX5uQ6M5z2tegFNXjKRpRbiMdLPzD6z/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -344,6 +356,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1IWNpLxutCgNHipTFi6kQkBmTWZ6vCoya/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -357,6 +370,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/13arXKvcKewzHpM5IS8lBwZUa17kkG6-W/view?usp=sharing')}
             >
               Download file
             </Button>
@@ -370,6 +384,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=> window.open('https://drive.google.com/file/d/1orDTGs-B-C0kqIm-r7OUVijqofTNkyTL/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -383,6 +398,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=> window.open('https://drive.google.com/file/d/1pN8mqKIHPH22jqG54YVqRLI2xsIjvYyu/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -396,6 +412,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=> window.open('https://drive.google.com/file/d/1G5C9f6PoZ6A6fvC5ient24vS71M54AhY/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -409,6 +426,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=> window.open('https://drive.google.com/file/d/1zu__EOrEay5CR6DdT7FzLbkUk40mJFb9/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -421,7 +439,8 @@ const HardWoodData = [
           <div>
             <Button 
               variant="secondary" 
-              size="medium" 
+              size="medium"
+              onClick={()=> window.open('https://drive.google.com/file/d/1JaqRTQBDnaZA4N3MFg1QFdZMguoTuaXa/view?usp=drive_link')} 
             >
               Download file
             </Button>
@@ -435,6 +454,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=> window.open('https://drive.google.com/file/d/1wkSuT7MDGgJdhFw5J8hEckW2cas6G4CH/view?usp=drive_link')} 
             >
               Download file
             </Button>
@@ -448,6 +468,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=> window.open('https://drive.google.com/file/d/1AYX5uQ6M5z2tegFNXjKRpRbiMdLPzD6z/view?usp=drive_link')} 
             >
               Download file
             </Button>
@@ -461,6 +482,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=> window.open('https://drive.google.com/file/d/1Bmpv5BjUOnb2qn_PjxlPBKLhg7VeKZEy/view?usp=drive_link')} 
             >
               Download file
             </Button>
@@ -474,6 +496,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=> window.open('https://drive.google.com/file/d/1LzMANlzWiTWHON2soliMDcQc_eY3N8zn/view?usp=drive_link')} 
             >
               Download file
             </Button>
@@ -495,6 +518,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=> window.open('https://drive.google.com/file/d/1GnEuyejJLnvjgd3jcKYcsq1XUK2qVPVa/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -508,6 +532,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=> window.open('https://drive.google.com/file/d/1eQ4U-cuR2GwPzlRoCghWKZOoQq_ZyHcf/view?usp=sharing')}
             >
               Download file
             </Button>
@@ -521,6 +546,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1eQ4U-cuR2GwPzlRoCghWKZOoQq_ZyHcf/view?usp=sharing')}
             >
               Download file
             </Button>
@@ -534,6 +560,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1sCmMwaAyHsvUTXn3UFwKmS-Z-noPVVGB/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -555,6 +582,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1RpObQ4Cx_IDy-kEBprrV5IVutBU4oBcO/view?usp=sharing')}
             >
               Download file
             </Button>
@@ -568,6 +596,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1MQQlicNUhHh4KkolJhf5PcMw8llFlwrT/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -581,6 +610,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1M_0nhbxRBUvqT_Ht7zb0CZBuVMZVqr9r/view?usp=sharing')}
             >
               Download file
             </Button>
@@ -594,6 +624,7 @@ const HardWoodData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1nZEHR3RhtaWiWVlgI1_gRxpT_l5_Gpab/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -617,7 +648,8 @@ const ThermoData = [
           <div>
             <Button 
               variant="secondary" 
-              size="medium" 
+              size="medium"
+              onClick={()=>window.open('https://drive.google.com/file/d/1nhtK2ZD6LEV85oCaU9NUPO_Si3l8ipJw/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -631,6 +663,7 @@ const ThermoData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1vlYf9pnwPRiZOGpfOH82RAOOguIwNqtR/view?usp=sharing')}
             >
               Download file
             </Button>
@@ -644,6 +677,7 @@ const ThermoData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1XNMztPTWdLjnbUROaVLWlzQBm0aFgwvo/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -657,6 +691,7 @@ const ThermoData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1_TIY1LQ_p5LcDZ2fsZdH6pprjh45vK5w/view?usp=sharing')}
             >
               Download file
             </Button>
@@ -670,6 +705,7 @@ const ThermoData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1_B1D419pg2Xo78hYLt_xBYf5KHd-3cX7/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -683,6 +719,7 @@ const ThermoData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1CT4Zi-iNjC4acUzpK8iTLgXD9q4v6LQ-/view?usp=sharing')}
             >
               Download file
             </Button>
@@ -696,6 +733,7 @@ const ThermoData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1vgvRLyY3Po_xwuasWDn5BVJAjjmh5OL2/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -709,6 +747,7 @@ const ThermoData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1r3SZWWIwR3QikE7QFk63ph4iGISKm4X2/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -722,6 +761,7 @@ const ThermoData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/12YTWeJa9Ahnfm3mO8mQLnSIVnpIoJrpf/view?usp=sharing')}
             >
               Download file
             </Button>
@@ -735,6 +775,7 @@ const ThermoData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1bF3cvk58D7wm9eKOvYvCkDvX6LjvBUJW/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -756,6 +797,7 @@ const ThermoData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/1CZYZ_XKiqsVyw0CT14jcnvUUN5Wrc9w0/view?usp=drive_link')}
             >
               Download file
             </Button>
@@ -769,6 +811,7 @@ const ThermoData = [
             <Button 
               variant="secondary" 
               size="medium" 
+              onClick={()=>window.open('https://drive.google.com/file/d/16BWt0EarnAw3OyUge5195uijPjik3Ank/view?usp=drive_link')}
             >
               Download file
             </Button>

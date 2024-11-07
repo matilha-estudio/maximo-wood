@@ -79,10 +79,10 @@ export default function Navbar({
     const buttonsByApp = () => {
       return (
         <div className="flex flex-col gap-4">
-          <Button variant="link" size="medium" className="justify-start p-0">
+          <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.allProducts)}>
             <SubtitleSmallMedium>Siding & Cladding</SubtitleSmallMedium>
           </Button>
-          <Button variant="link" size="medium" className="justify-start p-0">
+          <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.allProducts)}>
             <SubtitleSmallMedium>Decking</SubtitleSmallMedium>
           </Button>
         </div>
@@ -92,10 +92,10 @@ export default function Navbar({
     const buttonsByCollection = () => {
       return (
         <div className="flex flex-col gap-4">
-          <Button variant="link" size="medium" className="justify-start p-0">
+          <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.allProducts)}>
               <SubtitleSmallMedium>Walls & Ceilings</SubtitleSmallMedium>
           </Button>
-          <Button variant="link" size="medium" className="justify-start p-0">
+          <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.allProducts)}>
               <SubtitleSmallMedium>Narrow</SubtitleSmallMedium>
           </Button>
         </div>

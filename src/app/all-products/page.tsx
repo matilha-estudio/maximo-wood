@@ -1,18 +1,104 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client'
-import { Dropdown } from "@/components/dropdown/dropdown";
 import { Footer } from "@/components/footer/footer";
+import Pagination from "@/components/pagination/pagination";
 import { ProductCard } from "@/components/productCard/productCard";
 import ProductSamples from "@/components/productSamples";
+import { Select } from "@/components/select/select";
 import { H1, ParagraphLarge } from "@/components/text/Heading";
 import { HardWoodList } from "@/products/HardWoodList";
 import { ThermoWoodProducts } from "@/products/ThermowoodList";
+import { Product } from "@/products/types";
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+
+interface IFilters {
+  TYPEOFWOOD: string | null,
+  APPLICATION: string | null,
+  COLLECTION: string | null 
+}
+
+const itemsPerPage = 9;
+
+const itensTypeWood = [
+  "Thermowood", 
+  "Hardwood", 
+  "All Materials"
+];
+
+const itensApplication = [
+  "Siding & Cladding", 
+  "Decking", 
+  "Deck Tile", 
+  "Posts and Beams", 
+  "Facades", 
+  "Fencing", 
+  "Pergolas", 
+  "Trimming", 
+  "All application"
+];
+
+const itensCollection = [
+  "Narrow decking", 
+  "Standard decking", 
+  "Narrow walls & ceillings", 
+  "Standard walls & ceillings", 
+  "Ultra Wide walls & ceillings", 
+  "All collections"
+];
+
+
 
 export default function Products() {
     const LIST_PRODUCTS = HardWoodList.concat(ThermoWoodProducts);
     const { back } = useRouter();
+    const [currentPage, setCurrentPage] = useState(1);
+    const [listPage, setListPage] = useState<Product[]>([]);
+    const [filters, setFilters] = useState<IFilters>({ 
+      TYPEOFWOOD: null, APPLICATION: null, COLLECTION: null
+    });
+
+    useEffect(()=>{
+      pagination(1);
+    },[])
+
+    
+    const pagination = (pageNumber: number, isMobile = false) => {
+      const minPage = pageNumber;
+      const maxPage = Math.ceil(LIST_PRODUCTS?.length / itemsPerPage)
+      
+      if(minPage >= 1 && maxPage >= pageNumber){
+        const indexOfLastItem = pageNumber * itemsPerPage;
+        const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+        const newList = LIST_PRODUCTS?.slice(indexOfFirstItem, indexOfLastItem);
+        if(isMobile){
+          setListPage(current => ([...current, ...newList]));
+        }else{
+          setListPage(newList);
+        }
+        setCurrentPage(pageNumber);
+      }
+    }
+
+    const onChangeFilter = (value: string, label: string) => {
+      const labelTrim = label.replaceAll(' ', '').toUpperCase();
+      const newFilters = {...filters, [labelTrim]: value.replaceAll(' ', '').toUpperCase()};
+      console.log(newFilters)
+      const newList = LIST_PRODUCTS.filter(item => 
+        ((newFilters.TYPEOFWOOD == "ALLMATERIALS" && item.tag.material) ||
+        item.tag.material.replaceAll(' ', '').toUpperCase() === newFilters.TYPEOFWOOD) ||
+        ((newFilters.COLLECTION == "ALLCOLLECTIONS" && item.tag.collection) ||
+        item.tag.collection.replaceAll(' ', '').toUpperCase() === newFilters.COLLECTION)
+      )
+      console.log(newList);
+      
+      setFilters(newFilters);
+      // list_products.tag.material === value
+      console.log(value)
+      console.log(LIST_PRODUCTS)
+    }
 
     return (
         <div className="relative text-brand-graphite">
@@ -47,34 +133,39 @@ export default function Products() {
                     </H1>
 
                     <ParagraphLarge className="max-w-[638px]">
-                        Whether you have questions about our products or are interested in partnering with us, we're here to connect. Simply fill out the form below, and we'll get back to you shortly.
+                        Whether you have questions about our products or are interested in partnering with us, we’re here to connect. Simply fill out the form below, and we’ll get back to you shortly.
                     </ParagraphLarge>
                 </div>
             </section>
 
-            {/* Só comecei */}
-            <div className="flex max-w-screen-2xl lg:px-[72px] w-full gap-10 max-lg:px-6">
-                {/* TODO: FILTERS */}
-                <Dropdown />
-                <Dropdown />
-                <Dropdown />
-            </div>
+            {/* 
+              <div className="flex max-w-screen-2xl lg:px-[72px] w-full gap-10 max-lg:px-6">
+                  <Select label="Type of wood" onChange={onChangeFilter} lista={itensTypeWood}/>
+                  <Select label="Application" onChange={onChangeFilter} lista={itensApplication}/>
+                  <Select label="Collection" onChange={onChangeFilter} lista={itensCollection} />
+              </div>
+            
+            */}
 
             <section className="flex bg-white w-full justify-center">
                 <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[70px] max-lg:px-6 max-lg:py-14">
 
-                    <div className="flex flex-wrap gap-8 w-full justify-center">
+                    <div className="flex flex-wrap gap-8 w-full justify-center mb-2">
                         {
-                            LIST_PRODUCTS.map((product, index) => (
+                            listPage.map((product, index) => (
                                 <ProductCard key={index} product={product} />
                             ))
                         }
                     </div>
+                    <Pagination 
+                      itemsPerPage={itemsPerPage}
+                      totalItems={LIST_PRODUCTS?.length || 0}
+                      currentPage={currentPage}
+                      paginate={pagination} 
+                      totalPages={0}            
+                    />
                 </div>
             </section>
-
-
-            {/* TODO: PAGINATION */}
 
             <ProductSamples />
 
