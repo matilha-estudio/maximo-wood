@@ -60,6 +60,7 @@ export default function Navbar({
 
     const onClickRedirect = (page = Routes.home) => {
       setShowMenu(false);
+      setExpandedSection(null);
       push(page)
     }
 
@@ -67,10 +68,10 @@ export default function Navbar({
       return (
       <div className="flex flex-col gap-4">
           <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.hardwood)}>
-              <SubtitleSmallMedium>HardWood</SubtitleSmallMedium>
+              <SubtitleSmallMedium>Hardwood</SubtitleSmallMedium>
           </Button>
           <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.thermowood)}>
-              <SubtitleSmallMedium>TermoWood</SubtitleSmallMedium>
+              <SubtitleSmallMedium>Termo</SubtitleSmallMedium>
           </Button>
       </div>
       )
@@ -92,11 +93,26 @@ export default function Navbar({
     const buttonsByCollection = () => {
       return (
         <div className="flex flex-col gap-4">
-          <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.allProducts)}>
-              <SubtitleSmallMedium>Walls & Ceilings</SubtitleSmallMedium>
-          </Button>
+          <div className="justify-start p-0 border-b border-[#F0F0F0]">
+            <SubtitleSmallMedium className="text-[#666]">Walls & Ceilings</SubtitleSmallMedium>
+          </div>
           <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.allProducts)}>
               <SubtitleSmallMedium>Narrow</SubtitleSmallMedium>
+          </Button>
+          <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.allProducts)}>
+              <SubtitleSmallMedium>Standard</SubtitleSmallMedium>
+          </Button>
+          <div className="justify-start p-0 border-b border-[#F0F0F0]">
+            <SubtitleSmallMedium className="text-[#666]">Decking</SubtitleSmallMedium>
+          </div>
+          <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.allProducts)}>
+              <SubtitleSmallMedium>Narrow</SubtitleSmallMedium>
+          </Button>
+          <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.allProducts)}>
+              <SubtitleSmallMedium>Standard</SubtitleSmallMedium>
+          </Button>
+          <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.allProducts)}>
+              <SubtitleSmallMedium>Ultra Wide</SubtitleSmallMedium>
           </Button>
         </div>
       )
@@ -191,15 +207,15 @@ export default function Navbar({
       products: {
         image: '/images/menu/products.jpeg',
         menu: <>
-        <div className="flex flex-col h-full border-l gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
+        <div className="flex flex-col h-full border-l gap-6 border-[#F0F0F0] w-full max-w-[224px] pl-[18px] pb-4">
             <SubtitleSmallBold>By Material</SubtitleSmallBold>
             {buttonsByMaterial()}
         </div>
-        <div className="flex flex-col h-full border-l gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
+        <div className="flex flex-col h-full border-l gap-6 border-[#F0F0F0] w-full max-w-[224px] pl-[18px] pb-4">
             <SubtitleSmallBold>By Application</SubtitleSmallBold>
             {buttonsByApp()}
         </div>
-        <div className="flex flex-col h-full border-l gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
+        <div className="flex flex-col h-full border-l gap-6 border-[#F0F0F0] w-full max-w-[224px] pl-[18px] pb-4">
             <SubtitleSmallBold>By Collection</SubtitleSmallBold>
             {buttonsByCollection()}
         </div>
@@ -208,7 +224,7 @@ export default function Navbar({
       inspiration: {
         image: '/images/menu/inspiration.jpeg',
         menu: <>
-        <div className="flex flex-col h-full border-l gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
+        <div className="flex flex-col h-full border-l gap-6 border-[#F0F0F0] w-full max-w-[224px] pl-[18px] pb-4">
           {buttonsInspiration()}
         </div>
       </>
@@ -216,7 +232,7 @@ export default function Navbar({
       resources: {
         image: '/images/menu/resources.jpeg',
         menu: <>
-        <div className="flex flex-col h-full border-l gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
+        <div className="flex flex-col h-full border-l gap-6 border-[#F0F0F0] w-full max-w-[224px] pl-[18px] pb-4">
           {buttonsResources()}
         </div>
       </>
@@ -224,7 +240,7 @@ export default function Navbar({
       'where-to-buy': {
         image: '/images/menu/wheretoby.jpeg',
         menu: <>
-        <div className="flex flex-col h-full border-l gap-6 border-neutral-1000 w-full max-w-[224px] pl-[18px] pb-4">
+        <div className="flex flex-col h-full border-l gap-6 border-[#F0F0F0] w-full max-w-[224px] pl-[18px] pb-4">
           {buttonsWhereToBy()}
         </div>
       </>
@@ -232,63 +248,65 @@ export default function Navbar({
     }
 
     return (<>
-        <nav className={cn(`flex ${showMenu && 'h-screen'} flex-col justify-center items-center bg-white sticky top-0 gap-9 z-10`)}>
+        <nav className={cn(`flex ${showMenu && 'h-screen'} flex-col justify-center items-center bg-white sticky top-0 gap-9 z-10 ${!expandedSection && "border-neutral-1000 border-b" }`)}>
             {/* principal area */}
-            <div className={cn("relative flex justify-between px-6 lg:px-[72px] py-8 w-full max-w-screen-2xl border-neutral-1000 border-b")}>
-                <div className="relative flex items-center">
-                    <a href={Routes.home}>
-                        {/* Logo preto (inicial) */}
-                        <Image
-                            src={"/logos/MAXIMO_NO_TAGLINE_LOGO_BLACK.svg"}
-                            alt="logo"
-                            width={199}
-                            height={36.85}
-                            className={cn(
-                                "object-contain transition-opacity duration-300 ease-in-out",
-                                isScrolled ? "opacity-0" : "opacity-100"
-                            )}
-                        />
+            <div className={cn(`relative flex justify-center px-6 lg:px-[72px] pt-8 w-full ${expandedSection && "pb-8 border-neutral-1000 border-b" }`)}>
+                <div className="relative flex w-full justify-between max-w-screen-2xl">
+                  <div className="relative flex items-center">
+                      <a href={Routes.home}>
+                          {/* Logo preto (inicial) */}
+                          <Image
+                              src={"/logos/MAXIMO_NO_TAGLINE_LOGO_BLACK.svg"}
+                              alt="logo"
+                              width={199}
+                              height={36.85}
+                              className={cn(
+                                  "object-contain transition-opacity duration-300 ease-in-out",
+                                  isScrolled ? "opacity-0" : "opacity-100"
+                              )}
+                          />
 
-                        {/* Logo amarelo (scroll) */}
-                        <Image
-                            src={"/logos/MAXIMO_MW_LOGO_YELLOW.svg"}
-                            alt="logo"
-                            width={50}
-                            height={56}
-                            className={cn(
-                                "object-contain absolute top-0 left-0 transition-opacity duration-300 ease-in-out",
-                                isScrolled ? "opacity-100" : "opacity-0"
-                            )}
-                        />
-                    </a>
-                </div>
-                <div className="max-lg:hidden flex items-center justify-center lg:gap-0 xl:gap-10 ">
-                    <div className="flex items-center justify-center lg:gap-0 xl:gap-4">
-                        <Button variant="link" size="medium" className="gap-1" onClick={() => toggleSection('products')}>
-                            Products
-                            <ChevronDown />
-                        </Button>
-                        <Button variant="link" size="medium" className="gap-1" onClick={() => toggleSection('inspiration')}>
-                            Inspiration
-                            <ChevronDown />
-                        </Button>
-                        <Button variant="link" size="medium" className="gap-1" onClick={() => toggleSection('resources')}>
-                            Resources
-                            <ChevronDown />
-                        </Button>
-                        <Button variant="link" size="medium" className="gap-1" onClick={() => toggleSection('where-to-buy')}>
-                            Where to Buy
-                            <ChevronDown />
-                        </Button>
-                    </div>
-                    <Button variant="default" size="default" onClick={()=>onClickRedirect(Routes.becomeADealer)}>
-                      Become a dealer
+                          {/* Logo amarelo (scroll) */}
+                          <Image
+                              src={"/logos/MAXIMO_MW_LOGO_YELLOW.svg"}
+                              alt="logo"
+                              width={50}
+                              height={56}
+                              className={cn(
+                                  "object-contain absolute top-0 left-0 transition-opacity duration-300 ease-in-out",
+                                  isScrolled ? "opacity-100" : "opacity-0"
+                              )}
+                          />
+                      </a>
+                  </div>
+                  <div className="max-lg:hidden flex items-center justify-center lg:gap-0 xl:gap-10 ">
+                      <div className="flex items-center justify-center lg:gap-0 xl:gap-4">
+                          <Button variant="link" size="medium" className="gap-1" onClick={() => toggleSection('products')}>
+                              Products
+                              <ChevronDown />
+                          </Button>
+                          <Button variant="link" size="medium" className="gap-1" onClick={() => toggleSection('inspiration')}>
+                              Inspiration
+                              <ChevronDown />
+                          </Button>
+                          <Button variant="link" size="medium" className="gap-1" onClick={() => toggleSection('resources')}>
+                              Resources
+                              <ChevronDown />
+                          </Button>
+                          <Button variant="link" size="medium" className="gap-1" onClick={() => toggleSection('where-to-buy')}>
+                              Where to Buy
+                              <ChevronDown />
+                          </Button>
+                      </div>
+                      <Button variant="default" size="default" onClick={()=>onClickRedirect(Routes.becomeADealer)}>
+                        Become a dealer
+                      </Button>
+                  </div>
+                  <div className="lg:hidden">
+                    <Button variant="default" size="medium" onClick={()=>setShowMenu(!showMenu)}>
+                      {showMenu ? <X /> : <Menu /> }
                     </Button>
-                </div>
-                <div className="lg:hidden">
-                  <Button variant="default" size="medium" onClick={()=>setShowMenu(!showMenu)}>
-                    {showMenu ? <X /> : <Menu /> }
-                  </Button>
+                  </div>
                 </div>
             </div>
 
@@ -314,19 +332,27 @@ export default function Navbar({
             }
 
             {/* collapsible area */}
-            {expandedSection && (
-                <div className="flex w-full max-w-screen-2xl px-[72px] h-full pb-9 gap-6 max-lg:hidden">
-                    <Image
-                        src={itensMenuDesk[expandedSection as keyof typeof itensMenuDesk]?.image}
-                        alt="logo"
-                        width={422}
-                        height={318}
-                    />
-                    <div className="flex gap-6 h-full w-full">
-                        {itensMenuDesk[expandedSection as keyof typeof itensMenuDesk]?.menu}
-                    </div>
-                </div>
-            )}
+            <div
+              className={`flex w-full justify-center transition-all duration-500 ease-in-out overflow-hidden ${
+                expandedSection ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+              }`}
+              style={{ transitionProperty: 'max-height, opacity' }}
+            >
+              {expandedSection && (
+                  <div className="flex w-full max-w-screen-2xl px-[72px] h-full pb-9 gap-6 max-lg:hidden">
+                      <Image
+                          src={itensMenuDesk[expandedSection as keyof typeof itensMenuDesk]?.image}
+                          alt="logo"
+                          width={422}
+                          height={318}
+                          className="h-[318px] w-[422px]"
+                      />
+                      <div className="flex gap-6 h-full w-full">
+                          {itensMenuDesk[expandedSection as keyof typeof itensMenuDesk]?.menu}
+                      </div>
+                  </div>
+              )}
+            </div>
         </nav>
         {!showMenu && children}
     </>);

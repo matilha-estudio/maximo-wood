@@ -48,7 +48,7 @@ export default function Resources() {
               </div>
             </section>
 
-            <section className="flex bg-white w-full">
+            <section className="flex justify-center bg-white w-full">
               <div className="flex flex-col gap-14 max-w-screen-2xl lg:px-[72px] lg:py-[80px] max-lg:px-6 max-lg:py-14 w-full">
                 <H4>
                   Hardwood
@@ -64,7 +64,7 @@ export default function Resources() {
               </div>
             </section>
 
-            <section className="flex bg-white w-full">
+            <section className="flex justify-center bg-white w-full">
               <div className="flex flex-col gap-14 max-w-screen-2xl lg:px-[72px] lg:py-[80px] max-lg:px-6 max-lg:py-14 w-full">
                 <H4>
                   Thermo

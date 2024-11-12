@@ -133,7 +133,7 @@ export default function Products() {
                     </H1>
 
                     <ParagraphLarge className="max-w-[638px]">
-                        Whether you have questions about our products or are interested in partnering with us, we’re here to connect. Simply fill out the form below, and we’ll get back to you shortly.
+                        Explore our collections with peace of mind, knowing every Maximo board is sustainably sourced and chemical-free. Enhance your spaces—indoors and out—without harming your home or the planet. This is wood elevated to the max.
                     </ParagraphLarge>
                 </div>
             </section>
@@ -150,7 +150,7 @@ export default function Products() {
             <section className="flex bg-white w-full justify-center">
                 <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[70px] max-lg:px-6 max-lg:py-14">
 
-                    <div className="flex flex-wrap gap-8 w-full justify-center mb-2">
+                    <div className="flex flex-wrap gap-8 w-full justify-center max-lg:justify-start mb-2">
                         {
                             listPage.map((product, index) => (
                                 <ProductCard key={index} product={product} />

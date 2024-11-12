@@ -38,8 +38,8 @@ export function ProductCard(props: IProductCard) {
         props.product ?
             <div className="relative flex flex-col md:max-w-[320px] xl:max-w-[412px] max-md:max-w-[295px] w-full gap-4">
                 <div className="relative group cursor-pointer w-full h-full md:max-w-[320px] xl:max-w-[412px] max-md:max-w-[295px] md:max-h-[400px] max-md:max-h-[350px]" onClick={Redirect}>
-                    <div className="w-full h-full absolute group-hover:bg-neutral-1000/15 transition-colors" />
-                    <div className="absolute flex flex-wrap gap-4 w-full p-4 top-0">
+                    <div className="w-full h-full absolute" />
+                    <div className="absolute flex flex-wrap gap-2 w-full p-4 top-0">
                         <TAG type="material" name={props.product?.tag?.material} />
                         {
                             props.product?.tag?.application && props.product?.tag?.application?.map((application, index) => (

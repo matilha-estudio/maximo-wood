@@ -34,7 +34,7 @@ export default function AllProjects() {
             </section>
 
             <section className="flex bg-white w-full justify-center">
-                <div className="flex flex-col max-w-screen-2xl pt-[56px] max-lg:pt-0 w-full text-brand-graphite">
+                <div className="flex flex-col pt-[56px] max-lg:pt-0 w-full text-brand-graphite">
                     {
                         ProjectsList.map((item, index) => (
                             <ProjectsCarousel
@@ -58,12 +58,13 @@ export default function AllProjects() {
                         <H2 className="text-brand-graphite uppercase max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold ">
                             Our Products
                         </H2>
-
-                        <ButtonYellowLine title="All products" href={Routes.allProducts} />
+                        <div className="max-lg:hidden">
+                          <ButtonYellowLine title="All products" href={Routes.allProducts} />
+                        </div>
 
                     </div>
 
-                    <div className="flex gap-8 w-full max-lg:flex-col max-lg:items-center">
+                    <div className="flex gap-8 w-full max-lg:flex-col max-lg:items-start">
                         {
                             LIST_PRODUCTS.slice(0, 3).map((product, index) => (
                                 <ProductCard key={index} product={product} />

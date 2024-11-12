@@ -15,6 +15,11 @@ export function ModalInspirationCarousel({ trigger, list }: ModalInspirationCaro
         <Dialog>
             <DialogTrigger className="w-full h-full">{trigger}</DialogTrigger>
             <DialogContent className="bg-transparent border-none w-full h-full max-h-[644px] max-w-[1298px]">
+                <div className="w-full flex justify-end">
+                  <DialogClose>
+                    <X className="relative carousel-previous text-white" />
+                  </DialogClose>
+                </div>
                 <div className="flex flex-col gap-10">
                     <Carousel className="flex flex-col max-lg:flex-col-reverse justify-between gap-10">
                         <CarouselContent>
@@ -33,9 +38,6 @@ export function ModalInspirationCarousel({ trigger, list }: ModalInspirationCaro
                         </CarouselContent>
                         <div className="flex">
                             <div className="flex w-full justify-end items-start lg:pr-9">
-                                <DialogClose className="lg:hidden">
-                                  <X className="relative carousel-previous text-white" />
-                                </DialogClose>
                                 <CarouselPrevious className="max-lg:hidden relative carousel-previous text-white" />
                                 <CarouselNext className="max-lg:hidden relative -ml-20 carousel-next text-white" />
                             </div>

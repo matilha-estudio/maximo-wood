@@ -5,7 +5,7 @@ export enum Routes {
     allProjects = '/all-projects',
     productDetails = '/product-details',
     hardwood = '/hardwood',
-    thermowood = '/thermowood',
+    thermowood = '/thermo',
     contactus = '/contact-us',
     resources = '/resources',
 }

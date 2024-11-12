@@ -62,8 +62,8 @@ export default function Thermowood() {
                 </div>
             </section>
 
-            <section className="flex bg-white w-full justify-center">
-                <div className="flex flex-col max-w-screen-2xl lg:px-[72px] lg:py-[120px] w-full gap-10 border-t max-lg:border-b border-neutral-1000">
+            <section className="flex bg-white w-full justify-center border-t border-neutral-1000">
+                <div className="flex flex-col max-w-screen-2xl lg:px-[72px] lg:py-[120px] w-full gap-10  max-lg:border-b ">
                     <H2 className="max-w-[573px] max-lg:px-6 max-lg:pb-6 max-lg:pt-14">
                         How Maximo Thermo is made
                     </H2>
@@ -132,8 +132,8 @@ export default function Thermowood() {
                 </div>
             </section>
 
-            <section className="flex bg-white w-full justify-center">
-                <div className="flex flex-col justify-center max-w-screen-2xl border-t border-neutral-1000 w-full md:py-[120px] md:px-[72px] gap-12 max-lg:px-6 max-lg:py-14">
+            <section className="flex bg-white w-full justify-center border-t border-neutral-1000">
+                <div className="flex flex-col justify-center max-w-screen-2xl  w-full md:py-[120px] md:px-[72px] gap-12 max-lg:px-6 max-lg:py-14">
                     <div className="flex justify-between w-full max-lg:justify-center max-md:justify-between">
                         <H2 className="text-brand-graphite uppercase max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold max-w-screen-sm">
                             Our Thermo Products
@@ -144,7 +144,7 @@ export default function Thermowood() {
 
                     </div>
 
-                    <div className="flex gap-8 w-full max-lg:flex-col max-lg:items-center">
+                    <div className="flex gap-8 w-full max-lg:flex-col max-lg:items-start">
                         {
                             ThermoWoodProducts.slice(0, 3).map((product, index) => (
                                 <ProductCard key={index} product={product} />
@@ -158,8 +158,8 @@ export default function Thermowood() {
                 </div>
             </section>
 
-            <section className="flex bg-white w-full justify-center">
-                <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] border-y border-neutral-1000 gap-10">
+            <section className="flex bg-white w-full justify-center border-y border-neutral-1000">
+                <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px]  gap-10">
                     <div className="flex justify-between w-full max-md:px-6 max-md:pt-14" onClick={() => route.push(Routes.allProjects)}>
                         <H2 className="text-brand-graphite max-w-[814px] uppercase hover:text-brand-ipe-yellow cursor-pointer transition-colors">
                             Inspiring Maximo Thermo Designs from Around the World
@@ -173,7 +173,7 @@ export default function Thermowood() {
             </section>
 
             <section className="flex bg-white w-full justify-center">
-                <div className="flex max-md:flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] max-md:px-6 max-md:py-14 max-md:gap-10">
+                <div className="flex max-md:flex-col flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] max-md:px-6 max-md:py-14 max-md:gap-10">
                     <div className="flex flex-col gap-8 lg:w-1/2 max-lg:w-full">
                         <SubtitleXL className="uppercase">
                             Certified Excellence & Sustainability
@@ -184,7 +184,7 @@ export default function Thermowood() {
                     </div>
 
                     {/* Desktop */}
-                    <div className="relative flex gap-8 items-center max-h-[189px] max-lg:hidden">
+                    <div className="relative flex gap-8 items-center max-h-[189px] max-lg:hidden lg:mt-20">
                         {listLogos.map((item, index) => (
                             <div key={index} className="flex items-center justify-center max-h-[189px] max-w-[189px] overflow-hidden">
                                 <Image

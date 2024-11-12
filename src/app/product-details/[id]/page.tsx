@@ -1,6 +1,6 @@
 'use client'
 import { Footer } from "@/components/footer/footer";
-import { CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel"
+import { CarouselContent, CarouselItem, CarouselNextArrow, CarouselPreviousArrow, type CarouselApi } from "@/components/ui/carousel"
 import ProductFeatureAccordion from "@/components/productAccordions/productFeatureAccordion";
 import { H2, H4, H6, ParagraphLarge } from "@/components/text/Heading";
 import { Button } from "@/components/ui/button";
@@ -18,6 +18,11 @@ import { ProductCard } from "@/components/productCard/productCard";
 import { useRouter } from "next/navigation";
 import { LogosCarousel } from "@/components/carousel/logos";
 import { RelatedProducts } from "@/components/carousel/relatedProducts";
+import { Routes } from "@/enums/routes";
+import Link from "next/link";
+import { ButtonYellowLine } from "@/components/ui/buttonYellowLine";
+import { InspirationSection } from "@/components/carousel/inspirationsSection";
+import { Accordion } from "@/components/ui/accordion";
 
 export default function ProductDetail({ params }: { params: { id: string } }) {
     const { back } = useRouter();
@@ -58,10 +63,8 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
 
     return (
         <div className="relative">
-            {/* TODO: DETAILS */}
-
-            <section className="flex bg-white w-full justify-center text-brand-graphite">
-                <div className="flex max-md:flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] max-md:px-6 max-md:pt-10 max-md:pb-14 border-y border-neutral-1000 gap-10">
+            <section className="flex bg-white w-full justify-center text-brand-graphite border-b border-neutral-1000">
+                <div className="flex max-md:flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] max-md:px-6 max-md:pt-10 max-md:pb-14  gap-10">
                     <div className="md:hidden">
                       <ChevronLeft
                         onClick={() => back()}
@@ -86,8 +89,12 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                                     ))
                                 }
                             </CarouselContent>
-                            <CarouselNext className="mr-14" />
-                            <CarouselPrevious className="ml-14" />
+                            {current + 1 != product?.images.length &&  
+                              <CarouselNextArrow className="mr-14 hover:bg-[#3F3E3E] hover:text-white" />
+                            }
+                            {current > 0 &&
+                              <CarouselPreviousArrow className="ml-14 hover:bg-[#3F3E3E] hover:text-white" />
+                            }
                         </Carousel>
 
                         <div className="flex items-center gap-5">
@@ -101,7 +108,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                                         )}
                                         onClick={() => api?.scrollTo(index)}
                                     >
-                                        <div className={cn("absolute h-full w-full z-10 bg-slate-200/50", current === index && "hidden")} />
+                                        <div className={cn("absolute h-full w-full z-10 bg-slate-200/50 hover:hidden", current === index && "hidden")} />
                                         <Image
                                             key={index}
                                             src={image}
@@ -139,16 +146,43 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                             </Button>
                         </div>
 
-                        <ProductFeatureAccordion Trigger="Features" Item={String(product?.id)} Content={product ? product?.features : []} />
-                        <ProductDetailsAccordion Trigger="Details" Item={String(product?.id)} Content={product?.details} />
+                        <div className="flex flex-col gap-6">
+                          <Accordion type="single" collapsible>
+                            <ProductFeatureAccordion Trigger="Features" Item={`${product?.id}_features`} Content={product ? product?.features : []} />
+                            <ProductDetailsAccordion Trigger="Details" Item={`${product?.id}_details`} Content={product?.details} />
+                          </Accordion>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section className="flex bg-white w-full justify-center">
-                <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] border-b border-neutral-1000 max-md:px-6 max-md:py-14 gap-12">
+            <section className="flex bg-white w-full justify-center border-b border-neutral-1000 ">
+              <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] gap-10 max-lg:px-6 max-lg:py-14">
+                <div className="flex justify-between w-full max-lg:max-w-[316px]">
+                  <Link href={Routes.allProjects}>
+                    <H2 className="text-brand-graphite max-w-[730px] uppercase hover:text-brand-ipe-yellow cursor-pointer transition-colors max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold ">
+                      Inspiration for architects and designers
+                    </H2>
+                  </Link>
+                  <div className="max-lg:hidden">
+                    <ButtonYellowLine title="All projects" href={Routes.allProjects} />
+                  </div>
+                </div>
+
+                <div className="flex max-lg:flex-col max-lg:items-center">
+                  <InspirationSection showTitle showControls={false} />
+                </div>
+
+                <div className="flex justify-center lg:hidden">
+                  <ButtonYellowLine title="All projects" href={Routes.allProjects} />
+                </div>
+              </div>
+            </section>
+
+            <section className="flex bg-white w-full justify-center border-b border-neutral-1000">
+                <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] max-md:px-6 max-md:py-14 gap-12">
                     <div className="flex justify-between w-full">
-                        <H2 className="text-brand-graphite uppercase">Releated products</H2>
+                        <H2 className="text-brand-graphite uppercase lg:max-w-[510px]">Releated products</H2>
                         <Button variant='link' className="flex-col max-md:hidden">
                             <div className="flex gap-1">
                                 All products

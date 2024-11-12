@@ -76,11 +76,13 @@ export function Footer() {
                 </div>
             </div>
 
-            <div className="flex justify-between items-center max-w-screen-2xl w-full py-10 md:px-[72px] text-white lg:border-t border-white max-lg:flex-col max-lg:items-start max-lg:gap-6">
-              <Caption>
-                2024 Maximo Company. All Rights Reserved.
-              </Caption>
-              <Image src='/logos/badge-matilha.svg' alt='badge-matilha' width={164} height={28} className="cursor-pointer" />
+            <div className="flex justify-center items-center w-full py-10 md:px-[72px] text-white lg:border-t border-white max-lg:flex-col max-lg:items-start max-lg:gap-6">
+              <div className="flex justify-between items-center w-full max-w-screen-2xl">
+                <Caption>
+                  2024 Maximo Company. All Rights Reserved.
+                </Caption>
+                <Image src='/logos/badge-matilha.svg' alt='badge-matilha' width={164} height={28} className="cursor-pointer" />
+              </div>
             </div>
         </div>
     )

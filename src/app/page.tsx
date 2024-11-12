@@ -11,7 +11,7 @@ import { Routes } from "@/enums/routes";
 import { cn, shuffleArray } from "@/lib/utils";
 import { HardWoodList } from "@/products/HardWoodList";
 import { ThermoWoodProducts } from "@/products/ThermowoodList";
-import { ArrowRight, MoveRight } from "lucide-react";
+import { MoveRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -26,7 +26,7 @@ export default function Home() {
       <section className="flex bg-neutral-1000 w-full justify-center">
         <div className="flex max-w-screen-2xl px-[72px] pt-[56px] max-lg:flex-col max-lg:px-6 max-lg:py-14">
           <div className="text-white w-full flex flex-col gap-9 justify-center">
-            <H1 className="text-white">
+            <H1 className="text-white max-w-[573px]">
               The Wood
               That Sets
               the Standard
@@ -61,9 +61,11 @@ export default function Home() {
 
       <section id="type-of-wood" className="flex bg-brand-ipe-yellow/15 w-full justify-center">
         <div className="flex flex-col max-w-screen-2xl md:py-[120px] md:px-[174px] gap-24 max-lg:px-6 max-lg:py-14">
-          <H2 className="text-center max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold ">
-            The best of both worlds for your construction
-          </H2>
+          <div className="flex justify-center w-full">
+            <H2 className="text-center uppercase max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold max-lg:max-w-[316px] lg:max-w-[1068px]">
+              The best of both worlds for your construction
+            </H2>
+          </div>
           <div className="flex lg:justify-between max-lg:flex-col max-lg:items-center max-lg:gap-16">
             <div className="flex flex-col gap-10 max-w-[413px] items-center text-center ">
               <Image src={"/images/Ellipse1.png"} alt={"Ellipse1"} width={120} height={120} />
@@ -71,7 +73,7 @@ export default function Home() {
                 Thermo
               </SubtitleMediumBold>
               <ParagraphLarge>
-                Using only heat and steam, Maximo's patented process dramatically reduces the wood's sugar and moisture content, making it unattractive to bugs and exceptionally lightweight. Perfect for enhancing walls, ceilings, and more, both indoors and outdoors.
+                Using only heat and steam, Maximo’s patented process dramatically reduces the wood’s sugar and moisture content, making it unattractive to bugs and exceptionally lightweight. Perfect for enhancing walls, ceilings, and more, both indoors and outdoors.
               </ParagraphLarge>
 
               <ButtonYellowLine title="Explore Maximo Thermo" href={Routes.thermowood} />
@@ -100,12 +102,13 @@ export default function Home() {
             <H2 className="text-brand-graphite uppercase max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold ">
               Our Products
             </H2>
-
-            <ButtonYellowLine title="All products" href={Routes.allProducts} />
+            <div className="max-lg:hidden">
+              <ButtonYellowLine title="All products" href={Routes.allProducts} />
+            </div>
 
           </div>
 
-          <div className="flex gap-8 w-full max-lg:flex-col max-lg:items-center">
+          <div className="flex gap-8 w-full max-lg:flex-col max-lg:items-start">
             {
               LIST_PRODUCTS.slice(0, 3).map((product, index) => (
                 <ProductCard key={index} product={product} />
@@ -118,15 +121,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex bg-white w-full justify-center">
-        <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] border-y border-neutral-1000 gap-10 max-lg:px-6 max-lg:py-14">
-          <div className="flex justify-between w-full">
+      <section className="flex bg-white w-full justify-center border-y border-neutral-1000 ">
+        <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] gap-10 max-lg:px-6 max-lg:py-14">
+          <div className="flex justify-between w-full max-lg:max-w-[316px]">
             <Link href={Routes.allProjects}>
               <H2 className="text-brand-graphite max-w-[814px] uppercase hover:text-brand-ipe-yellow cursor-pointer transition-colors max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold ">
                 Inspiration for architects and designers
               </H2>
             </Link>
-            <ButtonYellowLine title="All projects" href={Routes.allProjects} />
+            <div className="max-lg:hidden">
+              <ButtonYellowLine title="All projects" href={Routes.allProjects} />
+            </div>
           </div>
 
           <div className="flex max-lg:flex-col max-lg:items-center">
@@ -147,7 +152,7 @@ export default function Home() {
                 <Image src={"/images/Rectangle12.jpeg"} alt={"Rectangle12"} width={365} height={416} className="h-full w-full " />
               </div>
                 <div className="relative flex flex-col gap-8 text-brand-graphite">
-                    <H2 className="md:max-w-[80%] max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold">
+                    <H2 className="md:max-w-[80%] max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold max-lg:max-w-[316px]">
                         Rooted in Responsibility: Our Commitment to Sustainable Wood
                     </H2>
                     <ParagraphLarge>

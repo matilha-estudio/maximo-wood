@@ -12,10 +12,11 @@ import { type CarouselApi } from "@/components/ui/carousel"
 interface InspirationSection {
     filter?: 'hardwood' | 'thermowood'
     showTitle?: boolean
+    showControls?: boolean,
     size?: "full" | "basis"
 }
 
-export function InspirationSection({ filter, showTitle, size }: InspirationSection) {
+export function InspirationSection({ filter, showTitle, size, showControls = true }: InspirationSection) {
     const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
 
     const [api, setApi] = useState<CarouselApi>()
@@ -72,10 +73,14 @@ export function InspirationSection({ filter, showTitle, size }: InspirationSecti
                                 </Link>
                             )
                         }
-                        <div className="flex w-full justify-end items-start pr-9">
-                            <CarouselPrevious className="relative carousel-previous" />
-                            <CarouselNext className="relative -ml-20 carousel-next" />
-                        </div>
+                        { 
+                          showControls && (
+                            <div className="flex w-full justify-end items-start pr-9 max-lg:hidden">
+                                <CarouselPrevious className="relative carousel-previous" />
+                                <CarouselNext className="relative -ml-20 carousel-next" />
+                            </div>
+                          )
+                        }
                     </div>
                 </Carousel>
             </div>

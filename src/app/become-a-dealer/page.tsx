@@ -4,6 +4,7 @@ import FAQAccordion from "@/components/faq/faq";
 import { Footer } from "@/components/footer/footer";
 import BecomeDealerForm from "@/components/forms/becomeDealer";
 import { H1, H2, H3, H5, ParagraphLarge, ParagraphMedium, SubtitleSmall } from "@/components/text/Heading";
+import { Accordion } from "@/components/ui/accordion";
 import { FAQData } from "@/content/faqList";
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
@@ -57,7 +58,7 @@ export default function BecomeADealer() {
                         </H3>
                     </div>
 
-                    <div className="flex w-full gap-16 lg:flex-wrap max-lg:flex-col items-center">
+                    <div className="flex w-full gap-16 lg:flex-wrap max-lg:flex-col max-lg:items-center">
                         <div className="flex flex-col gap-4 max-w-[338px]">
                             <SubtitleSmall>
                                 Access to Premium Products
@@ -104,9 +105,9 @@ export default function BecomeADealer() {
                             Trusted by Industry Leaders
                         </H5>
                     </div>
-                    <div className="flex gap-8 justify-center max-lg:hidden">
+                    <div className="flex gap-8 max-lg:justify-center max-lg:hidden">
                         <div className="flex flex-col gap-8 max-w-[410px]">
-                            <Image src="/images/BuildersFirst.png" alt="BuildersFirst" width={410} height={400} className="object-contain" />
+                            <Image src="/images/BuildersFirst.png" alt="BuildersFirst" width={410} height={400} className="object-contain h-[400px]" />
                             <div>
                                 <H5>
                                     Builders First Source
@@ -117,7 +118,7 @@ export default function BecomeADealer() {
                             </div>
                         </div>
                         <div className="flex flex-col gap-8 max-w-[410px]">
-                            <Image src="/images/BurtonLumber.png" alt="BurtonLumber" width={410} height={400} className="object-contain" />
+                            <Image src="/images/BurtonLumber.png" alt="BurtonLumber" width={410} height={400} className="object-contain h-[400px]" />
                             <div>
                                 <H5>
                                     Burton Lumber
@@ -128,7 +129,7 @@ export default function BecomeADealer() {
                             </div>
                         </div>
                         <div className="flex flex-col gap-8 max-w-[410px]">
-                            <Image src="/images/StringhamLumber.png" alt="StringhamLumber" width={410} height={400} className="object-contain" />
+                            <Image src="/images/StringhamLumber.png" alt="StringhamLumber" width={410} height={400} className="object-contain h-[400px]" />
                             <div>
                                 <H5>
                                     Stringham Lumber
@@ -179,11 +180,13 @@ export default function BecomeADealer() {
                         FAQ
                     </H3>
                     <div className="max-lg:w-full">
+                      <Accordion type="single" collapsible>
                         {
-                            FAQData.map((item, index) => (
-                                <FAQAccordion key={index} Item={item.Item} Trigger={item.Trigger} Content={item.Content} />
-                            ))
+                          FAQData.map((item, index) => (
+                            <FAQAccordion key={index} Item={item.Item} Trigger={item.Trigger} Content={item.Content} />
+                          ))
                         }
+                      </Accordion>
                     </div>
                 </div>
             </section>

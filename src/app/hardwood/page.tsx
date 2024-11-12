@@ -63,8 +63,8 @@ export default function Hardwood() {
                 </div>
             </section>
 
-            <section className="flex bg-white w-full justify-center">
-                <div className="flex flex-col max-w-screen-2xl lg:px-[72px] lg:py-[120px] w-full gap-10 border-t max-lg:border-b border-neutral-1000">
+            <section className="flex bg-white w-full justify-center border-t max-lg:border-b border-neutral-1000">
+                <div className="flex flex-col max-w-screen-2xl lg:px-[72px] lg:py-[120px] w-full gap-10 ">
                     <H2 className="max-w-[573px] max-lg:px-6 max-lg:pb-6 max-lg:pt-14">
                         How Maximo Hardwoods are Harvested
                     </H2>
@@ -146,7 +146,7 @@ export default function Hardwood() {
 
                     </div>
 
-                    <div className="flex gap-8 w-full max-lg:flex-col max-lg:items-center">
+                    <div className="flex gap-8 w-full max-lg:flex-col max-lg:items-start">
                         {
                             HardWoodList.slice(0, 3).map((product, index) => (
                                 <ProductCard key={index} product={product} />
@@ -159,8 +159,8 @@ export default function Hardwood() {
                 </div>
             </section>
 
-            <section className="flex bg-white w-full justify-center">
-                <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] border-y border-neutral-1000 gap-10">
+            <section className="flex bg-white w-full justify-center border-y border-neutral-1000">
+                <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px]  gap-10">
                     <div className="flex justify-between w-full max-md:px-6 max-md:pt-14" onClick={() => route.push(Routes.allProjects)}>
                         <H2 className="text-brand-graphite max-w-[814px] uppercase hover:text-brand-ipe-yellow cursor-pointer transition-colors">
                             Inspiring Maximo Hardwood Designs from Around the World
