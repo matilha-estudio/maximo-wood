@@ -64,17 +64,19 @@ export default function Thermowood() {
 
             <section className="flex bg-white w-full justify-center border-t border-neutral-1000">
                 <div className="flex flex-col max-w-screen-2xl lg:px-[72px] lg:py-[120px] w-full gap-10  max-lg:border-b ">
-                    <H2 className="max-w-[573px] max-lg:px-6 max-lg:pb-6 max-lg:pt-14">
+                    <H2 className="max-w-[560px] max-lg:px-6 max-lg:pb-6 max-lg:pt-14">
                         How Maximo Thermo is made
                     </H2>
 
                     <div className="max-lg:flex max-lg:flex-col-reverse">
-                      <ParagraphLarge className="max-w-[744px] max-lg:px-6 max-lg:py-14">
-                          We believe in giving wood a second chance. When species like Ayous and Radiata aren’t lucky enough to be born as resilient as our hardwoods, we do that for them. Using heat and steam alone, we forever alter their structure at the cellular level, making them more reliable and durable than ever before.
-                      </ParagraphLarge>
+                      <div className="max-w-[744px]">
+                        <ParagraphLarge className="max-w-[744px] max-lg:px-6 max-lg:py-14">
+                            We believe in giving wood a second chance. When species like Ayous and Radiata aren’t lucky enough to be born as resilient as our hardwoods, we do that for them. Using heat and steam alone, we forever alter their structure at the cellular level, making them more reliable and durable than ever before.
+                        </ParagraphLarge>
+                      </div>
 
                       <video
-                          src="/medias/How-Thermowood-is-Made-Temporary.webm"
+                          src="https://maximo-wood-s3-videos.s3.us-east-1.amazonaws.com/medias/How-Thermowood-is-Made-Temporary.webm"
                           className="aspect-video w-full mt-10"
                           controls
                       >
@@ -86,7 +88,7 @@ export default function Thermowood() {
 
             <section className="flex w-full justify-center">
                 <div className="flex max-w-screen-2xl px-[72px] py-[60px] w-full lg:gap-16 max-lg:px-6 max-lg:py-14 max-lg:flex-col">
-                    <div className="lg:max-w-[521px] max-lg:mb-10 flex w-full justify-center ">
+                    <div className="lg:max-w-[400px] max-lg:mb-10 flex w-full justify-center ">
                         <H2 className="uppercase max-lg:hidden">
                             Why Choose Maximo Thermo?
                         </H2>

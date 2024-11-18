@@ -7,7 +7,7 @@ import { DialogClose } from "@radix-ui/react-dialog";
 
 interface ModalInspirationCarouselProps {
     trigger: ReactNode;
-    list: string[];
+    list: (string | undefined)[];
 }
 
 export function ModalInspirationCarousel({ trigger, list }: ModalInspirationCarouselProps): JSX.Element {
@@ -23,16 +23,18 @@ export function ModalInspirationCarousel({ trigger, list }: ModalInspirationCaro
                 <div className="flex flex-col gap-10">
                     <Carousel className="flex flex-col max-lg:flex-col-reverse justify-between gap-10">
                         <CarouselContent>
-                            {list.map((item, index) => (
+                            {list?.map((item, index) => (
                                 <CarouselItem key={index} className="max-w-[93%] lg:max-w-[1298px]">
-                                    <Image
-                                        src={item}
-                                        alt={`Inspiration image ${index}`}
-                                        width={1298}
-                                        height={644}
-                                        className="w-full h-full object-cover max-h-[644px] max-w-[1298px]"
-                                        priority
-                                    />
+                                    {item && 
+                                      <Image
+                                          src={item}
+                                          alt={`Inspiration image ${index}`}
+                                          width={1298}
+                                          height={644}
+                                          className="w-full h-full object-cover max-h-[644px] max-w-[1298px]"
+                                          priority
+                                      />
+                                    }
                                 </CarouselItem>
                             ))}
                         </CarouselContent>

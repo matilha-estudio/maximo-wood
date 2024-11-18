@@ -10,31 +10,40 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-interface ISelect {
-  lista: string[],
-  onChange: any,
+interface ISelectItem {
+  value: string | null,
   label: string
+}
+
+interface ISelect {
+  lista: ISelectItem[],
+  onChange: any,
+  label: string,
+  value: string,
+  placeholder: string
 }
  
 export function Select({
   lista = [],
   onChange,
-  label = ''
+  label = '',
+  value,
+  placeholder
 }: ISelect) {
-  return (<div className="flex flex-col">
+  return (<div className="flex flex-col w-full max-w-[410px]">
     {label &&
       <div>
         {label}
       </div>
     }
-    <SelectUi onValueChange={(value)=>onChange(value, label)} >
-      <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder="Please select" />
+    <SelectUi value={value} onValueChange={(value)=>onChange(value === 'undefined' ? null : value, label)} >
+      <SelectTrigger className="w-full max-w-[410px]">
+        <SelectValue placeholder={placeholder || "Please select"} />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
           {lista.map((item, index)=>(
-            <SelectItem key={index} value={item}>{item}</SelectItem>
+            <SelectItem key={index} value={item.value?.toUpperCase() || 'undefined'}>{item.label}</SelectItem>
           ))}
         </SelectGroup>
       </SelectContent>

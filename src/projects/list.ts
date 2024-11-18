@@ -6,6 +6,7 @@ export interface IProjectsCarousel {
     location: string
     description: string
     images: string[]
+    imagesCarrousel?: string[]
 }
 
 export const ProjectsList: IProjectsCarousel[] = [
@@ -21,6 +22,12 @@ export const ProjectsList: IProjectsCarousel[] = [
             '/images/Inspirations/Ourania-231/Ourania-231-3.JPG',
             '/images/Inspirations/Ourania-231/Ourania-231-4.JPG',
         ],
+        imagesCarrousel: [
+          '/images/Inspirations/Hardwood/1.jpeg',
+          '/images/Inspirations/Hardwood/2.jpeg',
+          '/images/Inspirations/Hardwood/3.jpeg',
+          '/images/Inspirations/Hardwood/4.jpeg',
+        ],
         type: "hardwood"
     },
     {
@@ -30,12 +37,18 @@ export const ProjectsList: IProjectsCarousel[] = [
         location: 'Miami, Fl',
         description: 'When your property overlooks the Miami River, integrating the surrounding nature into the design becomes essential. The homeowners embraced this by selecting materials that harmonize with the environment, choosing custom-milled, fluted Maximo Thermowood Ayous.',
         images: [
-            '/images/Inspirations/Everglades-Residence/Everglades-Residence1.JPG',
-            '/images/Inspirations/Everglades-Residence/Everglades-Residence2.png',
-            '/images/Inspirations/Everglades-Residence/Everglades-Residence3.JPG',
-            '/images/Inspirations/Everglades-Residence/Everglades-Residence4.png',
-            '/images/Inspirations/Everglades-Residence/Everglades-Residence5.JPG',
-            '/images/Inspirations/Everglades-Residence/Everglades-Residence6.JPG',
+            '/images/Inspirations/Everglades/Everglades-Residence1.png',
+            '/images/Inspirations/Everglades/Everglades-Residence2.jpg',
+            '/images/Inspirations/Everglades/Everglades-Residence3.JPG',
+            '/images/Inspirations/Everglades/Everglades-Residence4.png',
+            '/images/Inspirations/Everglades/Everglades-Residence5.JPG',
+            '/images/Inspirations/Everglades/Everglades-Residence6.JPG',
+        ],
+        imagesCarrousel: [
+          '/images/Inspirations/Thermo/1.jpeg',
+          '/images/Inspirations/Thermo/2.png',
+          '/images/Inspirations/Thermo/3.jpeg',
+          '/images/Inspirations/Thermo/4.jpeg',
         ],
         type: "thermowood"
     },

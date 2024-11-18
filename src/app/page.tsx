@@ -26,10 +26,10 @@ export default function Home() {
       <section className="flex bg-neutral-1000 w-full justify-center">
         <div className="flex max-w-screen-2xl px-[72px] pt-[56px] max-lg:flex-col max-lg:px-6 max-lg:py-14">
           <div className="text-white w-full flex flex-col gap-9 justify-center">
-            <H1 className="text-white max-w-[573px]">
+            <H1 className="text-white max-w-[434px]">
               The Wood
               That Sets
-              the Standard
+              The Standard
             </H1>
             <ParagraphMedium className="max-w-[465px]">
               Maximo combines decades of natural resilience with advanced thermal innovation, offering wood that stands the test of time—in any climate, for any project.
@@ -149,7 +149,7 @@ export default function Home() {
             <div className="flex gap-[78px] max-lg:flex-col-reverse ">
               <Image src={"/images/Rectangle12.png"} alt={"Rectangle12"} width={365} height={416} className="h-full max-lg:hidden" />
               <div className="max-lg:flex justify-center lg:hidden">
-                <Image src={"/images/Rectangle12.jpeg"} alt={"Rectangle12"} width={365} height={416} className="h-full w-full " />
+                <Image src={"/images/mobile_Rectangle12.jpeg"} alt={"Rectangle12 mobile"} width={365} height={416} className="h-full w-full " />
               </div>
                 <div className="relative flex flex-col gap-8 text-brand-graphite">
                     <H2 className="md:max-w-[80%] max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold max-lg:max-w-[316px]">

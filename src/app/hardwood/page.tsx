@@ -70,12 +70,14 @@ export default function Hardwood() {
                     </H2>
 
                     <div className="max-lg:flex max-lg:flex-col-reverse">
-                      <ParagraphLarge className="max-w-[744px] max-lg:px-6 max-lg:py-14">
-                          Like you, we want our forests to stand for generations to come. That’s why we use the most modern forest management techniques, harvesting only 3-5 aging trees from an area as large as a football field. Watch the video to see how Maximo is tirelessly working to preserve our forests and support the communities that depend on them every day.
-                      </ParagraphLarge>
+                      <div className="max-w-[744px]">
+                        <ParagraphLarge className="max-lg:px-6 max-lg:py-14">
+                            Like you, we want our forests to stand for generations to come. That’s why we use the most modern forest management techniques, harvesting only 3-5 aging trees from an area as large as a football field. Watch the video to see how Maximo is tirelessly working to preserve our forests and support the communities that depend on them every day.
+                        </ParagraphLarge>
+                      </div>
 
                       <video
-                          src="/medias/Sustainability-Video-Presentation-2024-MAXIMO-V5.webm"
+                          src="https://maximo-wood-s3-videos.s3.us-east-1.amazonaws.com/medias/Sustainability-Video-Presentation-2024-MAXIMO-V5.webm"
                           className="aspect-video w-full lg:mt-10"
                           controls
                       >
@@ -86,8 +88,8 @@ export default function Hardwood() {
             </section>
 
             <section className="flex w-full justify-center">
-                <div className="flex max-w-screen-2xl px-[72px] py-[60px] w-full lg:gap-16 max-lg:px-6 max-lg:py-14 max-lg:flex-col">
-                    <div className="lg:max-w-[521px] max-lg:mb-10 flex w-full justify-center max-lg:justify-start ">
+                <div className="flex max-w-screen-2xl px-[72px] py-[60px] w-full lg:gap-4 max-lg:px-6 max-lg:py-14 max-lg:flex-col">
+                    <div className="lg:max-w-[400px] 2xl:max-w-[521px] max-lg:mb-10 flex w-full justify-center max-lg:justify-start ">
                         <H2 className="uppercase max-lg:hidden">
                             Why Choose Maximo Hardwood?
                         </H2>
@@ -96,8 +98,8 @@ export default function Hardwood() {
                         </H3>
                     </div>
 
-                    <div className="flex w-full gap-16 lg:flex-wrap max-lg:flex-col ">
-                        <div className="flex flex-col gap-4 lg:max-w-[338px]">
+                    <div className="flex w-full gap-8 lg:flex-wrap max-lg:flex-col ">
+                        <div className="flex flex-col gap-4 lg:max-w-[300px] 2xl:max-w-[338px]">
                             <SubtitleSmall>
                                 100% Organic, 50% Trapped Carbon
                             </SubtitleSmall>
@@ -105,7 +107,7 @@ export default function Hardwood() {
                                 Our Maximo Hardwoods are as organic as it gets. Half of the weight of every board consists of carbon trapped from the atmosphere, contributing positively to the environment.
                             </ParagraphLarge>
                         </div>
-                        <div className="flex flex-col gap-4 lg:max-w-[338px]">
+                        <div className="flex flex-col gap-4 lg:max-w-[300px] 2xl:max-w-[338px]">
                             <SubtitleSmall>
                                 Generational Durability
                             </SubtitleSmall>
@@ -113,7 +115,7 @@ export default function Hardwood() {
                                 Maximo Hardwoods, like our Maximo Ipe, are naturally dense and resistant, built to last for generations.
                             </ParagraphLarge>
                         </div>
-                        <div className="flex flex-col gap-4 lg:max-w-[338px]">
+                        <div className="flex flex-col gap-4 lg:max-w-[300px] 2xl:max-w-[338px]">
                             <SubtitleSmall>
                                 Unmatched Authenticity
                             </SubtitleSmall>
@@ -121,7 +123,7 @@ export default function Hardwood() {
                                 Our one-of-a-kind boards showcase the natural beauty and density that no other material can replicate.
                             </ParagraphLarge>
                         </div>
-                        <div className="flex flex-col gap-4 lg:max-w-[338px]">
+                        <div className="flex flex-col gap-4 lg:max-w-[300px] 2xl:max-w-[338px]">
                             <SubtitleSmall>
                                 Kiln-Dried Precision
                             </SubtitleSmall>
@@ -133,7 +135,7 @@ export default function Hardwood() {
                 </div>
             </section>
 
-            <section className="flex bg-white w-full justify-center">
+            <section className="flex bg-white w-full justify-center border-t max-lg:border-b border-neutral-1000">
                 <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] gap-12 max-lg:px-6 max-lg:py-14">
                     <div className="flex justify-between w-full max-lg:justify-center max-md:justify-between">
                         <H2 className="text-brand-graphite uppercase max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold max-w-screen-sm">

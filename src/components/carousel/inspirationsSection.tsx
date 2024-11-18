@@ -43,17 +43,17 @@ export function InspirationSection({ filter, showTitle, size, showControls = tru
         <div className="w-full">
             <div className="flex flex-col gap-10">
                 <Carousel setApi={setApi} className="flex flex-col justify-between gap-10">
-                    <CarouselContent className="w-full h-full max-h-[644px] max-w-[1298px]">
+                    <CarouselContent className="w-full h-full max-h-[644px] max-w-[1298px] ">
                         {filteredList.map((item, index) => (
                             <CarouselItem key={index} className={cn(size === 'basis' ? "basis-4/5" : "w-full", "carousel-drag")}>
                                 <ModalInspirationCarousel
                                     trigger={
                                         <Image
                                             src={item.images[0]}
-                                            alt={item + ' ' + index}
+                                            alt={item.title + ' ' + index}
                                             width={1298}
                                             height={644}
-                                            className=" h-full object-cover max-h-[644px]"
+                                            className="h-full object-cover max-h-[644px] max-lg:max-h-[286px]"
                                         />
                                     }
                                     list={item.images}

@@ -433,8 +433,8 @@ export const ThermoWoodProducts: Product[] = [
         name: "Maximo Thermowood® Ayous Reversible Profile",
         tag: {
             material: "Thermo",
-            application: ["Siding & Cladding"],
-            collection: "Narrow"
+            application: ["Siding & Cladding", "Facades"],
+            collection: "Standard"
         },
         description: "For those seeking a slightly broader profile, the 1x6 version of Maximo Thermowood® Ayous Reversible Profile continues the trend of flexibility and style. One side features a tongue-and-groove V-joint for seamless joints, while the other presents a square back, offering two distinct aesthetics for cladding applications. Thanks to its lightweight nature and Novawood technology, it provides reduced moisture content and superior durability.",
         features: [
@@ -465,80 +465,6 @@ export const ThermoWoodProducts: Product[] = [
             '/images/thermowood/Ayous/1x6 S4SE4E/Maximo Thermo Ayous 1x6-S4SE4E-1.jpg',
             '/images/thermowood/Ayous/1x6 S4SE4E/Maximo Thermo Ayous 1x6-S4SE4E-2.jpg',
             '/images/thermowood/Ayous/1x6 S4SE4E/IMG_0348.JPG',
-        ]
-    },
-    {
-        group: "Redwood",
-        name: "Maximo Thermowood® Redwood",
-        tag: {
-            material: "Thermo",
-            application: ["Siding & Cladding"],
-            collection: "Standard"
-        },
-        description: "Maximo Thermowood® Redwood 1x6 T&G V-Joint merges the rich hues and textures of redwood with the benefits of a patented thermal modification process. Ideal for cladding and siding, the V-joint profile delivers visual continuity, while the thermally treated wood ensures reduced moisture content for enhanced stability and a longer lifespan.",
-        features: [
-            "Sustainable sourced and produced",
-            "100% organic, no resins or chemicals",
-            "Patented thermal modification process",
-            "Reduced moisture content",
-            "Dimensionally stable",
-            "Suitable for all climates",
-            "Low maintenance",
-            "Will weather into a beautiful silver color if left untreated",
-            "From sustainably managed forests"
-        ],
-        details: {
-            species: "Redwood",
-            application: "Siding & Cladding",
-            use: "Exterior, interior",
-            finish: "Unoiled",
-            durabilityClass: 1,
-            warranty: "20 years",
-            availableIn: "Random Lengths",
-            boardLengths: "6-12ft"
-        },
-        dimensions: "1x6 - T&G V-Joint",
-        id: 113,
-        images: [
-            '/images/thermowood/Ayous/1x6 S4SE4E/Maximo Thermo Ayous 1x6-S4SE4E-1.jpg',
-            '/images/thermowood/Ayous/1x6 S4SE4E/Maximo Thermo Ayous 1x6-S4SE4E-2.jpg',
-        ]
-    },
-    {
-        group: "Redwood",
-        name: "Maximo Thermowood® Redwood",
-        tag: {
-            material: "Thermo",
-            application: ["Siding & Cladding"],
-            collection: "Standard"
-        },
-        description: "For a more contemporary feel, the Maximo Thermowood® Redwood 1x6 T&G Nickel Gap presents a refined option for cladding projects. The narrow gap between boards lends a modern touch, while the thermally modified redwood ensures durability and performance. This product is designed to withstand varying climate conditions, making it suitable for various exterior applications.",
-        features: [
-            "Sustainable sourced and produced",
-            "100% organic, no resins or chemicals",
-            "Patented thermal modification process",
-            "Reduced moisture content",
-            "Dimensionally stable",
-            "Suitable for all climates",
-            "Low maintenance",
-            "Will weather into a beautiful silver color if left untreated",
-            "From sustainably managed forests"
-        ],
-        details: {
-            species: "Redwood",
-            application: "Siding & Cladding",
-            use: "Exterior, interior",
-            finish: "Unoiled",
-            durabilityClass: 1,
-            warranty: "20 years",
-            availableIn: "Random Lengths",
-            boardLengths: "6-12ft"
-        },
-        dimensions: "1x6 - T&G Nickel Gap",
-        id: 114,
-        images: [
-            '/images/thermowood/Ayous/1x6 S4SE4E/Maximo Thermo Ayous 1x6-S4SE4E-2.jpg',
-            '/images/thermowood/Ayous/1x6 S4SE4E/Maximo Thermo Ayous 1x6-S4SE4E-2.jpg',
         ]
     }
 ];

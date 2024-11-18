@@ -25,7 +25,7 @@ import { InspirationSection } from "@/components/carousel/inspirationsSection";
 import { Accordion } from "@/components/ui/accordion";
 
 export default function ProductDetail({ params }: { params: { id: string } }) {
-    const { back } = useRouter();
+    const { back, push } = useRouter();
     const ProductID = params.id
     const LIST_PRODUCTS = HardWoodList.concat(ThermoWoodProducts)
 
@@ -108,14 +108,13 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                                         )}
                                         onClick={() => api?.scrollTo(index)}
                                     >
-                                        <div className={cn("absolute h-full w-full z-10 bg-slate-200/50 hover:hidden", current === index && "hidden")} />
                                         <Image
                                             key={index}
                                             src={image}
                                             alt={"product"}
                                             width={592}
                                             height={664}
-                                            className={cn("max-h-[84px] max-w-[84px] h-full w-full object-cover")}
+                                            className={cn("max-h-[84px] max-w-[84px] h-full w-full object-cover opacity-60 hover:opacity-100")}
                                         />
                                     </div>
                                 ))
@@ -140,7 +139,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                         </div>
 
                         <div className="lg:w-1/2 max-md:w-full">
-                            <Button className="gap-1 w-fit max-md:w-full bg-white hover:border-none border border-neutral-1000 text-neutral-1000 hover:bg-black hover:text-white">
+                            <Button className="gap-1 w-fit max-md:w-full bg-white hover:border-none border border-neutral-1000 text-neutral-1000 hover:bg-black hover:text-white" onClick={()=>push(Routes.resourcesSamples)}>
                                 Request samples
                                 <MoveRight />
                             </Button>

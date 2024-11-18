@@ -7,12 +7,32 @@ import { H2, H4, H5, H6, ParagraphLarge } from "@/components/text/Heading";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from "react";
 
 export default function Resources() {
     const { back } = useRouter();
     const [showProductSamples, setShowProductSamples] = useState(true);
+    const [hash, setHash] = useState('');
+
+    useEffect(() => {
+      const timer = setInterval(() => {
+        const newHash = window.location.hash.replace('#', '');
+        if (newHash !== hash || hash === '') {
+          if (newHash === 'scheduleceu') {
+            setShowProductSamples(false);
+          } else {
+            setShowProductSamples(true);
+          }
+          document.getElementById(newHash)?.scrollIntoView({ behavior: 'smooth' });
+        }
+        setHash(newHash)
+      }, 1000);
+      return () => {
+        clearInterval(timer);
+      }
+    }, [hash]);
+    
     return (
         <div className="relative text-brand-graphite">
 
@@ -48,7 +68,7 @@ export default function Resources() {
               </div>
             </section>
 
-            <section className="flex justify-center bg-white w-full">
+            <section id='hardwood' className="flex justify-center bg-white w-full">
               <div className="flex flex-col gap-14 max-w-screen-2xl lg:px-[72px] lg:py-[80px] max-lg:px-6 max-lg:py-14 w-full">
                 <H4>
                   Hardwood
@@ -64,7 +84,7 @@ export default function Resources() {
               </div>
             </section>
 
-            <section className="flex justify-center bg-white w-full">
+            <section id='thermo' className="flex justify-center bg-white w-full">
               <div className="flex flex-col gap-14 max-w-screen-2xl lg:px-[72px] lg:py-[80px] max-lg:px-6 max-lg:py-14 w-full">
                 <H4>
                   Thermo
@@ -84,7 +104,7 @@ export default function Resources() {
             <section className="flex bg-brand-ipe-yellow w-full justify-center">
                 <div className="flex flex-col w-full lg:pt-14 max-lg:pt-[14px]">
                   <div className="flex w-full lg:py-6 ">
-                    <div className={`flex justify-center w-1/2 border-black ${showProductSamples?"border-b-4":"border-b"} `} onClick={()=>setShowProductSamples(true)}>
+                    <div id='samples' className={`flex justify-center w-1/2 border-black ${showProductSamples?"border-b-4":"border-b"} `} onClick={()=>setShowProductSamples(true)}>
                       <H6 className="text-black cursor-pointer mb-6 max-lg:hidden">
                         Product Samples
                       </H6>
@@ -92,7 +112,7 @@ export default function Resources() {
                         Product Samples
                       </div>
                     </div>
-                    <div className={`flex justify-center w-1/2 border-black ${showProductSamples?"border-b":"border-b-4"} `} onClick={()=>setShowProductSamples(false)}>
+                    <div id='scheduleceu' className={`flex justify-center w-1/2 border-black ${showProductSamples?"border-b":"border-b-4"} `} onClick={()=>setShowProductSamples(false)}>
                       <H6 className="text-black cursor-pointer mb-6 max-lg:hidden">
                         Schedule a CEU
                       </H6>

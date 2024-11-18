@@ -13,8 +13,8 @@ export function FilteredInspirationCarousel({ filter, size }: InspirationSection
 
 
     const filteredImages = ProjectsList
-        .filter(project => project.type === filter)
-        .flatMap(project => project.images);
+        .filter(project => project.type === filter && project.imagesCarrousel)
+        .flatMap(project => project.imagesCarrousel);
 
     return (
         <div className="w-full">
@@ -26,7 +26,7 @@ export function FilteredInspirationCarousel({ filter, size }: InspirationSection
                                 <ModalInspirationCarousel
                                     trigger={
                                         <Image
-                                            src={item}
+                                            src={item || ''}
                                             alt={item + ' ' + index}
                                             width={1298}
                                             height={644}

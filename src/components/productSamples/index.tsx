@@ -15,10 +15,10 @@ export default function ProductSamples() {
           height={561} 
         />
         <div className="flex flex-col items-center gap-8 max-w-[453px] text-center">
-          <H5>
+          <H5 className="text-[#3F3E3E]">
             Product samples
           </H5>
-          <ParagraphLarge>
+          <ParagraphLarge className="text-[#3F3E3E]">
             Feel the quality of Maximo Wood. Get your sample and discover the difference at your fingertips.
           </ParagraphLarge>
           <Button className="w-fit max-lg:w-full">

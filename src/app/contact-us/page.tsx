@@ -89,7 +89,7 @@ export default function ContactUs() {
                           size="default" 
                           onClick={()=>push(Routes.becomeADealer)}
                         >
-                          Become a dealer
+                          Become a Dealer
                         </Button>
                     </div>
                 </div>

@@ -20,23 +20,29 @@ export function Footer() {
                 <div className="flex gap-16 md:justify-end text-white flex-wrap max-lg:w-full max-lg:flex-col max-lg:items-start">
                     <div className="flex flex-col lg:max-w-[190px] max-lg:w-full gap-4">
                         <TextLink>
-                            MaximoWood
+                            <div onClick={()=>push(Routes.home)}>
+                              MaximoWood
+                            </div>
                         </TextLink>
-
-                        <InputText>
-                            Products
+                        <InputText className="cursor-pointer">
+                            <div onClick={()=>push(Routes.allProducts)}>
+                              Products
+                            </div>
                         </InputText>
-                        <InputText>
-                            Inspiration
+                        <InputText className="cursor-pointer">
+                            <div onClick={()=>push(Routes.allProjects)}>
+                              Inspiration
+                            </div>
                         </InputText>
-                        <InputText>
-                            Resources
+                        <InputText className="cursor-pointer">
+                            <div onClick={()=>push(Routes.resources)}>
+                              Resources
+                            </div>
                         </InputText>
-                        <InputText>
-                            Where to buy
-                        </InputText>
-                        <InputText>
-                            Fencing
+                        <InputText className="cursor-pointer">
+                            <div onClick={()=>push(Routes.contactus)}>
+                              Where to buy
+                            </div>
                         </InputText>
                     </div>
 
@@ -70,7 +76,7 @@ export function Footer() {
                           className="bg-white text-neutral-1000 mt-2 max-lg:w-full"
                           onClick={() => push(Routes.becomeADealer)}
                         >
-                          Become a dealer
+                          Become a Dealer
                         </Button>
                     </div>
                 </div>
