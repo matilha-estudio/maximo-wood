@@ -23,7 +23,7 @@ interface IFilters {
 const itemsPerPage = 9;
 
 const itensTypeWood = [
-  { value: "Thermo" , label: "Thermowood" }, 
+  { value: "Thermo" , label: "Thermo" }, 
   { value: "Hardwood", label: "Hardwood" }, 
   { value: null, label: "All Materials" }
 ];
@@ -33,6 +33,7 @@ const itensApplication = [
   { value: "Decking" , label: "Decking" },
   { value: "DeckTiles" , label: "Deck Tile" },
   { value: "Posts&Beams" , label: "Posts and Beams" },
+  { value: "Facades" , label: "Facades" },
   { value: "Fencing" , label: "Fencing" },
   { value: "Pergolas" , label: "Pergolas" },
   { value: "WoodTrim" , label: "Wood Trim" },
@@ -167,11 +168,11 @@ export default function Products() {
                         />
                     </div>
                     <Image
-                        src={"/images/all-products/header.png"}
+                        src={"/images/all-products/header.jpeg"}
                         alt="header desk"
                         width={1440}
                         height={432}
-                        className="max-h-[432px] max-w-screen-2xl w-full h-full object-contain max-lg:hidden"
+                        className="max-h-[432px] max-w-screen-2xl w-full h-full object-cover max-lg:hidden"
                     />
                     <Image
                         src={"/images/all-products/headerMobile.jpg"}

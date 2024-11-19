@@ -180,16 +180,16 @@ export default function Navbar({
       return (
         <div className="flex flex-col gap-4">
           <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.resourcesScheduleCeu)}>
-            <SubtitleSmallMedium className="hover:text-[#F6CA21]">Schedule a ceu</SubtitleSmallMedium>
+            <SubtitleSmallMedium className="hover:text-[#F6CA21]">Schedule a CEU</SubtitleSmallMedium>
           </Button>
           <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.resourcesHardwood)}>
-            <SubtitleSmallMedium className="hover:text-[#F6CA21]">Resources for hardwood</SubtitleSmallMedium>
+            <SubtitleSmallMedium className="hover:text-[#F6CA21]">Resources for Hardwood</SubtitleSmallMedium>
           </Button>
           <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.resourcesThermo)}>
-            <SubtitleSmallMedium className="hover:text-[#F6CA21]">Resources for thermo</SubtitleSmallMedium>
+            <SubtitleSmallMedium className="hover:text-[#F6CA21]">Resources for Thermo</SubtitleSmallMedium>
           </Button>
           <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.resourcesSamples)}>
-            <SubtitleSmallMedium className="hover:text-[#F6CA21]">Request samples</SubtitleSmallMedium>
+            <SubtitleSmallMedium className="hover:text-[#F6CA21]">Request Samples</SubtitleSmallMedium>
           </Button>
         </div>
       )
@@ -199,10 +199,10 @@ export default function Navbar({
       return (
         <div className="flex flex-col gap-4">
           <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.contactus)}>
-            <SubtitleSmallMedium className="hover:text-[#F6CA21]">Contact us</SubtitleSmallMedium>
+            <SubtitleSmallMedium className="hover:text-[#F6CA21]">Contact Us</SubtitleSmallMedium>
           </Button>
           <Button variant="link" size="medium" className="justify-start p-0" onClick={()=>onClickRedirect(Routes.becomeADealer)}>
-            <SubtitleSmallMedium className="hover:text-[#F6CA21]">Become a dealer</SubtitleSmallMedium>
+            <SubtitleSmallMedium className="hover:text-[#F6CA21]">Become a Dealer</SubtitleSmallMedium>
           </Button>
         </div>
       )

@@ -1,9 +1,12 @@
 'use client'
 import { H5, ParagraphLarge } from "@/components/text/Heading";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { Routes } from "@/enums/routes";
 
 export default function ProductSamples() {
+    const { push } = useRouter();
     return (
       <section className="flex bg-brand-ipe-yellow/15 w-full justify-center">
       <div className="flex justify-center items-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] gap-8 max-lg:px-6 max-lg:py-14 max-lg:flex-col">
@@ -21,7 +24,7 @@ export default function ProductSamples() {
           <ParagraphLarge className="text-[#3F3E3E]">
             Feel the quality of Maximo Wood. Get your sample and discover the difference at your fingertips.
           </ParagraphLarge>
-          <Button className="w-fit max-lg:w-full">
+          <Button className="w-fit max-lg:w-full" onClick={()=>push(Routes.resourcesSamples)}>
             Order samples
           </Button>
         </div>

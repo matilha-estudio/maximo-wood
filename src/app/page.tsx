@@ -24,11 +24,11 @@ export default function Home() {
   return (
     <div className="relative">
       <section className="flex bg-neutral-1000 w-full justify-center">
-        <div className="flex max-w-screen-2xl px-[72px] pt-[56px] max-lg:flex-col max-lg:px-6 max-lg:py-14">
+        <div className="flex w-full max-w-screen-2xl md:px-[50px] xl:px-[72px] pt-[56px] max-lg:flex-col max-lg:px-6 max-lg:py-14">
           <div className="text-white w-full flex flex-col gap-9 justify-center">
-            <H1 className="text-white max-w-[434px]">
-              The Wood
-              That Sets
+            <H1 className="text-white max-w-[434px] w-full max-sm:text-[38px]">
+              The Wood<br/>
+              That Sets<br/>
               The Standard
             </H1>
             <ParagraphMedium className="max-w-[465px]">
@@ -108,7 +108,7 @@ export default function Home() {
 
           </div>
 
-          <div className="flex gap-8 w-full max-lg:flex-col max-lg:items-start">
+          <div className="flex gap-8 w-full max-lg:flex-col lg:flex-wrap xl:flex max-lg:items-start">
             {
               LIST_PRODUCTS.slice(0, 3).map((product, index) => (
                 <ProductCard key={index} product={product} />
@@ -147,7 +147,7 @@ export default function Home() {
       <section className="flex bg-white w-full justify-center">
         <div className="flex flex-col justify-center items-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] gap-20 max-lg:px-6 max-lg:py-14">
             <div className="flex gap-[78px] max-lg:flex-col-reverse ">
-              <Image src={"/images/Rectangle12.png"} alt={"Rectangle12"} width={365} height={416} className="h-full max-lg:hidden" />
+              <Image src={"/images/Rectangle12.png"} alt={"Rectangle12"} width={365} height={416} className="h-full max-h-[416px] max-lg:hidden" />
               <div className="max-lg:flex justify-center lg:hidden">
                 <Image src={"/images/mobile_Rectangle12.jpeg"} alt={"Rectangle12 mobile"} width={365} height={416} className="h-full w-full " />
               </div>
@@ -162,7 +162,7 @@ export default function Home() {
             </div>
 
           {/* Desktop */}
-          <div className="relative flex gap-8 items-center max-h-[189px] max-w-[100%] max-lg:hidden">
+          <div className="relative flex gap-8 max-xl:gap-2 items-center max-h-[189px] w-full max-lg:hidden">
             {listLogos.map((item, index) => (
               <div key={index} className="flex items-center justify-center max-h-[189px] max-w-[189px] overflow-hidden">
                 <Image
@@ -170,7 +170,7 @@ export default function Home() {
                   alt={item.alt}
                   width={item.width}
                   height={item.height}
-                  className={cn("object-contain h-full max-h-[189px] max-w-[189px]")}
+                  className={cn("object-contain h-full max-h-[189px] max-w-[170px]")}
                 />
               </div>
             ))}
