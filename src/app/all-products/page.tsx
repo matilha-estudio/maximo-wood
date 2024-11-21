@@ -43,9 +43,9 @@ const itensApplication = [
 const itensCollection = [
   { value: "Narrow" , label: "Decking - Narrow" },
   { value: "Standard" , label: "Decking - Standard" },
+  { value: "UltraWide" , label: "Decking - Ultra Wide" },
   { value: "Narrow1" , label: "Walls & ceillings - Narrow" },
   { value: "Standard1" , label: "Walls & ceillings - Standard" },
-  { value: "UltraWide" , label: "Decking - Ultra Wide" },
   { value: null , label: "All collections" },
 ];
 

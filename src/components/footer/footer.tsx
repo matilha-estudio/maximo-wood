@@ -11,7 +11,7 @@ export function Footer() {
         <div className="flex flex-col items-center w-full bg-black max-lg:px-6 max-lg:pt-20">
             <div className="flex justify-between items-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] gap-8 max-lg:w-full max-lg:flex-col max-lg:items-start">
                 <div className="flex gap-8 items-center text-white w-1/2 max-lg:w-full max-w-[539px] max-lg:flex-col max-lg:items-start">
-                    <Image src='/logos/MAXIMO_MW_LOGO_WHITE.svg' alt='badge-matilha' width={191} height={224} className="cursor-pointer" />
+                    <Image src='/logos/MAXIMO_MW_LOGO_WHITE.svg' alt='badge-maximo' width={191} height={224} className="cursor-pointer" />
                     <ParagraphMedium>
                         Maximo was built to elevate wood to its maximum potential. Through our Hardwood and Thermally Modified Wood divisions, we are taking sustainable, superior lumber to new heights and democratizing it for everyone.
                     </ParagraphMedium>
@@ -87,7 +87,9 @@ export function Footer() {
                 <Caption>
                   2024 Maximo Company. All Rights Reserved.
                 </Caption>
-                <Image src='/logos/badge-matilha.svg' alt='badge-matilha' width={164} height={28} className="cursor-pointer" />
+                <a href="https://www.matilha.digital/" target="_blank">
+                  <Image src='/logos/badge-matilha.svg' alt='badge-matilha' width={164} height={28} className="cursor-pointer" />
+                </a>
               </div>
             </div>
         </div>

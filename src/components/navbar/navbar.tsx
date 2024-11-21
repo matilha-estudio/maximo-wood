@@ -28,18 +28,21 @@ export default function Navbar({
     // Listen for scroll events to toggle logo
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
+          if (window.scrollY > 50) {
+            setIsScrolled(true);
+          } else {
+            setIsScrolled(false);
+          }
+          if(expandedSection){
+            setExpandedSection(null)
+          }
         };
 
         window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-    }, []);
+    }, [expandedSection]);
 
     // Listen for screen width change
     useEffect(() => {
