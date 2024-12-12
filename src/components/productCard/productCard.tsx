@@ -51,9 +51,11 @@ export function ProductCard(props: IProductCard) {
                     <Image src={props.product.images[1]} alt="card" width={412} height={400} className="object-cover hidden group-hover:flex md:max-w-[320px] xl:max-w-[412px] max-md:max-w-[295px] md:max-h-[400px] max-md:max-h-[350px] max-lg:h-[250px] lg:h-[400px]" />
                 </div>
                 <div className="flex flex-col gap-2">
-                    <SubtitleSmall>
-                        {props.product?.name}
-                    </SubtitleSmall>
+                    <div className="cursor-pointer hover:text-[#F6CA21]" onClick={Redirect}>
+                      <SubtitleSmall>
+                          {props.product?.name}
+                      </SubtitleSmall>
+                    </div>
                     <SubtitleSmallBold>
                         {props.product?.dimensions}
                     </SubtitleSmallBold>

@@ -6,10 +6,7 @@ import {
 import Image from "next/image"
 
 interface IImagesProps {
-  src: string,
-  alt: string,
-  width: number,
-  height: number
+  image: string
 }
 
 interface ILogosCarousel {
@@ -25,10 +22,10 @@ export function LogosCarousel(props: ILogosCarousel) {
               props.images && props.images.map((image, index) => (
                 <CarouselItem key={index} className="basis-1/3">
                   <Image 
-                    src={image.src} 
-                    alt={image.alt} 
-                    width={image.width} 
-                    height={image.height} 
+                    src={image.image} 
+                    alt={`logo_${index}`} 
+                    width={189} 
+                    height={189} 
                     className="object-contain h-[120px]" 
                   />
                 </CarouselItem>

@@ -4,9 +4,7 @@ import { CarouselContent, CarouselItem, CarouselNextArrow, CarouselPreviousArrow
 import ProductFeatureAccordion from "@/components/productAccordions/productFeatureAccordion";
 import { H2, H4, H6, ParagraphLarge } from "@/components/text/Heading";
 import { Button } from "@/components/ui/button";
-import { HardWoodList } from "@/products/HardWoodList";
-import { ThermoWoodProducts } from "@/products/ThermowoodList";
-import { Product } from "@/products/types";
+import { Product, ProductDetails, ProductTag } from "@/products/types";
 import { ChevronLeft, MoveRight } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -23,31 +21,63 @@ import Link from "next/link";
 import { ButtonYellowLine } from "@/components/ui/buttonYellowLine";
 import { InspirationSection } from "@/components/carousel/inspirationsSection";
 import { Accordion } from "@/components/ui/accordion";
+import { getAllProducts, getHomePage, getInspirations, getProductDetail } from "@/services";
+import { HomePage, InspirationCarrouselData } from "@/services/models";
 
 export default function ProductDetail({ params }: { params: { id: string } }) {
     const { back, push } = useRouter();
     const ProductID = params.id
-    const LIST_PRODUCTS = HardWoodList.concat(ThermoWoodProducts)
 
     const [releatedProducts, setReleatedProducts] = useState<Product[]>()
     const [product, setProduct] = useState<Product>()
+    const [insp, setInsp] = useState<InspirationCarrouselData>();
 
     const [api, setApi] = useState<CarouselApi>()
+    const [pageDetail, setPageDetail] = useState<HomePage>();
     const [current, setCurrent] = useState(0)
 
     useEffect(() => {
+      const init = async ()=>{
         if (ProductID) {
-            const filter = LIST_PRODUCTS.find((v) => v.id === Number(ProductID))
-            setProduct(filter)
+          const productbyId = await getProductDetail(ProductID);
+          const products = await getAllProducts();
+          const inspirations = await getInspirations();
+          setInsp(inspirations);
+          if(productbyId){
+            const details: ProductDetails = {
+              application: productbyId.details?.application || '',
+              availableIn: productbyId.details?.availableIn || '',
+              boardLengths: productbyId.details?.boardLengths || '',
+              durabilityClass: parseInt(productbyId.details?.durabilityClass || '0', 10),
+              finish: productbyId.details?.finish || '',
+              species: productbyId.details?.species || '',
+              use: productbyId.details?.use || '',
+              warranty: productbyId.details?.warranty || ''
+            }
+            const tag: ProductTag = {
+              application: productbyId.tag?.application,
+              collection: productbyId.tag?.collection,
+              material: productbyId.tag?.material
+            }
+            setProduct({
+              description: productbyId.description,
+              dimensions: productbyId.dimensions,
+              features: productbyId.features,
+              id: parseInt(productbyId.id || '0', 10),
+              images: productbyId.images,
+              name: productbyId.name,
+              details,
+              tag,
+            })
+            setReleatedProducts(products.filter((v: Product) => v.details.species.trim() === productbyId?.details?.species?.trim()))
+          }
         }
-    }, [ProductID])
+        const response = await getHomePage();
+        setPageDetail(response);
 
-    useEffect(() => {
-        if (product) {
-            const releated = LIST_PRODUCTS.filter((v) => v.details.species === product?.details.species)
-            setReleatedProducts(releated)
-        }
-    }, [product])
+      }  
+      init();
+    }, [ProductID])
 
     useEffect(() => {
         if (!api) {
@@ -160,7 +190,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                 <div className="flex justify-between w-full max-lg:max-w-[316px]">
                   <Link href={Routes.allProjects}>
                     <H2 className="text-brand-graphite max-w-[730px] uppercase hover:text-brand-ipe-yellow cursor-pointer transition-colors max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold ">
-                      Inspiration for architects and designers
+                      {insp?.title}
                     </H2>
                   </Link>
                   <div className="max-lg:hidden">
@@ -169,7 +199,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                 </div>
 
                 <div className="flex max-lg:flex-col max-lg:items-center">
-                  <InspirationSection showTitle showControls={false} />
+                  <InspirationSection showTitle showControls={false} list={insp?.list_images} />
                 </div>
 
                 <div className="flex justify-center lg:hidden">
@@ -209,28 +239,32 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
             <section className="flex bg-white w-full justify-center">
                 <div className="flex flex-col justify-center items-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] max-md:px-6 max-md:py-14 gap-20">
                     <div className="flex max-md:flex-col-reverse gap-[78px]">
-                      <Image src={"/images/Rectangle12.png"} alt={"Rectangle12"} width={365} height={416} className="h-full max-md:hidden" />
+                      {pageDetail &&
+                        <Image src={pageDetail?.rooted_in_responsibility.image} alt={"Rectangle12"} width={365} height={416} className="h-full max-md:hidden" />
+                      }
                       <div className="max-md:flex justify-center md:hidden">
-                        <Image src={"/images/Rectangle12.jpeg"} alt={"Rectangle12"} width={365} height={416} className="h-full w-full " />
+                        {pageDetail && 
+                          <Image src={pageDetail?.rooted_in_responsibility.image_mobile} alt={"Rectangle12_mobile"} width={365} height={416} className="h-full w-full " />
+                        }
                       </div>
                         <div className="relative flex flex-col gap-8 text-brand-graphite">
                             <H2 className="md:max-w-[80%] max-sm:text-[24px] max-sm:leading-[33.6px] max-sm:font-extrabold">
-                                Rooted in Responsibility: Our Commitment to Sustainable Wood
+                                {pageDetail?.rooted_in_responsibility.title}
                             </H2>
                             <ParagraphLarge>
-                                Sustainability is at the heart of everything we do at Maximo Wood. From sourcing responsibly managed woodlands to supporting communities in Brazil that depend on forests for their livelihoods, we’re committed to making a positive impact. Our products are backed by certifications like FSC and PEFC, ensuring our wood is sourced with care for both people and the planet.
+                                {pageDetail?.rooted_in_responsibility.text}
                             </ParagraphLarge>
                         </div>
                     </div>
 
                     <div className="relative flex gap-8 items-center max-h-[189px] max-lg:hidden">
-                        {listLogos.map((item, index) => (
+                        {pageDetail && pageDetail.rooted_in_responsibility.list_logos.map((item, index) => (
                             <div key={index} className="flex items-center justify-center max-h-[189px] max-w-[189px] overflow-hidden">
                                 <Image
-                                    src={item.src}
-                                    alt={item.alt}
-                                    width={item.width}
-                                    height={item.height}
+                                    src={item.image}
+                                    alt={`logo_${index}`}
+                                    width={189}
+                                    height={189}
                                     className={cn("object-contain h-full max-h-[189px] max-w-[189px]")}
                                 />
                             </div>
@@ -239,7 +273,9 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
 
                     {/* Mobile */}
                     <div className="relative flex gap-1 items-center w-full lg:hidden">
-                        <LogosCarousel images={listLogos} />
+                        {pageDetail &&
+                          <LogosCarousel images={pageDetail?.rooted_in_responsibility.list_logos} />
+                        }
                     </div>
                 </div>
             </section>
@@ -250,42 +286,3 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
         </div>
     )
 }
-
-const listLogos = [
-    {
-        src: "/logos/FSC_C116010_Promotional_with_text_Portrait_BlackOnWhite_r_2Y5lcA 1.png",
-        alt: "FSC_C116010",
-        width: 189,
-        height: 189
-    },
-    {
-        src: "/logos/UNICONSULT_LOGO-_1_ 1.png",
-        alt: "UNICONSULT_LOGO",
-        width: 189,
-        height: 189
-    },
-    {
-        src: "/logos/PEFC_LOGO.png",
-        alt: "PEFC_LOGO",
-        width: 189,
-        height: 189
-    },
-    {
-        src: "/logos/EPD_LOGO1.png",
-        alt: "EPD_LOGO1",
-        width: 189,
-        height: 189
-    },
-    {
-        src: "/logos/USGBC_LOGO1.png",
-        alt: "USGBC_LOGO1",
-        width: 189,
-        height: 189
-    },
-    {
-        src: "/logos/TIMBER-TRUST_LOGO.png",
-        alt: "TIMBER-TRUST_LOGO",
-        width: 189,
-        height: 189
-    },
-]

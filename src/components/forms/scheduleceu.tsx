@@ -7,7 +7,7 @@ declare global {
   }
 }
 
-const ScheduleCeuForm = () => {
+const ScheduleCeuForm = ({ formId = '', portalId = ''}) => {
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://js.hsforms.net/forms/v2.js';
@@ -16,8 +16,8 @@ const ScheduleCeuForm = () => {
       if (window.hbspt) {
         window.hbspt.forms.create({
           region: 'na1',
-          portalId: '9068325',
-          formId: 'f92d6105-c730-4e80-a8da-a43954b35684',
+          portalId: portalId,
+          formId: formId,
           target: '#hubspotForm'
         });
       }

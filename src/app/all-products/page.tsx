@@ -6,13 +6,13 @@ import { ProductCard } from "@/components/productCard/productCard";
 import ProductSamples from "@/components/productSamples";
 import { Select } from "@/components/select/select";
 import { H1, ParagraphLarge } from "@/components/text/Heading";
-import { HardWoodList } from "@/products/HardWoodList";
-import { ThermoWoodProducts } from "@/products/ThermowoodList";
 import { Product } from "@/products/types";
+import { getAllProducts, getAllProductsHero } from "@/services";
+import { ProductHeroData } from "@/services/models";
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 interface IFilters {
   TYPEOFWOOD: string | null,
@@ -50,16 +50,32 @@ const itensCollection = [
 ];
 
 export default function Products() {
-    const LIST_PRODUCTS = HardWoodList.concat(ThermoWoodProducts)
-    const [listaProdutos, setListaProdutos] = useState(HardWoodList.concat(ThermoWoodProducts))
-    const [totalPages, setTotalPages] = useState(LIST_PRODUCTS.length || 0);
     const { back } = useRouter();
+    const [LIST_PRODUCTS, setListProducts] = useState<Product[]>([]);
+    const [listaProdutos, setListaProdutos] = useState<Product[]>([]);
+    const [totalPages, setTotalPages] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
     const [hash, setHash] = useState('');
     const [listPage, setListPage] = useState<Product[]>([]);
+    const [pageDetails, setPageDetails] = useState<ProductHeroData>();
     const [filters, setFilters] = useState<IFilters>({ 
       TYPEOFWOOD: null, APPLICATION: null, COLLECTION: null
     });
+
+    useEffect(()=>{
+      const init = async ()=>{
+        const prods = await getAllProducts();
+        setListProducts(prods)
+        setListaProdutos(prods)
+        setTotalPages(prods.length || 0);
+        pagination(1, false, prods);
+
+        const hero = await getAllProductsHero();
+        setPageDetails(hero);
+
+      }
+      init();
+    },[])
 
     useEffect(() => {
       const timer = setInterval(() => {
@@ -88,12 +104,7 @@ export default function Products() {
       return () => {
         clearInterval(timer);
       }
-    }, [hash]);
-
-    useEffect(()=>{
-      pagination(1);
-    },[])
-
+    }, [hash, LIST_PRODUCTS]);
     
     const pagination = (pageNumber: number, isMobile = false, lista?: Product[]) => {
       let listaToMap = lista || LIST_PRODUCTS
@@ -124,7 +135,7 @@ export default function Products() {
       }
     }
 
-    const onChangeFilter = (value: string, label: string, init = false) => {
+    const onChangeFilter = useCallback((value: string, label: string, init = false)=>{
       const labelTrim = label.replaceAll(' ', '').toUpperCase();
       let newFilters = null;
       if(init){
@@ -155,9 +166,9 @@ export default function Products() {
         pagination(1,false, newList)
       }
       setFilters(newFilters);
-    }
+    },[LIST_PRODUCTS])
 
-    return (
+    return (pageDetails &&
         <div className="relative text-brand-graphite">
             <section className="flex bg-white w-full justify-center">
                 <div className="flex flex-col max-w-screen-2xl w-full lg:gap-10 max-lg:pt-10">
@@ -168,14 +179,14 @@ export default function Products() {
                         />
                     </div>
                     <Image
-                        src={"/images/all-products/header.jpeg"}
+                        src={pageDetails.image}
                         alt="header desk"
                         width={1440}
                         height={432}
                         className="max-h-[432px] max-w-screen-2xl w-full h-full object-cover max-lg:hidden"
                     />
                     <Image
-                        src={"/images/all-products/headerMobile.jpg"}
+                        src={pageDetails.image_mobile}
                         alt="header mobile"
                         width={1440}
                         height={432}
@@ -186,11 +197,11 @@ export default function Products() {
             <section className="flex bg-white w-full justify-center">
                 <div className="flex flex-col max-w-screen-2xl lg:px-[72px] lg:pt-[120px] lg:pb-[80px] w-full gap-10 max-lg:px-6 max-lg:py-14">
                     <H1 className="max-w-[924px]">
-                        Products
+                        {pageDetails.title}
                     </H1>
 
                     <ParagraphLarge className="max-w-[638px]">
-                        Explore our collections with peace of mind, knowing every Maximo board is sustainably sourced and chemical-free. Enhance your spaces—indoors and out—without harming your home or the planet. This is wood elevated to the max.
+                        {pageDetails.text}
                     </ParagraphLarge>
                 </div>
             </section>

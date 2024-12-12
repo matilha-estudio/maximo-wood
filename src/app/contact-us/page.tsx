@@ -4,13 +4,27 @@ import LocateDealerForm from "@/components/forms/locateDealer";
 import { H1, H2, H4, H5, InputText, ParagraphLarge } from "@/components/text/Heading";
 import { Button } from "@/components/ui/button";
 import { Routes } from "@/enums/routes";
+import { getContactUs } from "@/services";
+import { ContactUsData } from "@/services/models";
 import { ChevronLeft, Inbox, Phone } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function ContactUs() {
     const { back, push } = useRouter();
-    return (
+    const [pageDetails, setPageDetails] = useState<ContactUsData>();
+
+    useEffect(()=>{
+      const init = async ()=>{
+        const resp = await getContactUs();
+        setPageDetails(resp);
+      }
+      init();
+    },[])
+
+
+    return (pageDetails &&
         <div className="relative text-brand-graphite">
 
             <section className="flex bg-white w-full justify-center">
@@ -22,18 +36,18 @@ export default function ContactUs() {
                         />
                     </div>
                     <H1 className="max-w-[638px] max-lg:mb-6">
-                      Let’s Build Something Together
+                      {pageDetails.title}
                     </H1>
 
                     <ParagraphLarge className="max-w-[638px]">
-                      From finding your nearest dealer to exploring partnership opportunities and professional courses, discover how Maximo Wood supports your building journey.
+                      {pageDetails.text}
                     </ParagraphLarge>
                 </div>
             </section>
 
             <section className="flex bg-white w-full justify-center">
                 <div className="flex max-w-screen-2xl  w-full">
-                    <Image src={"/images/contact-us-hero.jpeg"} alt={"maximo"} width={1440} height={432} className="max-h-[432px] w-full object-cover" />
+                    <Image src={pageDetails.image} alt={"maximo"} width={1440} height={432} className="max-h-[432px] w-full object-cover" />
                 </div>
             </section>
 
@@ -41,31 +55,31 @@ export default function ContactUs() {
               <div className="flex max-w-screen-2xl lg:px-[72px] lg:py-[120px] w-full lg:gap-16 max-lg:px-6 max-lg:py-14 max-lg:flex-col">
                 <div className="flex flex-col gap-6 lg:w-1/3 max-lg:mb-14">
                   <H2 className="uppercase max-lg:hidden">
-                      Locate a Dealer
+                    {pageDetails.locate_dealer.title}
                   </H2>
                   <H5 className="uppercase lg:hidden">
-                      Locate a Dealer
+                    {pageDetails.locate_dealer.title}
                   </H5>
                   <ParagraphLarge>
-                    With our expanding network of dealers nationwide, finding a Maximo partner near you is easy. Fill out the form, and we’ll connect you to the most convenient location for your project needs.
+                    {pageDetails.locate_dealer.text}
                   </ParagraphLarge>
                   <div className="flex flex-col lg:max-w-[190px] max-lg:w-full gap-6 flex-wrap">
                         <InputText className="flex gap-4 items-center">
                             <Phone className="fill-current" />
                             <a href="">
-                                (888) 987-2224
+                              {pageDetails.locate_dealer.phone}
                             </a>
                         </InputText>
                         <InputText className="flex gap-4 items-center">
                             <Inbox />
-                            <a href="">
-                                info@maximowood.com
+                            <a href={`mailto:${pageDetails.locate_dealer.mail}`}>
+                              {pageDetails.locate_dealer.mail}
                             </a>
                         </InputText>
                     </div>
                 </div>
                 <div className="flex flex-col gap-6 lg:w-2/3 max-lg:mb-14">
-                  <LocateDealerForm />
+                  <LocateDealerForm formId={pageDetails.locate_dealer.hubspot_form_id} portalId={pageDetails.locate_dealer.hubspot_portal_id} />
                 </div>
               </div>
             </section>
@@ -75,13 +89,13 @@ export default function ContactUs() {
                 <div className="flex justify-center max-w-screen-2xl lg:px-[72px] lg:py-[120px] w-full lg:gap-16 max-lg:px-6 max-lg:py-14 max-lg:flex-col">
                     <div className="flex flex-col items-center lg:max-w-[636px] gap-6 max-lg:mb-14">
                         <H2 className="text-black text-center max-w-[551px] uppercase max-lg:hidden">
-                          Partner with Maximo Wood
+                          {pageDetails.partner_maximo_wood.title}
                         </H2>
                         <H4 className="text-black text-center max-w-[300px] uppercase lg:hidden">
-                          Partner with Maximo Wood
+                          {pageDetails.partner_maximo_wood.title}
                         </H4>
                         <ParagraphLarge className="flex items-center max-w-[636px] w-full text-center" >
-                          Be part of our mission to provide sustainable, premium-quality building materials across the United States. Join us in making high-quality wood products accessible to every project, big or small.
+                          {pageDetails.partner_maximo_wood.text}
                         </ParagraphLarge>
                         <Button 
                           className="lg:max-w-[224px] max-lg:w-full "

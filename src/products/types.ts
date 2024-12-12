@@ -25,7 +25,7 @@ export type ProductDetails = {
 
 export type Product = {
     id: number;
-    group: string;
+    group?: string;
     name: string;
     dimensions: string;
     tag: ProductTag;

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 import { FilteredInspirationCarousel } from "@/components/carousel/filteredInspirationCarousel";
 import { LogosCarousel } from "@/components/carousel/logos";
@@ -9,15 +10,31 @@ import { Button } from "@/components/ui/button";
 import { ButtonYellowLine } from "@/components/ui/buttonYellowLine";
 import { Routes } from "@/enums/routes";
 import { cn } from "@/lib/utils";
-import { ThermoWoodProducts } from "@/products/ThermowoodList";
 import Image from "next/image";
 import { ChevronLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { getAllProducts, getThermo } from "@/services";
+import { MaximoHardwoodThermoData } from "@/services/models";
 
 export default function Thermowood() {
-    const route = useRouter()
+    const route = useRouter();
+    const [pageDetails, setPageDetails] = useState<MaximoHardwoodThermoData>();
+    const [thermo, setThermo] = useState([]);
 
-    return (
+
+    useEffect(()=>{
+      const init = async ()=>{
+        const resp = await getThermo();
+        const products = await getAllProducts();
+        console.log(products);
+        setPageDetails(resp);
+        setThermo(products.filter((i: any)=> i.tag.material.toUpperCase() === 'THERMO'))
+      }
+      init()
+    },[])
+
+    return (pageDetails &&
         <div className="relative text-brand-graphite">
 
             <section className="flex bg-white w-full justify-center">
@@ -29,14 +46,14 @@ export default function Thermowood() {
                       />
                     </div>
                     <H1 className="max-w-[924px]">
-                        Thermo
+                      {pageDetails?.title_page}
                     </H1>
                 </div>
             </section>
 
             <section className="flex bg-white w-full justify-center max-md:h-56">
                 <Image
-                    src={"/images/thermowood/Banner.png"}
+                    src={pageDetails.hero_image}
                     alt="logo"
                     width={1440}
                     height={432}
@@ -47,11 +64,11 @@ export default function Thermowood() {
             <section className="flex bg-white w-full justify-center">
                 <div className="flex flex-col max-w-screen-2xl w-full gap-10 lg:px-[72px] lg:py-[120px] lg:items-center max-lg:px-6 max-lg:py-14">
                     <H5 className="max-w-[924px]">
-                        We’ve Forever Changed Wood Using only Heat and Steam
+                      {pageDetails.title_text}
                     </H5>
 
                     <SubtitleMediumNormal className="lg:text-center max-md:text-[16px] max-md:leading-7">
-                        Sometimes, less is more. After years of research, it’s clear that you don’t need to add anything to wood to make it better—you need to remove it. By extracting the moisture and sugars through our patented process, we’ve created wood that’s lighter and no longer attractive to bugs. It’s sustainable, organic, stable, and perfect for any application, indoors or out.
+                      {pageDetails.text}
                     </SubtitleMediumNormal>
 
                     <Button>
@@ -65,18 +82,18 @@ export default function Thermowood() {
             <section className="flex bg-white w-full justify-center border-t border-neutral-1000">
                 <div className="flex flex-col max-w-screen-2xl lg:px-[72px] lg:py-[120px] w-full gap-10  max-lg:border-b ">
                     <H2 className="max-w-[560px] max-lg:px-6 max-lg:pb-6 max-lg:pt-14">
-                        How Maximo Thermo is made
+                      {pageDetails.second_section.title}
                     </H2>
 
                     <div className="max-lg:flex max-lg:flex-col-reverse">
                       <div className="max-w-[744px]">
                         <ParagraphLarge className="max-w-[744px] max-lg:px-6 max-lg:py-14">
-                            We believe in giving wood a second chance. When species like Ayous and Radiata aren’t lucky enough to be born as resilient as our hardwoods, we do that for them. Using heat and steam alone, we forever alter their structure at the cellular level, making them more reliable and durable than ever before.
+                          {pageDetails.second_section.text}
                         </ParagraphLarge>
                       </div>
 
                       <video
-                          src="https://maximo-wood-s3-videos.s3.us-east-1.amazonaws.com/medias/How-Thermowood-is-Made-Temporary.webm"
+                          src={pageDetails.second_section.video}
                           className="aspect-video w-full mt-10"
                           controls
                       >
@@ -90,44 +107,44 @@ export default function Thermowood() {
                 <div className="flex max-w-screen-2xl px-[72px] py-[60px] w-full lg:gap-16 max-lg:px-6 max-lg:py-14 max-lg:flex-col">
                     <div className="lg:max-w-[400px] max-lg:mb-10 flex w-full justify-center ">
                         <H2 className="uppercase max-lg:hidden">
-                            Why Choose Maximo Thermo?
+                            {pageDetails.why_choose.title}
                         </H2>
                         <H3 className="uppercase lg:hidden">
-                            Why Choose Maximo Thermo?
+                            {pageDetails.why_choose.title}
                         </H3>
                     </div>
 
                     <div className="flex w-full gap-16 lg:flex-wrap max-lg:flex-col ">
                         <div className="flex flex-col gap-4 max-w-[338px]">
                             <SubtitleSmall>
-                                Built to Last
+                                {pageDetails.why_choose.item_1.title}
                             </SubtitleSmall>
                             <ParagraphLarge>
-                                Maximo’s patented thermal modification process changes the wood at the cellular level, dramatically enhancing its natural resilience—backed by a 20-year warranty.
+                                {pageDetails.why_choose.item_1.text}
                             </ParagraphLarge>
                         </div>
                         <div className="flex flex-col gap-4 max-w-[338px]">
                             <SubtitleSmall>
-                                Lightweight & Easy to Install
+                                {pageDetails.why_choose.item_2.title}
                             </SubtitleSmall>
                             <ParagraphLarge>
-                                Maximo Thermo’s lightweight nature makes it easier to handle and install, reducing labor time and effort.
+                                {pageDetails.why_choose.item_2.text}
                             </ParagraphLarge>
                         </div>
                         <div className="flex flex-col gap-4 max-w-[338px]">
                             <SubtitleSmall>
-                                Deep Color & Rich Finish
+                                {pageDetails.why_choose.item_3.title}
                             </SubtitleSmall>
                             <ParagraphLarge>
-                                Our patented process not only enhances the wood’s durability but also brings out deep, natural color tones that elevate the look of any space.
+                                {pageDetails.why_choose.item_3.text}
                             </ParagraphLarge>
                         </div>
                         <div className="flex flex-col gap-4 max-w-[338px]">
                             <SubtitleSmall>
-                                100% Organic
+                                {pageDetails.why_choose.item_4.title}
                             </SubtitleSmall>
                             <ParagraphLarge>
-                                Made from fast-growing, sustainably sourced trees without chemicals, Maximo Thermo is organic, durable for outdoor use, and safe indoors, while also storing carbon for decades.
+                                {pageDetails.why_choose.item_4.text}
                             </ParagraphLarge>
                         </div>
                     </div>
@@ -148,7 +165,7 @@ export default function Thermowood() {
 
                     <div className="flex gap-8 w-full max-lg:flex-col max-lg:items-start">
                         {
-                            ThermoWoodProducts.slice(0, 3).map((product, index) => (
+                            thermo.slice(0, 3).map((product, index) => (
                                 <ProductCard key={index} product={product} />
                             ))
                         }
@@ -164,12 +181,12 @@ export default function Thermowood() {
                 <div className="flex flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px]  gap-10">
                     <div className="flex justify-between w-full max-md:px-6 max-md:pt-14" onClick={() => route.push(Routes.allProjects)}>
                         <H2 className="text-brand-graphite max-w-[814px] uppercase hover:text-brand-ipe-yellow cursor-pointer transition-colors">
-                            Inspiring Maximo Thermo Designs from Around the World
+                          {pageDetails.inspiring_maximo.title}
                         </H2>
                     </div>
 
                     <div className="max-md:pl-6 max-md:pb-14">
-                        <FilteredInspirationCarousel filter="thermowood" size="basis" />
+                        <FilteredInspirationCarousel filter="thermowood" size="basis" lista={pageDetails.inspiring_maximo.list_images.map(i=> i.image)} />
                     </div>
                 </div>
             </section>
@@ -178,22 +195,22 @@ export default function Thermowood() {
                 <div className="flex max-md:flex-col flex-col justify-center max-w-screen-2xl w-full md:py-[120px] md:px-[72px] max-md:px-6 max-md:py-14 max-md:gap-10">
                     <div className="flex flex-col gap-8 lg:w-1/2 max-lg:w-full">
                         <SubtitleXL className="uppercase">
-                            Certified Excellence & Sustainability
+                          {pageDetails.certified_excellence_sustainability.title}
                         </SubtitleXL>
                         <ParagraphLarge>
-                            With products crafted under the authentic Thermowood process, Maximo Thermo ensures the highest standards of quality and sustainability.
+                          {pageDetails.certified_excellence_sustainability.text}
                         </ParagraphLarge>
                     </div>
 
                     {/* Desktop */}
                     <div className="relative flex gap-8 items-center max-h-[189px] max-lg:hidden lg:mt-20">
-                        {listLogos.map((item, index) => (
+                        {pageDetails.certified_excellence_sustainability.list_logos.map((item, index) => (
                             <div key={index} className="flex items-center justify-center max-h-[189px] max-w-[189px] overflow-hidden">
                                 <Image
-                                    src={item.src}
-                                    alt={item.alt}
-                                    width={item.width}
-                                    height={item.height}
+                                    src={item.image}
+                                    alt={`logo_${index}`}
+                                    width={189}
+                                    height={189}
                                     className={cn("object-contain h-full max-h-[189px] max-w-[189px]")}
                                 />
                             </div>
@@ -202,7 +219,7 @@ export default function Thermowood() {
 
                     {/* Mobile */}
                     <div className="relative flex gap-1 items-center w-full lg:hidden">
-                        <LogosCarousel images={listLogos} />
+                        <LogosCarousel images={pageDetails.certified_excellence_sustainability.list_logos} />
                     </div>
                 </div>
             </section>
@@ -213,42 +230,3 @@ export default function Thermowood() {
         </div >
     );
 }
-
-const listLogos = [
-    {
-        src: "/logos/FSC_C116010_Promotional_with_text_Portrait_BlackOnWhite_r_2Y5lcA 1.png",
-        alt: "FSC_C116010",
-        width: 189,
-        height: 189
-    },
-    {
-        src: "/logos/UNICONSULT_LOGO-_1_ 1.png",
-        alt: "UNICONSULT_LOGO",
-        width: 189,
-        height: 189
-    },
-    {
-        src: "/logos/PEFC_LOGO.png",
-        alt: "PEFC_LOGO",
-        width: 189,
-        height: 189
-    },
-    {
-        src: "/logos/EPD_LOGO1.png",
-        alt: "EPD_LOGO1",
-        width: 189,
-        height: 189
-    },
-    {
-        src: "/logos/USGBC_LOGO1.png",
-        alt: "USGBC_LOGO1",
-        width: 189,
-        height: 189
-    },
-    {
-        src: "/logos/TIMBER-TRUST_LOGO.png",
-        alt: "TIMBER-TRUST_LOGO",
-        width: 189,
-        height: 189
-    },
-]

@@ -7,7 +7,7 @@ declare global {
   }
 }
 
-const LocateDealerForm = () => {
+const LocateDealerForm = ({formId = '', portalId = ''}) => {
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://js.hsforms.net/forms/v2.js';
@@ -16,8 +16,8 @@ const LocateDealerForm = () => {
       if (window.hbspt) {
         window.hbspt.forms.create({
           region: 'na1',
-          portalId: '9068325',
-          formId: 'b2dcae8a-23ee-465d-a11f-05ea9ee0419b',
+          portalId: portalId,
+          formId: formId,
           target: '#hubspotForm'
         });
       }

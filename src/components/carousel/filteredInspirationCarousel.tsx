@@ -7,12 +7,13 @@ import { cn } from "@/lib/utils";
 interface InspirationSection {
     filter: 'hardwood' | 'thermowood'
     size?: "full" | "basis"
+    lista?: string[]
 }
 
-export function FilteredInspirationCarousel({ filter, size }: InspirationSection) {
+export function FilteredInspirationCarousel({ filter, size, lista }: InspirationSection) {
 
 
-    const filteredImages = ProjectsList
+    const filteredImages = lista || ProjectsList
         .filter(project => project.type === filter && project.imagesCarrousel)
         .flatMap(project => project.imagesCarrousel);
 
