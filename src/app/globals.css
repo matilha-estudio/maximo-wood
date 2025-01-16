@@ -80,3 +80,11 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+[data-state="open"] .plus-icon {
+  display: none;
+}
+
+[data-state="closed"] .minus-icon {
+  display: none;
+}

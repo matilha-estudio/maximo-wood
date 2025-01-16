@@ -418,14 +418,14 @@ export const ThermoWoodProducts: Product[] = [
             durabilityClass: 1,
             warranty: "20 years",
             availableIn: "Random Lengths",
-            boardLengths: "6-12ft"
+            boardLengths: "6-16ft"
         },
         dimensions: "1x4 - T&G V-Joint x Square Back",
         id: 111,
         images: [
-            '/images/thermowood/Ayous/1x4 S4SE4E/Maximo Thermo Ayous 1x4-S4SE4E-1.jpg',
-            '/images/thermowood/Ayous/1x4 S4SE4E/Maximo Thermo Ayous 1x4-S4SE4E-2.jpg',
-            '/images/thermowood/Ayous/1x4 S4SE4E/IMG_2547.jpg',
+            '/images/thermowood/Ayous/Reversible Profile 1x4 - T&G V–Joint x Square Back/Maximo Thermo Ayous Reversible Profile 1x4 - T&G V–Joint x Square Back-1.jpg',
+            '/images/thermowood/Ayous/Reversible Profile 1x4 - T&G V–Joint x Square Back/Maximo Thermo Ayous Reversible Profile 1x4 - T&G V–Joint x Square Back-2.jpg',
+            '/images/thermowood/Ayous/Reversible Profile 1x4 - T&G V–Joint x Square Back/IMG_2552.jpg',
         ]
     },
     {
@@ -433,10 +433,10 @@ export const ThermoWoodProducts: Product[] = [
         name: "Maximo Thermowood® Ayous Reversible Profile",
         tag: {
             material: "Thermo",
-            application: ["Siding & Cladding"],
-            collection: "Narrow"
+            application: ["Siding & Cladding", "Facades"],
+            collection: "Standard"
         },
-        description: "For those seeking a slightly broader profile, the 1x6 version of Maximo Thermowood® Ayous Reversible Profile continues the trend of flexibility and style. One side features a tongue-and-groove V-joint for seamless joints, while the other presents a square back, offering two distinct aesthetics for cladding applications. Thanks to its lightweight nature and Novawood technology, it provides reduced moisture content and superior durability.",
+        description: "The Maximo Thermowood® Ayous 1x6 Reversible Profile combines the elegance of its tan tone with the practicality of a lightweight design. Featuring a reversible profile with a T&G V-joint on one side and a square back on the other, this option offers adaptable installation for both walls and ceilings. Enhanced by the Novawood Thermowood® process, it’s built for ease, durability, and reduced moisture, making it perfect for diverse interior applications.",
         features: [
             "Sustainable sourced and produced",
             "100% organic, no resins or chemicals",
@@ -457,88 +457,482 @@ export const ThermoWoodProducts: Product[] = [
             durabilityClass: 1,
             warranty: "20 years",
             availableIn: "Random Lengths",
-            boardLengths: "6-12ft"
+            boardLengths: "6-16ft"
         },
         dimensions: "1x6 - T&G V-Joint x Square Back",
         id: 112,
         images: [
-            '/images/thermowood/Ayous/1x6 S4SE4E/Maximo Thermo Ayous 1x6-S4SE4E-1.jpg',
-            '/images/thermowood/Ayous/1x6 S4SE4E/Maximo Thermo Ayous 1x6-S4SE4E-2.jpg',
-            '/images/thermowood/Ayous/1x6 S4SE4E/IMG_0348.JPG',
+            '/images/thermowood/Ayous/Reversible Profile 1x6 - T&G V–Joint x Square Back/Maximo Thermo Ayous Reversible Profile 1x6 - T&G V–Joint x Square Back-1.jpg',
+            '/images/thermowood/Ayous/Reversible Profile 1x6 - T&G V–Joint x Square Back/Maximo Thermo Ayous Reversible Profile 1x6 - T&G V–Joint x Square Back-2.jpg',
+            '/images/thermowood/Ayous/Reversible Profile 1x6 - T&G V–Joint x Square Back/IMG_0518.JPG',
         ]
     },
     {
-        group: "Redwood",
-        name: "Maximo Thermowood® Redwood",
-        tag: {
-            material: "Thermo",
-            application: ["Siding & Cladding"],
-            collection: "Standard"
-        },
-        description: "Maximo Thermowood® Redwood 1x6 T&G V-Joint merges the rich hues and textures of redwood with the benefits of a patented thermal modification process. Ideal for cladding and siding, the V-joint profile delivers visual continuity, while the thermally treated wood ensures reduced moisture content for enhanced stability and a longer lifespan.",
-        features: [
-            "Sustainable sourced and produced",
-            "100% organic, no resins or chemicals",
-            "Patented thermal modification process",
-            "Reduced moisture content",
-            "Dimensionally stable",
-            "Suitable for all climates",
-            "Low maintenance",
-            "Will weather into a beautiful silver color if left untreated",
-            "From sustainably managed forests"
-        ],
-        details: {
-            species: "Redwood",
-            application: "Siding & Cladding",
-            use: "Exterior, interior",
-            finish: "Unoiled",
-            durabilityClass: 1,
-            warranty: "20 years",
-            availableIn: "Random Lengths",
-            boardLengths: "6-12ft"
-        },
-        dimensions: "1x6 - T&G V-Joint",
-        id: 113,
-        images: [
-            '/images/thermowood/Ayous/1x6 S4SE4E/Maximo Thermo Ayous 1x6-S4SE4E-1.jpg',
-            '/images/thermowood/Ayous/1x6 S4SE4E/Maximo Thermo Ayous 1x6-S4SE4E-2.jpg',
-        ]
+      group: "Ayous Reversible",
+      name: "Maximo Thermowood® Ayous Reversible Profile",
+      dimensions: "1x8 - T&G V–Joint x Square Back",
+      id: 113,
+      tag: {
+          material: "Thermo",
+          application: ["Siding & Cladding", "Facades"],
+          collection: "Ultra Wide"
+      },
+      description: "Maximo Thermowood® Ayous 1x8 Reversible Profile delivers a broad and beautiful finish for walls and ceilings. This wide, lightweight profile showcases the adored tan tone of Ayous wood and offers a dual design option with a V-joint on one side and a square back on the other. Thermally modified using Novawood technology, it provides reduced moisture content and structural stability, ensuring simple installation and an adaptable aesthetic.",
+      features: [
+        "Certified sustainable",
+        "Legitimate Thermowood®",
+        "Incredibly lightweight",
+        "100% organic, no resins or chemicals",
+        "Reduced moisture content",
+        "Dimensionally stable",
+        "Suitable for all climates",
+        "Low maintenance",
+        "Will weather into a beautiful silver color if left untreated",
+        "From sustainably managed forests",
+      ],
+      details: {
+          species: "Ayous",
+          application: "Siding & Cladding Facades",
+          use: "Exterior, interior",
+          finish: "Unoiled",
+          durabilityClass: 1,
+          warranty: "20 years",
+          availableIn: "Random Lengths",
+          boardLengths: "6-16ft"
+      },
+      images: [
+        '/images/thermowood/Ayous/Reversible Profile 1x8 - T&G V–Joint x Square Back/Maximo Thermo Ayous Reversible Profile 1x8 - T&G V–Joint x Square Back-1.jpg',
+        '/images/thermowood/Ayous/Reversible Profile 1x8 - T&G V–Joint x Square Back/Maximo Thermo Ayous Reversible Profile 1x8 - T&G V–Joint x Square Back-2.jpg',
+        '/images/thermowood/Ayous/Reversible Profile 1x8 - T&G V–Joint x Square Back/3B31380B-3F75-4ED7-93D0-CC79D4A69909.jpeg',
+      ]
     },
     {
-        group: "Redwood",
-        name: "Maximo Thermowood® Redwood",
-        tag: {
-            material: "Thermo",
-            application: ["Siding & Cladding"],
-            collection: "Standard"
-        },
-        description: "For a more contemporary feel, the Maximo Thermowood® Redwood 1x6 T&G Nickel Gap presents a refined option for cladding projects. The narrow gap between boards lends a modern touch, while the thermally modified redwood ensures durability and performance. This product is designed to withstand varying climate conditions, making it suitable for various exterior applications.",
-        features: [
-            "Sustainable sourced and produced",
-            "100% organic, no resins or chemicals",
-            "Patented thermal modification process",
-            "Reduced moisture content",
-            "Dimensionally stable",
-            "Suitable for all climates",
-            "Low maintenance",
-            "Will weather into a beautiful silver color if left untreated",
-            "From sustainably managed forests"
-        ],
-        details: {
-            species: "Redwood",
-            application: "Siding & Cladding",
-            use: "Exterior, interior",
-            finish: "Unoiled",
-            durabilityClass: 1,
-            warranty: "20 years",
-            availableIn: "Random Lengths",
-            boardLengths: "6-12ft"
-        },
-        dimensions: "1x6 - T&G Nickel Gap",
-        id: 114,
-        images: [
-            '/images/thermowood/Ayous/1x6 S4SE4E/Maximo Thermo Ayous 1x6-S4SE4E-2.jpg',
-            '/images/thermowood/Ayous/1x6 S4SE4E/Maximo Thermo Ayous 1x6-S4SE4E-2.jpg',
-        ]
-    }
+      group: "Ayous",
+      name: "Maximo Thermowood® Ayous",
+      dimensions: "1x4 - S4SE4E",
+      id: 114,
+      tag: {
+          material: "Thermo",
+          application: ["Wood Trim"],
+          collection: ""
+      },
+      description: "Maximo Thermowood® Ayous 1x4 trim offers a slim look, perfect for enhancing walls, ceilings, and architectural details. Lightweight and easy to work with, this profile ensures straightforward installation while maintaining durability and stability. Crafted using Novawood technology, the thermally modified process reduces moisture content for better performance, providing a refined finish that stands the test of time.",
+      features: [
+          "Certified sustainable",
+          "Legitimate Thermowood®",
+          "Incredibly lightweight",
+          "100% organic, no resins or chemicals",
+          "Reduced moisture content",
+          "Dimensionally stable",
+          "Suitable for all climates",
+          "Low maintenance",
+          "Will weather into a beautiful silver color if left untreated",
+          "From sustainably managed forests"
+      ],
+      details: {
+          species: "Ayous",
+          application: "Wood Trim",
+          use: "Exterior, interior",
+          finish: "Unoiled",
+          durabilityClass: 1,
+          warranty: "20 years",
+          availableIn: "Random Lengths",
+          boardLengths: "6-16ft"
+      },
+      images: [
+        '/images/thermowood/Ayous/1x4 S4SE4E/Maximo Thermo Ayous 1x4-S4SE4E-1.jpg',
+        '/images/thermowood/Ayous/1x4 S4SE4E/Maximo Thermo Ayous 1x4-S4SE4E-2.jpg',
+        '/images/thermowood/Ayous/1x4 S4SE4E/IMG_2547.jpg',
+      ]
+  },
+  {
+    group: "Ayous Reversible",
+    name: "Maximo Thermowood® Ayous",
+    dimensions: "1x6 - S4SE4E",
+    id: 115,
+    tag: {
+        material: "Thermo",
+        application: ["Wood Trim"],
+        collection: ""
+    },
+    description: "Maximo Thermowood® Ayous 1x6 trim offers an elegant tan look, perfect for enhancing walls, ceilings, and architectural details. Lightweight and easy to work with, this profile ensures straightforward installation while maintaining durability and stability. Crafted using Novawood technology, the thermally modified process reduces moisture content for better performance, providing a refined finish that stands the test of time.",
+    features: [
+        "Certified sustainable",
+        "Legitimate Thermowood®",
+        "Incredibly lightweight",
+        "100% organic, no resins or chemicals",
+        "Reduced moisture content",
+        "Dimensionally stable",
+        "Suitable for all climates",
+        "Low maintenance",
+        "Will weather into a beautiful silver color if left untreated",
+        "From sustainably managed forests"
+    ],
+    details: {
+        species: "Ayous",
+        application: "Wood Trim",
+        use: "Exterior, interior",
+        finish: "Unoiled",
+        durabilityClass: 1,
+        warranty: "20 years",
+        availableIn: "Random Lengths",
+        boardLengths: "6-16ft"
+    },
+    images: [
+      '/images/thermowood/Ayous/1x6 S4SE4E/Maximo Thermo Ayous 1x6-S4SE4E-1.jpg',
+      '/images/thermowood/Ayous/1x6 S4SE4E/Maximo Thermo Ayous 1x6-S4SE4E-2.jpg',
+      '/images/thermowood/Ayous/1x6 S4SE4E/IMG_0348.JPG',
+    ]
+  },
+  {
+    group: "Ayous Reversible",
+    name: "Maximo Thermowood® Ayous",
+    dimensions: "5/4x6 - S4SE4E",
+    id: 116,
+    tag: {
+        material: "Thermo",
+        application: ["Wood Trim"],
+        collection: ""
+    },
+    description: "Maximo Thermowood® Ayous 5/4x6 trim is designed for projects that require both thickness and aesthetic appeal. With its classic 6\" profile, this trim is perfect for framing and finishing architectural Features. The thermally modified technology not only enhances stability by reducing moisture content but also preserves the trim's lightweight properties, making it a versatile and durable choice.",
+    features: [
+        "Certified sustainable",
+        "Legitimate Thermowood®",
+        "Incredibly lightweight",
+        "100% organic, no resins or chemicals",
+        "Reduced moisture content",
+        "Dimensionally stable",
+        "Suitable for all climates",
+        "Low maintenance",
+        "Will weather into a beautiful silver color if left untreated",
+        "From sustainably managed forests"
+    ],
+    details: {
+        species: "Ayous",
+        application: "Wood Trim",
+        use: "Exterior, interior",
+        finish: "Unoiled",
+        durabilityClass: 1,
+        warranty: "20 years",
+        availableIn: "Random Lengths",
+        boardLengths: "6-16ft"
+    },
+    images: [
+      '/images/thermowood/Ayous/5-4x6 S4SE4E/Maximo Thermo Ayous 5-4x6-S4SE4E-1.jpg',
+      '/images/thermowood/Ayous/5-4x6 S4SE4E/Maximo Thermo Ayous 5-4x6-S4SE4E-2.jpg',
+      '/images/thermowood/Ayous/5-4x6 S4SE4E/IMG_2724.JPG',
+    ]
+  },
+  {
+    group: "Ayous Reversible",
+    name: "Maximo Thermowood® Ayous",
+    dimensions: "1x8 - S4SE4E",
+    id: 117,
+    tag: {
+        material: "Thermo",
+        application: ["Wood Trim"],
+        collection: ""
+    },
+    description: "Maximo Thermowood® Ayous 1x8 trim offers a wide and striking profile, ideal for bold design elements. Its tan tone and smooth finish provide an elevated look to walls, corners, and other architectural details. The Novawood technology used in its thermally modified process ensures reduced moisture content, resulting in a stable and lightweight trim that’s easy to install.",
+    features: [
+        "Certified sustainable",
+        "Legitimate Thermowood®",
+        "Incredibly lightweight",
+        "100% organic, no resins or chemicals",
+        "Reduced moisture content",
+        "Dimensionally stable",
+        "Suitable for all climates",
+        "Low maintenance",
+        "Will weather into a beautiful silver color if left untreated",
+        "From sustainably managed forests"
+    ],
+    details: {
+        species: "Ayous",
+        application: "Wood Trim",
+        use: "Exterior, interior",
+        finish: "Unoiled",
+        durabilityClass: 1,
+        warranty: "20 years",
+        availableIn: "Random Lengths",
+        boardLengths: "6-16ft"
+    },
+    images: [
+      '/images/thermowood/Ayous/1x8 S4SE4E/Maximo Thermo Ayous 1x8-S4SE4E-1.jpg',
+      '/images/thermowood/Ayous/1x8 S4SE4E/Maximo Thermo Ayous 1x8-S4SE4E-2.jpg',
+      '/images/thermowood/Ayous/1x8 S4SE4E/IMG_0498.png',
+    ]
+  },
+  {
+    group: "Ayous Reversible",
+    name: "Maximo Thermowood® Ayous",
+    dimensions: "1x11 - S4SE4E",
+    id: 118,
+    tag: {
+        material: "Thermo",
+        application: ["Wood Trim"],
+        collection: ""
+    },
+    description: "Maximo Thermowood® Ayous 1x11 trim Features a bold and expansive profile, perfect for creating impactful design elements. Its warm tan tone and smooth surface enhance walls, edges, and architectural details with sophistication. Utilizing Novawood technology, the thermally modified process ensures reduced moisture content, providing a stable, lightweight, and easy-to-install trim option for various applications.",
+    features: [
+        "Certified sustainable",
+        "Legitimate Thermowood®",
+        "Incredibly lightweight",
+        "100% organic, no resins or chemicals",
+        "Reduced moisture content",
+        "Dimensionally stable",
+        "Suitable for all climates",
+        "Low maintenance",
+        "Will weather into a beautiful silver color if left untreated",
+        "From sustainably managed forests"
+    ],
+    details: {
+        species: "Ayous",
+        application: "Wood Trim",
+        use: "Exterior, interior",
+        finish: "Unoiled",
+        durabilityClass: 1,
+        warranty: "20 years",
+        availableIn: "Random Lengths",
+        boardLengths: "6-16ft"
+    },
+    images: [
+      '/images/thermowood/Ayous/1x11 S4SE4E/Maximo Thermo Ayous 1x11-S4SE4E-1.jpg',
+      '/images/thermowood/Ayous/1x11 S4SE4E/Maximo Thermo Ayous 1x11-S4SE4E-2.jpg',
+      '/images/thermowood/Ayous/1x11 S4SE4E/IMG_0453.jpg',
+    ]
+  },
+  {
+    group: "Ayous Reversible",
+    name: "Maximo Thermowood® Ayous",
+    dimensions: "2x2 - S4SE4E",
+    id: 119,
+    tag: {
+        material: "Thermo",
+        application: ["Wood Trim"],
+        collection: ""
+    },
+    description: "Maximo Thermowood® Ayous 2x2 trim is a versatile option for creating sleek edges and detailing. Perfect for both traditional and modern applications, its lightweight structure allows for hassle-free installation, while its tan hue adds warmth to any space. Engineered with Novawood technology, the reduced moisture content enhances its longevity and performance.",
+    features: [
+        "Certified sustainable",
+        "Legitimate Thermowood®",
+        "Incredibly lightweight",
+        "100% organic, no resins or chemicals",
+        "Reduced moisture content",
+        "Dimensionally stable",
+        "Suitable for all climates",
+        "Low maintenance",
+        "Will weather into a beautiful silver color if left untreated",
+        "From sustainably managed forests"
+    ],
+    details: {
+        species: "Ayous",
+        application: "Wood Trim",
+        use: "Exterior, interior",
+        finish: "Unoiled",
+        durabilityClass: 1,
+        warranty: "20 years",
+        availableIn: "Random Lengths",
+        boardLengths: "6-16ft"
+    },
+    images: [
+      '/images/thermowood/Ayous/2x2 S4SE4E/Maximo Thermo Ayous 2x2-S4SE4E-1.jpg',
+      '/images/thermowood/Ayous/2x2 S4SE4E/Maximo Thermo Ayous 2x2-S4SE4E-2.jpg',
+      '/images/thermowood/Ayous/2x2 S4SE4E/IMG_0603.JPG',
+    ]
+  },
+  {
+    group: "Ayous Reversible",
+    name: "Maximo Thermowood® Ayous",
+    dimensions: "2x4 - S4SE4E",
+    id: 120,
+    tag: {
+        material: "Thermo",
+        application: ["Wood Trim"],
+        collection: ""
+    },
+    description: "Maximo Thermowood® Ayous 2x4 trim strikes the perfect balance between size and functionality, making it suitable for a range of finishing projects. Its lightweight nature simplifies installation, while the thermally modified process ensures long-lasting stability and reduced moisture content. The warm tan color complements various design aesthetics, bringing sophistication to every detail.",
+    features: [
+        "Certified sustainable",
+        "Legitimate Thermowood®",
+        "Incredibly lightweight",
+        "100% organic, no resins or chemicals",
+        "Reduced moisture content",
+        "Dimensionally stable",
+        "Suitable for all climates",
+        "Low maintenance",
+        "Will weather into a beautiful silver color if left untreated",
+        "From sustainably managed forests"
+    ],
+    details: {
+        species: "Ayous",
+        application: "Wood Trim",
+        use: "Exterior, interior",
+        finish: "Unoiled",
+        durabilityClass: 1,
+        warranty: "20 years",
+        availableIn: "Random Lengths",
+        boardLengths: "6-16ft"
+    },
+    images: [
+      '/images/thermowood/Ayous/2x4 S4SE4E/Maximo Thermo Ayous 2x4-S4SE4E-1.jpg',
+      '/images/thermowood/Ayous/2x4 S4SE4E/Maximo Thermo Ayous 2x4-S4SE4E-2.jpg',
+      '/images/thermowood/Ayous/2x4 S4SE4E/NOVATHERMOWOOD AYOUS.jpeg',
+    ]
+  },
+  {
+    group: "Ayous Reversible",
+    name: "Maximo Thermowood® Ayous",
+    dimensions: "2x6 - S4SE4E",
+    id: 121,
+    tag: {
+      material: "Thermo",
+      application: ["Wood Trim"],
+      collection: ""
+    },
+    description: "Maximo Thermowood® Ayous 2x6 trim provides a substantial profile for impactful designs and robust architectural Features. Despite its size, the trim remains lightweight, allowing for easy handling and installation. The thermally modified process using Novawood technology reduces moisture content, ensuring stability and a refined finish that enhances any space with its elegant tan tone.",
+    features: [
+      "Certified sustainable",
+      "Legitimate Thermowood®",
+      "Incredibly lightweight",
+      "100% organic, no resins or chemicals",
+      "Reduced moisture content",
+      "Dimensionally stable",
+      "Suitable for all climates",
+      "Low maintenance",
+      "Will weather into a beautiful silver color if left untreated",
+      "From sustainably managed forests"
+    ],
+    details: {
+      species: "Ayous",
+      application: "Wood Trim",
+      use: "Exterior, interior",
+      finish: "Unoiled",
+      durabilityClass: 1,
+      warranty: "20 years",
+      availableIn: "Random Lengths",
+      boardLengths: "6-16ft"
+    },
+    images: [
+      '/images/thermowood/Ayous/2x6 S4SE4E/Maximo Thermo Ayous 2x6-S4SE4E-1.jpg',
+      '/images/thermowood/Ayous/2x6 S4SE4E/Maximo Thermo Ayous 2x6-S4SE4E-2.jpg',
+      '/images/thermowood/Ayous/2x6 S4SE4E/IMG_5265.jpeg',
+    ]
+  },
+  {
+    group: "Scandinavian",
+    name: "Maximo Scandinavian Thermowood®",
+    dimensions: "5/4x6 - S4SE4E",
+    id: 122,
+    tag: {
+      material: "Thermo",
+      application: ["Decking"],
+      collection: "Standard"
+    },
+    description: "Maximo Scandinavian Thermowood® 5/4x6 offers a classic, rustic appeal with its knotty look, reminiscent of butterfly knots, making it an inviting choice for outdoor decking. The thermal process, made to the highest standards, ensures stability and durability, all while maintaining the natural character of the wood. Perfect for those looking to elevate their outdoor spaces with a touch of nordic charm.",
+    features: [
+      "Certified sustainable",
+      "Legitimate Thermowood®",
+      "Incredibly lightweight",
+      "100% organic, no resins or chemicals",
+      "Reduced moisture content",
+      "Dimensionally stable",
+      "Suitable for all climates",
+      "Low maintenance",
+      "Will weather into a beautiful silver color if left untreated",
+      "From sustainably managed forests"
+    ],
+    details: {
+      species: "Scots Pine",
+      application: "Decking",
+      use: "Exterior, interior",
+      finish: "Unoiled",
+      durabilityClass: 1,
+      warranty: "20 years",
+      availableIn: "Random Lengths",
+      boardLengths: "11-16ft"
+    },
+    images: [
+      '/images/thermowood/Scandinavian/5-4x6 S4SE4E/Maximo Scandinavian Thermo 5-4x6-S4SE4E-1.jpg',
+      '/images/thermowood/Scandinavian/5-4x6 S4SE4E/Maximo Scandinavian Thermo 5-4x6-S4SE4E-2.jpg',
+      '/images/thermowood/Scandinavian/5-4x6 S4SE4E/IMG_0720.JPG',
+    ]
+  },
+  {
+    group: "Scandinavian",
+    name: "Maximo Scandinavian Thermowood®",
+    dimensions: "5/8x4 - S4SE4E",
+    id: 123,
+    tag: {
+      material: "Thermo",
+      application: ["Siding & Cladding"],
+      collection: "Narrow"
+    },
+    description: "For those seeking a versatile and stylish cladding solution, Maximo Scandinavian Thermowood® 5/8x4 delivers with its distinct knotty appearance and lightweight profile. Ideal for exterior siding, this thermally modified option is designed to bring warmth and texture to any project. Easy to work with, it allows for smooth installation and a lasting, natural look that suits a wide range of architectural styles.",
+    features: [
+      "Certified sustainable",
+      "Legitimate Thermowood®",
+      "Incredibly lightweight",
+      "100% organic, no resins or chemicals",
+      "Reduced moisture content",
+      "Dimensionally stable",
+      "Suitable for all climates",
+      "Low maintenance",
+      "Will weather into a beautiful silver color if left untreated",
+      "From sustainably managed forests"
+    ],
+    details: {
+      species: "Scots Pine",
+      application: "Siding & Cladding",
+      use: "Exterior, interior",
+      finish: "Unoiled",
+      durabilityClass: 1,
+      warranty: "20 years",
+      availableIn: "Random Lengths",
+      boardLengths: "6-18ft"
+    },
+    images: [
+      '/images/thermowood/Scandinavian/5-8x4 S4SE4E/Maximo Scandinavian Thermo 5-8x4-S4SE4E-1.jpg',
+      '/images/thermowood/Scandinavian/5-8x4 S4SE4E/Maximo Scandinavian Thermo 5-8x4-S4SE4E-2.jpg',
+      '/images/thermowood/Scandinavian/5-8x4 S4SE4E/IMG_5562.png',
+    ]
+  },
+  {
+    group: "Scandinavian Reversible",
+    name: "Maximo Scandinavian Thermowood® Reversible Profile",
+    dimensions: "1x6 - T&G V-Joint x Square Back",
+    id: 120,
+    tag: {
+      material: "Thermo",
+      application: ["Siding & Cladding"],
+      collection: "Standard"
+    },
+    description: "Maximo Scandinavian Thermowood® 1x6 Reversible Profile combines design flexibility with the timeless beauty of knotty wood. Featuring a T&G V-joint on one side and a square back on the other, it provides versatile installation options for cladding and siding projects. With the trusted Thermowood® process, it offers reduced moisture content and enduring performance, all while showcasing the rustic, authentic character loved in Scandinavian design.",
+    features: [
+      "Certified sustainable",
+      "Legitimate Thermowood®",
+      "Incredibly lightweight",
+      "100% organic, no resins or chemicals",
+      "Reduced moisture content",
+      "Dimensionally stable",
+      "Suitable for all climates",
+      "Low maintenance",
+      "Will weather into a beautiful silver color if left untreated",
+      "From sustainably managed forests"
+    ],
+    details: {
+      species: "Scots Pine",
+      application: "Siding & Cladding",
+      use: "Exterior, interior",
+      finish: "Unoiled",
+      durabilityClass: 1,
+      warranty: "20 years",
+      availableIn: "Random Lengths",
+      boardLengths: "6-17ft"
+    },
+    images: [
+      '/images/thermowood/Scandinavian/Reversible Profile 1x6 - T&G V-Joint x Square Back/Maximo Scandinavian Thermo Reversible Profile 1x6 - T&G V-Joint x Square Back-1.jpg',
+      '/images/thermowood/Scandinavian/Reversible Profile 1x6 - T&G V-Joint x Square Back/Maximo Scandinavian Thermo Reversible Profile 1x6 - T&G V-Joint x Square Back-2.jpg',
+      '/images/thermowood/Scandinavian/Reversible Profile 1x6 - T&G V-Joint x Square Back/D21DD191-DFF2-4419-9050-605928483011.jpeg',
+    ]
+  } 
 ];

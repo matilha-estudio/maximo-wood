@@ -24,23 +24,28 @@ export default function Pagination({
     pageNumbers.push(i);
   }
 
+  const goToPage = (number: number) =>{
+    paginate(number);
+    document.getElementById('filters')?.scrollIntoView({ behavior: 'smooth' });
+  }
+
   return (<>
     {maxPage > 1 && <>
       <div className="flex justify-center items-center max-lg:hidden">
         {currentPage > 1 &&
-          <div className="cursor-pointer mr-1" onClick={()=> paginate(currentPage -1)}>
+          <div className="cursor-pointer mr-1" onClick={()=> goToPage(currentPage -1)}>
             <MoveLeft />
           </div>
         }
         {pageNumbers.map((number)=> (
           <div key={number} className={`flex justify-center items-center w-10 h-10 ${currentPage === number && "border border-black rounded-full"} cursor-pointer`}>
-            <div onClick={()=>paginate(number)}>
+            <div onClick={()=>goToPage(number)}>
               {number}
             </div>
           </div>
         ))}
         {currentPage !== pageNumbers.length &&
-          <div className="cursor-pointer ml-1" onClick={()=> paginate(currentPage + 1)}>
+          <div className="cursor-pointer ml-1" onClick={()=> goToPage(currentPage + 1)}>
             <MoveRight className="h-5 w-5" />
           </div>
         }

@@ -11,7 +11,7 @@ export default function ListItensMenuMobile({ Item, Content, Trigger }: IListIte
     return (
         <Accordion type="single" collapsible className="w-full">
             <AccordionItem value={Item} className="border-b-0">
-                <AccordionTriggerChevron>
+                <AccordionTriggerChevron className="hover:no-underline">
                     <SubtitleSmall>
                         {Trigger}
                     </SubtitleSmall>

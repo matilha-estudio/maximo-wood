@@ -4,14 +4,27 @@ import FAQAccordion from "@/components/faq/faq";
 import { Footer } from "@/components/footer/footer";
 import BecomeDealerForm from "@/components/forms/becomeDealer";
 import { H1, H2, H3, H5, ParagraphLarge, ParagraphMedium, SubtitleSmall } from "@/components/text/Heading";
-import { FAQData } from "@/content/faqList";
+import { Accordion } from "@/components/ui/accordion";
+import { getBecomeDealer } from "@/services";
+import { BecaomeDealerData } from "@/services/models";
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function BecomeADealer() {
     const { back } = useRouter();
-    return (
+    const [pageDetails, setPageDetails] = useState<BecaomeDealerData>();
+
+    useEffect(()=>{
+      const init = async () => {
+        const resp = await getBecomeDealer();
+        setPageDetails(resp);
+      }
+      init()
+    },[])
+
+    return (pageDetails &&
         <div className="relative text-brand-graphite">
 
             <section className="flex bg-white w-full justify-center">
@@ -23,25 +36,25 @@ export default function BecomeADealer() {
                         />
                     </div>
                     <H1 className="max-w-[924px] max-lg:mb-6">
-                        Be at the Forefront of the Wood Revolution
+                        {pageDetails.title}
                     </H1>
 
                     <ParagraphLarge className="max-w-[638px]">
-                        Partner with Maximo Wood to lead the charge in innovative, sustainable wood solutions. Gain access to our premium products, exclusive market opportunities, and dedicated support designed to elevate your business to new heights.
+                      {pageDetails.text}
                     </ParagraphLarge>
                 </div>
             </section>
 
             <section className="flex bg-white w-full justify-center">
                 <div className="flex max-w-screen-2xl  w-full">
-                    <Image src={"/images/image98.png"} alt={"maximo"} width={1440} height={432} className="max-h-[432px] w-full object-cover" />
+                    <Image src={pageDetails.image} alt={"maximo"} width={1440} height={432} className="max-h-[432px] w-full object-cover object-bottom" />
                 </div>
             </section>
 
             <section className="flex bg-white w-full justify-center">
                 <div className="flex max-w-screen-2xl lg:px-[72px] lg:py-[120px] w-full justify-end max-lg:px-6 max-lg:py-14">
                     <ParagraphLarge className="max-w-[744px]">
-                        Every Maximo board is handpicked for quality, sustainability, and unmatched stability. Our range includes both timeless hardwoods and thermally modified woods, giving you the flexibility to choose between classic beauty and modern performance. With Maximo, you’re not just choosing wood—you’re choosing a legacy of craftsmanship, built for the future. Explore the possibilities and discover the wood that redefines excellence.
+                      {pageDetails.second_text}
                     </ParagraphLarge>
                 </div>
             </section>
@@ -50,44 +63,44 @@ export default function BecomeADealer() {
                 <div className="flex max-w-screen-2xl px-[72px] py-[120px] w-full lg:gap-16 max-lg:px-6 max-lg:py-14 max-lg:flex-col">
                     <div className="lg:max-w-[521px] max-lg:mb-10 flex w-full justify-center ">
                         <H2 className="uppercase max-lg:hidden">
-                            Why Partner with Maximo?
+                          {pageDetails.why_partner.title}
                         </H2>
                         <H3 className="uppercase lg:hidden">
-                            Why Partner with Maximo?
+                          {pageDetails.why_partner.title}
                         </H3>
                     </div>
 
-                    <div className="flex w-full gap-16 lg:flex-wrap max-lg:flex-col items-center">
+                    <div className="flex w-full gap-16 lg:flex-wrap max-lg:flex-col max-lg:items-center">
                         <div className="flex flex-col gap-4 max-w-[338px]">
                             <SubtitleSmall>
-                                Access to Premium Products
+                              {pageDetails.why_partner.item_1.title}
                             </SubtitleSmall>
                             <ParagraphLarge>
-                                At Maximo Wood, we’re driven by a vision: to make premium, high-quality wood accessible to everyone—whether you’re building a deck
+                              {pageDetails.why_partner.item_1.text}
                             </ParagraphLarge>
                         </div>
                         <div className="flex flex-col gap-4 max-w-[338px]">
                             <SubtitleSmall>
-                                Democratizing Thermally Modified Wood
+                              {pageDetails.why_partner.item_2.title}
                             </SubtitleSmall>
                             <ParagraphLarge>
-                                At Maximo Wood, we’re driven by a vision: to make premium, high-quality wood accessible to everyone—whether you’re building a deck
+                              {pageDetails.why_partner.item_2.text}
                             </ParagraphLarge>
                         </div>
                         <div className="flex flex-col gap-4 max-w-[338px]">
                             <SubtitleSmall>
-                                Exclusive Dealer Pricing
+                              {pageDetails.why_partner.item_3.title}
                             </SubtitleSmall>
                             <ParagraphLarge>
-                                Gain competitive, exclusive pricing designed to boost your margins and maximize profitability with growth-focused partner programs.
+                              {pageDetails.why_partner.item_3.text}
                             </ParagraphLarge>
                         </div>
                         <div className="flex flex-col gap-4 max-w-[338px]">
                             <SubtitleSmall>
-                                Marketing & Sales Support
+                              {pageDetails.why_partner.item_4.title}
                             </SubtitleSmall>
                             <ParagraphLarge>
-                                Access marketing resources, product training, and tools for co-branded materials, point-of-sale support, and engaging dealer events.
+                              {pageDetails.why_partner.item_4.text}
                             </ParagraphLarge>
                         </div>
                     </div>
@@ -98,50 +111,75 @@ export default function BecomeADealer() {
                 <div className="flex flex-col max-w-screen-2xl lg:px-[72px] lg:py-[120px] w-full gap-12 max-lg:px-6 max-lg:py-14">
                     <div className="w-full">
                         <H2 className="max-w-[530px] max-lg:hidden">
-                            Trusted by Industry Leaders
+                          {pageDetails.trusted_industry_leaders.title}
                         </H2>
                         <H5 className="lg:hidden">
-                            Trusted by Industry Leaders
+                          {pageDetails.trusted_industry_leaders.title}
                         </H5>
                     </div>
-                    <div className="flex gap-8 justify-center max-lg:hidden">
+                    <div className="flex gap-8 max-lg:justify-center max-lg:hidden">
                         <div className="flex flex-col gap-8 max-w-[410px]">
-                            <Image src="/images/BuildersFirst.png" alt="BuildersFirst" width={410} height={400} className="object-contain" />
+                            <Image src={pageDetails.trusted_industry_leaders.item_1.image} alt="BuildersFirst" width={410} height={400} className="object-contain h-[400px]" />
                             <div>
                                 <H5>
-                                    Builders First Source
+                                  {pageDetails.trusted_industry_leaders.item_1.title}
                                 </H5>
                                 <ParagraphMedium>
-                                    As one of the largest building materials retailers in the country, Builders First Source trusts Maximo Wood to deliver high-quality solutions that meet the needs of professionals across America.
+                                  {pageDetails.trusted_industry_leaders.item_1.text}
                                 </ParagraphMedium>
                             </div>
                         </div>
                         <div className="flex flex-col gap-8 max-w-[410px]">
-                            <Image src="/images/BurtonLumber.png" alt="BurtonLumber" width={410} height={400} className="object-contain" />
+                            <Image src={pageDetails.trusted_industry_leaders.item_2.image} alt="BurtonLumber" width={410} height={400} className="object-contain h-[400px]" />
                             <div>
                                 <H5>
-                                    Burton Lumber
+                                  {pageDetails.trusted_industry_leaders.item_2.title}
                                 </H5>
                                 <ParagraphMedium>
-                                    With over 100 years of history and multiple branches, Burton Lumber counts on Maximo to offer modern, innovative solutions for their clients—keeping their legacy strong and future-focused.
+                                  {pageDetails.trusted_industry_leaders.item_2.text}
                                 </ParagraphMedium>
                             </div>
                         </div>
                         <div className="flex flex-col gap-8 max-w-[410px]">
-                            <Image src="/images/StringhamLumber.png" alt="StringhamLumber" width={410} height={400} className="object-contain" />
+                            <Image src={pageDetails.trusted_industry_leaders.item_3.image} alt="StringhamLumber" width={410} height={400} className="object-contain h-[400px]" />
                             <div>
                                 <H5>
-                                    Stringham Lumber
+                                  {pageDetails.trusted_industry_leaders.item_3.title}
                                 </H5>
                                 <ParagraphMedium>
-                                    A proud part of the well-known Do it Best network, with branches all over the U.S., Stringham Lumber relies on Maximo Wood to provide the premium products their customers demand.
+                                  {pageDetails.trusted_industry_leaders.item_3.text}
                                 </ParagraphMedium>
                             </div>
                         </div>
                     </div>
                     <div className="flex justify-center lg:hidden">
                         <IndustryLeadersCarousel
-                            images={listLogos}
+                            images={[
+                              {
+                                src: pageDetails.trusted_industry_leaders.item_1.image,
+                                alt: "BuildersFirst",
+                                width: 410,
+                                height: 400,
+                                title: pageDetails.trusted_industry_leaders.item_1.title,
+                                subTitle: pageDetails.trusted_industry_leaders.item_1.text
+                              },
+                              {
+                                src: pageDetails.trusted_industry_leaders.item_2.image,
+                                alt: "BuildersFirst",
+                                width: 410,
+                                height: 400,
+                                title: pageDetails.trusted_industry_leaders.item_2.title,
+                                subTitle: pageDetails.trusted_industry_leaders.item_2.text
+                              },
+                              {
+                                src: pageDetails.trusted_industry_leaders.item_3.image,
+                                alt: "BuildersFirst",
+                                width: 410,
+                                height: 400,
+                                title: pageDetails.trusted_industry_leaders.item_3.title,
+                                subTitle: pageDetails.trusted_industry_leaders.item_3.text
+                              },
+                            ]}
                         />
                     </div>
                 </div>
@@ -151,21 +189,21 @@ export default function BecomeADealer() {
                 <div className="flex max-w-screen-2xl lg:px-[72px] lg:py-[120px] w-full lg:gap-16 max-lg:px-6 max-lg:py-14 max-lg:flex-col">
                     <div className="flex flex-col gap-6 lg:w-1/3 max-lg:mb-14">
                         <H2 className="text-black uppercase max-lg:hidden">
-                            Ready to Be
-                            a Pioneer in the Wood Industry?
+                          {pageDetails.ready_pioneer.title}
                         </H2>
                         <H5 className="text-black uppercase lg:hidden">
-                            Ready to Be
-                            a Pioneer in the Wood Industry?
+                          {pageDetails.ready_pioneer.title}
                         </H5>
                         <ParagraphLarge>
-                            Join our network of early adopters today and gain access to exclusive products, pricing, and support designed to build strong, lasting partnerships. Let’s grow together.
+                          {pageDetails.ready_pioneer.text}
                         </ParagraphLarge>
                     </div>
 
-                    <div>
-                        <BecomeDealerForm />
-                    </div>
+                    {pageDetails.ready_pioneer &&
+                      <div>
+                          <BecomeDealerForm formId={pageDetails.ready_pioneer.hubspot_form_id} portalId={pageDetails.ready_pioneer.hubspot_portal_id} />
+                      </div>
+                    }
                 </div>
             </section>
 
@@ -179,11 +217,13 @@ export default function BecomeADealer() {
                         FAQ
                     </H3>
                     <div className="max-lg:w-full">
+                      <Accordion type="single" collapsible>
                         {
-                            FAQData.map((item, index) => (
-                                <FAQAccordion key={index} Item={item.Item} Trigger={item.Trigger} Content={item.Content} />
-                            ))
+                          pageDetails.faq.map((item, index) => (
+                            <FAQAccordion key={index} Item={`${index}`} Trigger={item.title} Content={item.text} />
+                          ))
                         }
+                      </Accordion>
                     </div>
                 </div>
             </section>
@@ -192,30 +232,3 @@ export default function BecomeADealer() {
         </div>
     )
 }
-
-const listLogos = [
-    {
-        src: "/images/BuildersFirst.png",
-        alt: "BuildersFirst",
-        width: 410,
-        height: 400,
-        title: 'Builders First Source',
-        subTitle: 'As one of the largest building materials retailers in the country, Builders First Source trusts Maximo Wood to deliver high-quality solutions that meet the needs of professionals across America.'
-    },
-    {
-        src: "/images/BurtonLumber.png",
-        alt: "BurtonLumber",
-        width: 410,
-        height: 400,
-        title: 'Burton Lumber',
-        subTitle: 'With over 100 years of history and multiple branches, Burton Lumber counts on Maximo to offer modern, innovative solutions for their clients—keeping their legacy strong and future-focused.'
-    },
-    {
-        src: "/images/StringhamLumber.png",
-        alt: "StringhamLumber",
-        width: 410,
-        height: 400,
-        title: 'Stringham Lumber',
-        subTitle: 'A proud part of the well-known Do it Best network, with branches all over the U.S., Stringham Lumber relies on Maximo Wood to provide the premium products their customers demand.'
-    }
-]

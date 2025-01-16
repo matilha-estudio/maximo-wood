@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import { ChevronDown, Plus } from "lucide-react"
+import { ChevronDown, Minus, Plus } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
@@ -14,7 +14,7 @@ const AccordionItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AccordionPrimitive.Item
     ref={ref}
-    className={cn("border-b", className)}
+    className={cn("border-b-0", className)}
     {...props}
   />
 ))
@@ -34,7 +34,8 @@ const AccordionTrigger = React.forwardRef<
       {...props}
     >
       {children}
-      <Plus className="h-4 w-4 shrink-0 transition-transform duration-200" />
+      <Plus className="h-4 w-4 shrink-0 transition-transform duration-200 plus-icon" />
+      <Minus className="h-4 w-4 shrink-0 transition-transform duration-200 minus-icon" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ))

@@ -11,7 +11,7 @@ export default function AccordionResources({ Item, Content, Trigger }: IAccordio
     return (
         <Accordion type="single" collapsible>
             <AccordionItem value={Item}>
-                <AccordionTrigger>
+                <AccordionTrigger className="border-b border-black hover:no-underline">
                     <SubtitleSmall className="max-lg:text-start">
                         {Trigger}
                     </SubtitleSmall>

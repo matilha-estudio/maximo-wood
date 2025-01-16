@@ -7,14 +7,15 @@ import { cn } from "@/lib/utils";
 interface InspirationSection {
     filter: 'hardwood' | 'thermowood'
     size?: "full" | "basis"
+    lista?: string[]
 }
 
-export function FilteredInspirationCarousel({ filter, size }: InspirationSection) {
+export function FilteredInspirationCarousel({ filter, size, lista }: InspirationSection) {
 
 
-    const filteredImages = ProjectsList
-        .filter(project => project.type === filter)
-        .flatMap(project => project.images);
+    const filteredImages = lista || ProjectsList
+        .filter(project => project.type === filter && project.imagesCarrousel)
+        .flatMap(project => project.imagesCarrousel);
 
     return (
         <div className="w-full">
@@ -26,7 +27,7 @@ export function FilteredInspirationCarousel({ filter, size }: InspirationSection
                                 <ModalInspirationCarousel
                                     trigger={
                                         <Image
-                                            src={item}
+                                            src={item || ''}
                                             alt={item + ' ' + index}
                                             width={1298}
                                             height={644}
